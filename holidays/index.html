@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holiday Hacker - Holidays</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body>
+  <div class="page">
+    <div class="blob-primary" aria-hidden="true"></div>
+    <div class="blob-secondary" aria-hidden="true"></div>
+
+    <!-- Hero -->
+    <div class="timeline-hero">
+      <div class="timeline-hero-text">
+        <p>Plan your leave</p>
+        <h1>Holiday Hacker</h1>
+      </div>
+      <div class="timeline-progress-wrap">
+        <svg viewBox="0 0 36 36" aria-hidden="true">
+          <path class="timeline-progress-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor"/>
+          <path class="timeline-progress-fill" id="progressFill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor"/>
+        </svg>
+        <span class="timeline-progress-label" id="progressLabel">–</span>
+      </div>
+    </div>
+
+    <!-- Location row -->
+    <div class="timeline-location-row" style="position:relative;">
+      <div class="location-btn-wrap" id="locationBtnWrap">
+        <button type="button" class="btn-location" id="btnLocation">
+          <span class="material-symbols-outlined">location_on</span>
+          <span id="locationLabel">Loading…</span>
+          <span class="material-symbols-outlined" id="locationChevron">expand_more</span>
+        </button>
+        <!-- Location dropdown -->
+        <div class="location-dropdown" id="locationDropdown" hidden>
+          <button type="button" class="location-dropdown-item" id="locOptMerge" data-loc="merged">
+            <span class="material-symbols-outlined">layers</span>
+            <div class="location-dropdown-text">
+              <span class="location-dropdown-label">Combined</span>
+              <span class="location-dropdown-val">All in one place</span>
+            </div>
+            <span class="material-symbols-outlined location-dropdown-check" id="locMergeCheck">check</span>
+          </button>
+          <button type="button" class="location-dropdown-item" id="locOptWork" data-loc="work">
+            <span class="material-symbols-outlined">apartment</span>
+            <div class="location-dropdown-text">
+              <span class="location-dropdown-label">Work City</span>
+              <span class="location-dropdown-val" id="locWorkVal">–</span>
+            </div>
+            <span class="material-symbols-outlined location-dropdown-check" id="locWorkCheck">check</span>
+          </button>
+          <button type="button" class="location-dropdown-item" id="locOptHome" data-loc="home">
+            <span class="material-symbols-outlined">home</span>
+            <div class="location-dropdown-text">
+              <span class="location-dropdown-label">Hometown</span>
+              <span class="location-dropdown-val" id="locHomeVal">–</span>
+            </div>
+            <span class="material-symbols-outlined location-dropdown-check" id="locHomeCheck">check</span>
+          </button>
+          <button type="button" class="location-dropdown-item" id="locOptPersonal" data-loc="personal" style="display:none;">
+            <span class="material-symbols-outlined">person</span>
+            <div class="location-dropdown-text">
+              <span class="location-dropdown-label">Personal</span>
+              <span class="location-dropdown-val">Custom holidays</span>
+            </div>
+            <span class="material-symbols-outlined location-dropdown-check" id="locPersonalCheck">check</span>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn-tune" aria-label="Filters">
+        <span class="material-symbols-outlined">tune</span>
+      </button>
+    </div>
+
+    <!-- Timeline scroll -->
+    <div class="timeline-scroll no-scrollbar" id="timelineScroll">
+      <div class="timeline-vertical-line" aria-hidden="true"></div>
+      <div id="timelineContent">
+        <!-- Injected by timeline.js -->
+        <div class="timeline-loading">
+          <span class="material-symbols-outlined">hourglass_top</span>
+          <p>Loading holidays…</p>
+        </div>
+      </div>
+      <div style="height:2.5rem;"></div>
+    </div>
+
+    <!-- FAB -->
+    <div class="timeline-fab" id="fabWrap">
+      <div class="fab-menu" id="fabMenu">
+        <button type="button" class="fab-menu-item" id="fabEditExisting">
+          <span class="material-symbols-outlined">edit_note</span>
+          <span>Edit existing</span>
+        </button>
+        <button type="button" class="fab-menu-item" id="fabAddCustom">
+          <span class="material-symbols-outlined">add_circle</span>
+          <span>Add custom</span>
+        </button>
+      </div>
+      <button type="button" class="btn-fab" id="btnFab" aria-label="Options">
+        <span class="material-symbols-outlined">edit</span>
+      </button>
+    </div>
+
+    <!-- Edit Holiday Popup -->
+    <div class="edit-popup-overlay" id="editOverlay">
+      <div class="edit-popup" id="editPopup">
+        <header class="edit-popup-header">
+          <button type="button" class="edit-popup-back" id="editPopupClose">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <h1>Edit Holiday</h1>
+        </header>
+
+        <main class="edit-popup-body">
+          <!-- Name -->
+          <section class="edit-field">
+            <label class="edit-field-label">Holiday Name</label>
+            <input type="text" class="edit-field-input" id="editName" placeholder="Enter holiday name"/>
+          </section>
+
+          <!-- Date scroll picker -->
+          <section class="edit-field">
+            <div class="edit-field-top">
+              <label class="edit-field-label">Select Date</label>
+              <span class="edit-date-badge" id="editDateBadge">–</span>
+            </div>
+            <div class="edit-date-picker">
+              <div class="edit-date-highlight" aria-hidden="true"></div>
+              <div class="edit-date-col" id="editMonthCol"></div>
+              <div class="edit-date-col" id="editDayCol"></div>
+              <div class="edit-date-fade" aria-hidden="true"></div>
+            </div>
+          </section>
+
+          <!-- Category -->
+          <section class="edit-field" id="editCatSection">
+            <label class="edit-field-label" for="editCategory">Category</label>
+            <div class="edit-select-wrap">
+              <span class="material-symbols-outlined edit-select-icon" id="editCatIcon">apartment</span>
+              <select class="edit-field-select" id="editCategory">
+                <option value="work">Work City</option>
+                <option value="home">Hometown</option>
+              </select>
+              <span class="material-symbols-outlined edit-select-chevron">expand_more</span>
+            </div>
+          </section>
+        </main>
+
+        <footer class="edit-popup-footer">
+          <button type="button" class="edit-save-btn" id="editSaveBtn">
+            <span>Save Changes</span>
+            <span class="material-symbols-outlined">done_all</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <nav class="glass-nav" aria-label="Main">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-item nav-item--active" onclick="event.preventDefault();">
+          <span class="material-symbols-outlined">celebration</span>
+          <span>Holidays</span>
+        </a>
+        <a href="../calendar/index.html" class="nav-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>Calendar</span>
+        </a>
+        <a href="../plan/index.html" class="nav-item">
+          <span class="material-symbols-outlined">map</span>
+          <span>Plan</span>
+        </a>
+        <a href="../trips/index.html" class="nav-item">
+          <span class="material-symbols-outlined">airplane_ticket</span>
+          <span>Trips</span>
+        </a>
+        <a href="../profile/index.html" class="nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <script src="holidays.js"></script>
+</body>
+</html>

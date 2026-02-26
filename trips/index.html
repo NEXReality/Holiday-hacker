@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holiday Hacker - Trips</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body class="passport-page trips-page">
+  <div class="page">
+    <div class="blob-primary" aria-hidden="true"></div>
+    <div class="blob-secondary" aria-hidden="true"></div>
+
+    <!-- Hero: same layout as other pages -->
+    <div class="timeline-hero">
+      <div class="timeline-hero-text">
+        <h1>My Trips</h1>
+      </div>
+      <button type="button" class="btn-export">
+        <span class="material-symbols-outlined">ios_share</span>
+        <span>Export</span>
+      </button>
+    </div>
+
+    <main class="passport-main">
+      <section class="passport-stats">
+        <div class="passport-stat-hero">
+          <div class="passport-stat-hero-inner">
+            <div>
+              <p>Total Leaves Saved</p>
+              <h2>12 <span>Days</span></h2>
+            </div>
+            <div class="passport-stat-hero-icon">
+              <span class="material-symbols-outlined">savings</span>
+            </div>
+          </div>
+          <div class="passport-stat-hero-footer">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span>You're beating 85% of hackers!</span>
+          </div>
+        </div>
+        <div class="passport-stat-card passport-stat-card--confirmed">
+          <div class="passport-stat-card-row">
+            <div class="passport-stat-card-icon">
+              <div class="icon-wrap icon-wrap--primary">
+                <span class="material-symbols-outlined">flight_takeoff</span>
+              </div>
+            </div>
+            <h3>0</h3>
+          </div>
+          <p>Confirmed Trips</p>
+        </div>
+        <div class="passport-stat-card passport-stat-card--holidays">
+          <div class="passport-stat-card-row">
+            <div class="passport-stat-card-icon">
+              <div class="icon-wrap icon-wrap--emerald">
+                <span class="material-symbols-outlined">celebration</span>
+              </div>
+            </div>
+            <h3>0</h3>
+          </div>
+          <p>Public Holidays Used</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="passport-section-title">Upcoming Hacks</h3>
+        <div id="tripsHacks" class="plan-dest-grid trips-hacks-grid"></div>
+
+        <div class="passport-empty">
+          <div class="passport-empty-inner">
+            <div class="passport-empty-icon">
+              <span class="material-symbols-outlined">add_location_alt</span>
+            </div>
+            <h4>No confirmed trips yet</h4>
+            <p>Go to Plan, pick a holiday window, and tap the map pin on a destination to confirm it.</p>
+            <a href="../plan/index.html" class="plan-empty-link">Go to Plan</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="glass-nav" aria-label="Main">
+      <div class="nav-inner">
+        <a href="../holidays/index.html" class="nav-item">
+          <span class="material-symbols-outlined">celebration</span>
+          <span>Holidays</span>
+        </a>
+        <a href="../calendar/index.html" class="nav-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>Calendar</span>
+        </a>
+        <a href="../plan/index.html" class="nav-item">
+          <span class="material-symbols-outlined">map</span>
+          <span>Plan</span>
+        </a>
+        <a href="index.html" class="nav-item nav-item--active" onclick="event.preventDefault();">
+          <span class="material-symbols-outlined">airplane_ticket</span>
+          <span>Trips</span>
+        </a>
+        <a href="../profile/index.html" class="nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="trip-detail-overlay" id="tripDetailOverlay" aria-hidden="true">
+    <div class="trip-detail-popup">
+      <div class="trip-detail-header">
+        <button type="button" class="trip-detail-close" aria-label="Close"><span class="material-symbols-outlined">close</span></button>
+        <h2 class="trip-detail-title" id="tripDetailTitle"></h2>
+      </div>
+      <div class="trip-detail-body" id="tripDetailBody">
+        <div class="trip-detail-img" id="tripDetailImg"></div>
+        <div class="trip-detail-category" id="tripDetailCategory"></div>
+        <div class="trip-detail-accordion">
+          <button type="button" class="trip-detail-tab trip-detail-tab--active" data-tab="desc">Description</button>
+          <button type="button" class="trip-detail-tab" data-tab="understand">Understand</button>
+          <button type="button" class="trip-detail-tab" data-tab="see">See</button>
+        </div>
+        <div class="trip-detail-panel trip-detail-panel--active" id="tripDetailDescPanel">
+          <div class="trip-detail-content wv-formatted" id="tripDetailDesc"></div>
+        </div>
+        <div class="trip-detail-panel" id="tripDetailUnderstandPanel">
+          <div class="trip-detail-content wv-formatted" id="tripDetailUnderstand"></div>
+        </div>
+        <div class="trip-detail-panel" id="tripDetailSeePanel">
+          <div class="trip-detail-content wv-formatted" id="tripDetailSee"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var raw = localStorage.getItem('holidayHacker_user');
+      if (!raw) { window.location.href = '../index.html'; return; }
+      var user = JSON.parse(raw);
+      if (!user.name && !user.workLocation) { window.location.href = '../index.html'; return; }
+      if (!localStorage.getItem('holidayHacker_calSetup')) { window.location.href = '../calendar/index.html'; return; }
+    })();
+  </script>
+  <script src="trips.js"></script>
+</body>
+</html>

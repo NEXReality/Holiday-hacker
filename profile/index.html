@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holiday Hacker - Profile</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body class="profile-page">
+  <div class="page">
+    <div class="blob-primary" aria-hidden="true"></div>
+    <div class="blob-secondary" aria-hidden="true"></div>
+
+    <div class="timeline-hero">
+      <div class="timeline-hero-text">
+        <h1>My Profile</h1>
+        <p>Manage your travel DNA</p>
+      </div>
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhxuQV-uxljOtgfmrP4dzd09znoH5U7-0EtplPsVnCTD-ve_G6P5JZ3Rvzk4-Dz7w7Lp_JKGbSQQ9204jKC2eSdVY04xPEaYQTOeTGwcexOXLGeO-V3HOowkr46bZq2TNw_640pjSsh0E2FsdjY2AmCR-YUlMlCgWwfy0PjS6sOx9x_3DRFSGP-5GQ2gW1OC7tGlnoV39A8YyBam4XRu__E0GKFvFwkMqk6yPhWhxc5TF3yTnB7-QPqb_kR4VysZ2cYAgi6syox6b" alt="Profile"/>
+        </div>
+        <span class="profile-avatar-dot" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <main class="profile-main">
+      <!-- Identity card -->
+      <section class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">
+            <span class="material-symbols-outlined">fingerprint</span>
+          </span>
+          <h2 id="profileName">User</h2>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-field">
+            <label for="profile-name-input">Name</label>
+            <input class="profile-input profile-editable" id="profile-name-input" type="text" value="" readonly/>
+          </div>
+          <div class="profile-grid-2">
+            <div class="profile-field">
+              <label for="profile-age">Age Group</label>
+              <input class="profile-input profile-editable" id="profile-age" type="text" value="" readonly/>
+            </div>
+            <div class="profile-field">
+              <label for="profile-gender">Gender</label>
+              <input class="profile-input profile-editable" id="profile-gender" type="text" value="" readonly/>
+            </div>
+          </div>
+          <div class="profile-grid-2">
+            <div class="profile-field">
+              <label for="profile-work">Work City</label>
+              <div class="profile-input-wrap">
+                <span class="material-symbols-outlined">apartment</span>
+                <input class="profile-input profile-input-with-icon profile-editable" id="profile-work" type="text" value="" readonly/>
+              </div>
+            </div>
+            <div class="profile-field">
+              <label for="profile-home">Hometown</label>
+              <div class="profile-input-wrap">
+                <span class="material-symbols-outlined">home</span>
+                <input class="profile-input profile-input-with-icon profile-editable" id="profile-home" type="text" value="" readonly/>
+              </div>
+            </div>
+          </div>
+          <div class="profile-field">
+            <label>Family Size</label>
+            <div class="profile-family-row" id="profileFamilyRow">
+              <div class="profile-family-left">
+                <span class="profile-family-icon">
+                  <span class="material-symbols-outlined">family_restroom</span>
+                </span>
+                <span id="profileFamilyDisplay">2 Adults, 1 Child</span>
+              </div>
+              <div class="profile-family-edit" id="profileFamilyEdit" style="display:none;">
+                <div class="profile-family-controls">
+                  <label class="profile-family-label">Adults</label>
+                  <div class="profile-family-stepper">
+                    <button type="button" class="profile-family-btn" id="profileAdultsMinus" aria-label="Decrease adults">−</button>
+                    <span id="profileAdultsVal">2</span>
+                    <button type="button" class="profile-family-btn" id="profileAdultsPlus" aria-label="Increase adults">+</button>
+                  </div>
+                </div>
+                <div class="profile-family-controls">
+                  <label class="profile-family-label">Children</label>
+                  <div class="profile-family-stepper">
+                    <button type="button" class="profile-family-btn" id="profileChildrenMinus" aria-label="Decrease children">−</button>
+                    <span id="profileChildrenVal">1</span>
+                    <button type="button" class="profile-family-btn" id="profileChildrenPlus" aria-label="Increase children">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Annual Leaves -->
+      <section class="profile-card profile-card--quota">
+        <div class="profile-quota-header">
+          <div class="profile-card-header">
+            <span class="profile-card-icon">
+              <span class="material-symbols-outlined">event_available</span>
+            </span>
+            <h2>Annual Leaves</h2>
+          </div>
+          <span class="profile-quota-pill">12 Days</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-range-wrap">
+            <input class="profile-range" type="range" min="0" max="30" value="12" id="profile-leaves"/>
+            <div class="profile-range-labels">
+              <span>0</span>
+              <span>15</span>
+              <span>30+</span>
+            </div>
+          </div>
+          <div class="profile-quota-legend">
+            <span><span class="dot dot--green"></span> Used: 4</span>
+            <span><span class="dot dot--primary"></span> Remaining: 8</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Travel Modes (multi-select) -->
+      <section class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">
+            <span class="material-symbols-outlined">commute</span>
+          </span>
+          <h2>Travel Modes</h2>
+        </div>
+        <div class="profile-card-body">
+          <p class="profile-hint">Select all that apply. Recommendations use your preferred modes.</p>
+          <div class="profile-mode-wrap" id="profileTravelModes">
+            <button type="button" class="profile-mode-btn" data-mode="flight">
+              <span class="material-symbols-outlined">flight</span>
+              <span>Flight</span>
+            </button>
+            <button type="button" class="profile-mode-btn" data-mode="train">
+              <span class="material-symbols-outlined">train</span>
+              <span>Train</span>
+            </button>
+            <button type="button" class="profile-mode-btn" data-mode="bus">
+              <span class="material-symbols-outlined">directions_bus</span>
+              <span>Bus</span>
+            </button>
+            <button type="button" class="profile-mode-btn" data-mode="car">
+              <span class="material-symbols-outlined">directions_car</span>
+              <span>Self-Drive</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Destination Segments (multi-select) -->
+      <section class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">
+            <span class="material-symbols-outlined">terrain</span>
+          </span>
+          <h2>Preferred Destinations</h2>
+        </div>
+        <div class="profile-card-body">
+          <p class="profile-hint">What type of places do you enjoy? Beach, mountains, heritage…</p>
+          <div class="profile-segments-wrap" id="profileDestinationSegments">
+            <label class="profile-segment-check"><input type="checkbox" data-segment="beach"/><span class="material-symbols-outlined">beach_access</span> Beach / Coastal</label>
+            <label class="profile-segment-check"><input type="checkbox" data-segment="mountain"/><span class="material-symbols-outlined">terrain</span> Mountain / Hills</label>
+            <label class="profile-segment-check"><input type="checkbox" data-segment="heritage"/><span class="material-symbols-outlined">account_balance</span> Heritage / Culture</label>
+            <label class="profile-segment-check"><input type="checkbox" data-segment="wildlife"/><span class="material-symbols-outlined">pets</span> Wildlife / Nature</label>
+            <label class="profile-segment-check"><input type="checkbox" data-segment="city"/><span class="material-symbols-outlined">location_city</span> City / Urban</label>
+            <label class="profile-segment-check"><input type="checkbox" data-segment="spiritual"/><span class="material-symbols-outlined">volunteer_activism</span> Spiritual / Pilgrimage</label>
+          </div>
+          <label class="profile-check-row">
+            <input type="checkbox" id="profileHasKidsUnder10"/>
+            <span>Traveling with kids under 10 (prioritize kid-friendly activities)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Visited Places -->
+      <section class="profile-card">
+        <div class="profile-section-header">
+          <div class="profile-card-header">
+            <span class="profile-card-icon">
+              <span class="material-symbols-outlined">beenhere</span>
+            </span>
+            <h2>Visited Places</h2>
+          </div>
+          <span class="profile-badge-small">Excluded from AI</span>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-search-wrap">
+            <span class="material-symbols-outlined">add_location_alt</span>
+            <input class="profile-input" type="text" placeholder="Add a place you've been..."/>
+          </div>
+          <div class="profile-tags">
+            <button type="button" class="profile-tag">Goa <span class="material-symbols-outlined">close</span></button>
+            <button type="button" class="profile-tag">Jaipur <span class="material-symbols-outlined">close</span></button>
+            <button type="button" class="profile-tag">Kerala <span class="material-symbols-outlined">close</span></button>
+            <button type="button" class="profile-tag">Manali <span class="material-symbols-outlined">close</span></button>
+            <button type="button" class="profile-tag">Coorg <span class="material-symbols-outlined">close</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clear Data -->
+      <section class="profile-card profile-card--danger">
+        <div class="profile-card-header">
+          <span class="profile-card-icon profile-card-icon--danger">
+            <span class="material-symbols-outlined">delete_forever</span>
+          </span>
+          <h2>Clear Data</h2>
+        </div>
+        <div class="profile-card-body">
+          <p class="profile-clear-desc">Remove stored data. Calendar reset will show the setup chat again.</p>
+          <div class="profile-clear-buttons">
+            <button type="button" class="profile-clear-btn" id="profileClearRecommendation">
+              <span class="material-symbols-outlined">recommend</span>
+              Clear Recommendation Preferences
+            </button>
+            <button type="button" class="profile-clear-btn" id="profileClearPersonal">
+              <span class="material-symbols-outlined">person_off</span>
+              Clear Personal Data
+            </button>
+            <button type="button" class="profile-clear-btn" id="profileClearCalendar">
+              <span class="material-symbols-outlined">event_busy</span>
+              Clear Calendar Data
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Save / Edit button -->
+      <div class="profile-save-wrap">
+        <button type="button" class="profile-save-btn" id="profileSaveBtn">
+          <span id="profileSaveBtnText">Edit Profile</span>
+          <span class="material-symbols-outlined" id="profileSaveBtnIcon">edit</span>
+        </button>
+        <p class="profile-last-updated" id="profileLastUpdated"></p>
+      </div>
+    </main>
+
+    <nav class="glass-nav" aria-label="Main">
+      <div class="nav-inner">
+        <a href="../holidays/index.html" class="nav-item">
+          <span class="material-symbols-outlined">celebration</span>
+          <span>Holidays</span>
+        </a>
+        <a href="../calendar/index.html" class="nav-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>Calendar</span>
+        </a>
+        <a href="../plan/index.html" class="nav-item">
+          <span class="material-symbols-outlined">map</span>
+          <span>Plan</span>
+        </a>
+        <a href="../trips/index.html" class="nav-item">
+          <span class="material-symbols-outlined">airplane_ticket</span>
+          <span>Trips</span>
+        </a>
+        <a href="index.html" class="nav-item nav-item--active" onclick="event.preventDefault();">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

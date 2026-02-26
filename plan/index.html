@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holiday Hacker - Plan Your Break</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body class="plan-page">
+  <div class="page">
+    <div class="blob-primary" aria-hidden="true"></div>
+    <div class="blob-secondary" aria-hidden="true"></div>
+
+    <!-- Plan onboarding chat overlay -->
+    <div class="cal-chat-overlay" id="planChatOverlay">
+      <header class="header">
+        <div class="header-inner">
+          <div class="logo-ring">
+            <div class="logo-inner">
+              <span class="material-symbols-outlined logo-icon">map</span>
+            </div>
+          </div>
+          <div>
+            <h1 class="brand-title">Plan Your Trip</h1>
+            <div class="online-row">
+              <span class="online-dot"></span>
+              <span class="online-label">Online</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="chat-area no-scrollbar" id="planChatArea"></div>
+      <div class="chat-footer" id="planChatFooter">
+        <div class="chat-privacy">
+          <span class="material-symbols-outlined">lock</span>
+          Your data stays on this device
+        </div>
+      </div>
+    </div>
+
+    <div id="planContent">
+    <header class="plan-header">
+      <div class="plan-header-row">
+        <h1 class="plan-title">Plan Your Break</h1>
+        <div class="plan-progress-inline">
+          <div class="plan-progress-circle-wrap">
+            <svg class="plan-progress-svg" viewBox="0 0 36 36" aria-hidden="true">
+              <circle class="plan-progress-bg" cx="18" cy="18" r="15.9" fill="none" stroke="currentColor"/>
+              <circle class="plan-progress-fill" id="planProgressFill" cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-dasharray="100" stroke-dashoffset="100"/>
+            </svg>
+            <span class="plan-progress-text" id="planProgressText">0%</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="plan-main">
+      <section class="plan-section">
+        <div class="plan-section-header">
+          <h2 class="plan-section-title">Upcoming Windows</h2>
+          <div class="plan-filter-row">
+            <div class="plan-filter-pills no-scrollbar" id="planFilterPills">
+              <button type="button" class="plan-pill plan-pill--active" data-filter="all">All</button>
+              <button type="button" class="plan-pill" data-filter="mega">Mega-Bridges</button>
+              <button type="button" class="plan-pill" data-filter="golden">Golden Bridges</button>
+              <button type="button" class="plan-pill" data-filter="free">Free Holidays</button>
+            </div>
+            <button type="button" class="plan-search-btn" id="planSearchBtn" aria-label="Search">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
+        </div>
+        <div class="plan-windows-scroll no-scrollbar" id="planWindowsScroll">
+          <!-- Window cards injected by plan.js -->
+        </div>
+      </section>
+
+      <section class="plan-section plan-destinations">
+        <div class="plan-section-header">
+          <h2 class="plan-section-title">Recommended Destinations</h2>
+        </div>
+        <div class="plan-dest-grid" id="planDestGrid">
+          <div class="plan-dest-loading" id="planDestLoading">Loading destinations…</div>
+        </div>
+      </section>
+    </main>
+    </div>
+
+    <nav class="glass-nav" aria-label="Main">
+      <div class="nav-inner">
+        <a href="../holidays/index.html" class="nav-item">
+          <span class="material-symbols-outlined">celebration</span>
+          <span>Holidays</span>
+        </a>
+        <a href="../calendar/index.html" class="nav-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>Calendar</span>
+        </a>
+        <a href="index.html" class="nav-item nav-item--active" onclick="event.preventDefault();">
+          <span class="material-symbols-outlined">map</span>
+          <span>Plan</span>
+        </a>
+        <a href="../trips/index.html" class="nav-item">
+          <span class="material-symbols-outlined">airplane_ticket</span>
+          <span>Trips</span>
+        </a>
+        <a href="../profile/index.html" class="nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <script src="plan-onboard.js"></script>
+  <script src="plan.js"></script>
+</body>
+</html>

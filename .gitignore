@@ -1,0 +1,10 @@
+.cursor
+destination-data
+StateUT-wise list of destinations.csv
+wikidata-test
+wikivoyage-test
+train
+plan/Project plan.txt
+database/recommendation/CONFIG_LOGIC.md
+database/recommendation/CREDIBILITY_LIST.md
+database/recommendation/SCORE_COMPARISON.md

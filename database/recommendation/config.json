@@ -1,0 +1,204 @@
+{
+  "_comment": "Editable weightage table for recommendation engine. Adjust values to tune scoring without code changes.",
+  "decision_table": {
+    "duration_match": {
+      "weight": 50,
+      "condition": "min_days <= available_days"
+    },
+    "transport_flight_distance": {
+      "weight": 30,
+      "condition": "distance_km > 500 AND travel_mode = flight"
+    },
+    "transport_train_distance": {
+      "weight": 30,
+      "condition": "distance 400-800km AND travel_mode = train"
+    },
+    "transport_bus_car_distance": {
+      "weight": 30,
+      "condition": "distance < 400km AND travel_mode = bus OR car"
+    },
+    "popularity": {
+      "weight": 50,
+      "condition": "content_richness_score > 0.5"
+    },
+    "child_friendly": {
+      "weight": 10,
+      "condition": "has_kids_under_10 AND section has Zoo/Garden/Park/etc"
+    },
+    "strenuous_penalty": {
+      "weight": -20,
+      "condition": "has_kids_under_10 AND category/brief has Trek/Ruins/Steep/etc"
+    },
+    "summer_risk": {
+      "weight": -30,
+      "condition": "month Mar-May AND (Beaches/Ruins/Hot states)"
+    },
+    "monsoon_risk": {
+      "weight": -30,
+      "condition": "month Jun-Aug AND (Beaches/Landslide zones)"
+    }
+  },
+  "distance_bands_by_mode": {
+    "car": {
+      "0_300": 30,
+      "300_600": 10,
+      "600_plus": -20
+    },
+    "bus": {
+      "0_300": 20,
+      "300_600": 30,
+      "600_plus": -10
+    },
+    "train": {
+      "0_300": 10,
+      "300_600": 30,
+      "600_plus": 20
+    },
+    "flight": {
+      "0_300": -40,
+      "300_600": 10,
+      "600_plus": 30
+    }
+  },
+  "popularity_bands": {
+    "high": {
+      "min": 0.5,
+      "weight": 80
+    },
+    "medium": {
+      "min": 0.35,
+      "weight": 40
+    },
+    "low": {
+      "min": 0.2,
+      "weight": 15
+    }
+  },
+  "child_friendly_keywords": [
+    "Zoo",
+    "Garden",
+    "Aquarium",
+    "Park",
+    "Museum",
+    "Palace",
+    "Boat",
+    "Resort",
+    "Promenade",
+    "Tea gardens"
+  ],
+  "strenuous_keywords": [
+    "Trek",
+    "Climb",
+    "Steep",
+    "Wilderness",
+    "Ancient Ruins",
+    "Hiking",
+    "Rafting"
+  ],
+  "fallbacks": {
+    "min_days": 2,
+    "road_access_quality": "good",
+    "ideal_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "content_richness_score": 0.3,
+    "safety_score": 3
+  },
+  "destination_segments": {
+    "beach": [
+      "beach",
+      "coast",
+      "backwater",
+      "seaside",
+      "coastal"
+    ],
+    "mountain": [
+      "mountain",
+      "hill",
+      "hills",
+      "tea garden",
+      "coffee",
+      "mist",
+      "trek"
+    ],
+    "heritage": [
+      "heritage",
+      "historic",
+      "palace",
+      "fort",
+      "ruins",
+      "ancient"
+    ],
+    "wildlife": [
+      "wildlife",
+      "nature",
+      "park",
+      "sanctuary",
+      "forest",
+      "tiger",
+      "elephant"
+    ],
+    "city": [
+      "city",
+      "urban",
+      "sightseeing",
+      "landmark"
+    ],
+    "spiritual": [
+      "temple",
+      "religious",
+      "pilgrimage",
+      "shrine",
+      "church",
+      "mosque",
+      "sabarimala",
+      "spiritual"
+    ]
+  },
+  "seasonal_map": {
+    "summer_risk_months": [
+      3,
+      4,
+      5
+    ],
+    "summer_risk_categories": [
+      "Beaches",
+      "Ancient Ruins"
+    ],
+    "summer_risk_states": [],
+    "monsoon_risk_months": [
+      6,
+      7,
+      8
+    ],
+    "monsoon_risk_categories": [
+      "Mountains",
+      "Nature & Wildlife Areas"
+    ],
+    "monsoon_landslide_states": [
+      "Kerala",
+      "Karnataka"
+    ],
+    "peak_season_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ]
+  },
+  "popularity_multiplier": 100,
+  "spiritual_not_selected_penalty": -80,
+  "peak_season_bonus": 25,
+  "distance_actual_weight": 0.03,
+  "credibility_weights": {
+    "unesco_world_heritage": 30,
+    "unesco_tentative": 15,
+    "geo_heritage": 10,
+    "asi_monument": 10
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holiday Hacker - Calendar</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body class="calendar-page">
+  <div class="page" id="calPage">
+    <div class="blob-primary" aria-hidden="true"></div>
+    <div class="blob-secondary" aria-hidden="true"></div>
+
+    <!-- ── Chat onboarding overlay ── -->
+    <div class="cal-chat-overlay" id="calChatOverlay">
+      <header class="header">
+        <div class="header-inner">
+          <div class="logo-ring">
+            <div class="logo-inner">
+              <span class="material-symbols-outlined logo-icon">calendar_month</span>
+            </div>
+          </div>
+          <div>
+            <h1 class="brand-title">Calendar Setup</h1>
+            <div class="online-row">
+              <span class="online-dot"></span>
+              <span class="online-label">Online</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="chat-area no-scrollbar" id="calChatArea"></div>
+      <div class="chat-footer" id="calChatFooter">
+        <div class="chat-privacy">
+          <span class="material-symbols-outlined">lock</span>
+          Your data stays on this device
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Split container (calendar + advisor) ── -->
+    <div class="cal-split" id="calSplit" style="display:none;">
+
+      <!-- Top: Calendar -->
+      <div class="cal-split-top" id="calSplitTop">
+        <div class="cal-content" id="calContent">
+          <header class="calendar-header">
+            <div class="calendar-month-selector" id="monthSelector">
+              <h1 id="monthTitle">
+                Loading…
+                <span class="material-symbols-outlined" id="monthChevron">expand_more</span>
+              </h1>
+              <div class="calendar-month-dropdown" id="monthDropdown"></div>
+            </div>
+            <div class="calendar-nav-arrows">
+              <button type="button" class="calendar-arrow" id="prevMonth" aria-label="Previous month">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button type="button" class="calendar-arrow" id="nextMonth" aria-label="Next month">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </header>
+
+          <main class="calendar-main" id="calMain">
+            <div class="calendar-weekdays" id="calWeekdays">
+              <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+            </div>
+
+            <div class="calendar-swipe-area" id="calSwipeArea">
+              <div class="calendar-grid" id="calGrid"></div>
+            </div>
+
+            <div class="calendar-legend">
+              <div class="calendar-legend-inner">
+                <div class="calendar-legend-item">
+                  <span class="calendar-legend-dot calendar-legend-dot--work"></span>
+                  <span>Work City</span>
+                </div>
+                <div class="calendar-legend-item">
+                  <span class="calendar-legend-dot calendar-legend-dot--home"></span>
+                  <span>Hometown</span>
+                </div>
+                <div class="calendar-legend-item">
+                  <span class="calendar-legend-dot calendar-legend-dot--personal"></span>
+                  <span>Personal</span>
+                </div>
+                <div class="calendar-legend-item">
+                  <span class="calendar-legend-dot calendar-legend-dot--weekoff"></span>
+                  <span>Weekly Off</span>
+                </div>
+              </div>
+            </div>
+
+            <section class="calendar-events" id="calEvents">
+              <div id="calEventsList"></div>
+            </section>
+
+            <div style="height:2rem;"></div>
+          </main>
+        </div>
+      </div>
+
+      <!-- Drag handle -->
+      <div class="cal-split-handle" id="calSplitHandle">
+        <div class="cal-split-handle-bar"></div>
+      </div>
+
+      <!-- Bottom: Advisor chat -->
+      <div class="cal-split-bottom" id="calSplitBottom">
+        <div class="cal-advisor-chat" id="calAdvisorChat">
+          <div class="cal-advisor-messages" id="advisorMessages"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="glass-nav" aria-label="Main">
+      <div class="nav-inner">
+        <a href="../holidays/index.html" class="nav-item">
+          <span class="material-symbols-outlined">celebration</span>
+          <span>Holidays</span>
+        </a>
+        <a href="index.html" class="nav-item nav-item--active" onclick="event.preventDefault();">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>Calendar</span>
+        </a>
+        <a href="../plan/index.html" class="nav-item">
+          <span class="material-symbols-outlined">map</span>
+          <span>Plan</span>
+        </a>
+        <a href="../trips/index.html" class="nav-item">
+          <span class="material-symbols-outlined">airplane_ticket</span>
+          <span>Trips</span>
+        </a>
+        <a href="../profile/index.html" class="nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <script src="cal-onboard.js"></script>
+  <script src="calendar.js"></script>
+  <script src="cal-advisor.js"></script>
+</body>
+</html>
