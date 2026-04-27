@@ -20,53 +20,72 @@
         <h1>My Profile</h1>
         <p>Manage your travel DNA</p>
       </div>
-      <div class="profile-avatar-wrap">
-        <div class="profile-avatar">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhxuQV-uxljOtgfmrP4dzd09znoH5U7-0EtplPsVnCTD-ve_G6P5JZ3Rvzk4-Dz7w7Lp_JKGbSQQ9204jKC2eSdVY04xPEaYQTOeTGwcexOXLGeO-V3HOowkr46bZq2TNw_640pjSsh0E2FsdjY2AmCR-YUlMlCgWwfy0PjS6sOx9x_3DRFSGP-5GQ2gW1OC7tGlnoV39A8YyBam4XRu__E0GKFvFwkMqk6yPhWhxc5TF3yTnB7-QPqb_kR4VysZ2cYAgi6syox6b" alt="Profile"/>
-        </div>
-        <span class="profile-avatar-dot" aria-hidden="true"></span>
-      </div>
     </div>
 
     <main class="profile-main">
       <!-- Identity card -->
-      <section class="profile-card">
-        <div class="profile-card-header">
-          <span class="profile-card-icon">
-            <span class="material-symbols-outlined">fingerprint</span>
-          </span>
-          <h2 id="profileName">User</h2>
+      <section class="profile-card" id="profileIdentityCard">
+        <div class="profile-card-header profile-card-header--with-actions">
+          <div class="profile-card-header-start">
+            <span class="profile-card-icon">
+              <span class="material-symbols-outlined">fingerprint</span>
+            </span>
+            <h2 id="profileName">User</h2>
+          </div>
+          <div class="profile-card-actions">
+            <button type="button" class="profile-card-action" id="profileIdentityToggle" aria-label="Edit profile details"><span class="material-symbols-outlined">edit</span></button>
+          </div>
         </div>
         <div class="profile-card-body">
           <div class="profile-field">
             <label for="profile-name-input">Name</label>
-            <input class="profile-input profile-editable" id="profile-name-input" type="text" value="" readonly/>
+            <input class="profile-input profile-editable" id="profile-name-input" type="text" value="" readonly autocomplete="name"/>
           </div>
           <div class="profile-grid-2">
             <div class="profile-field">
               <label for="profile-age">Age Group</label>
-              <input class="profile-input profile-editable" id="profile-age" type="text" value="" readonly/>
+              <select class="profile-input profile-editable" id="profile-age" disabled>
+                <option value="Below 30">Below 30</option>
+                <option value="31-45">31–45</option>
+                <option value="45 Above">45 above</option>
+              </select>
             </div>
             <div class="profile-field">
               <label for="profile-gender">Gender</label>
-              <input class="profile-input profile-editable" id="profile-gender" type="text" value="" readonly/>
+              <select class="profile-input profile-editable" id="profile-gender" disabled>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
           </div>
           <div class="profile-grid-2">
             <div class="profile-field">
               <label for="profile-work">Work City</label>
-              <div class="profile-input-wrap">
-                <span class="material-symbols-outlined">apartment</span>
-                <input class="profile-input profile-input-with-icon profile-editable" id="profile-work" type="text" value="" readonly/>
+              <div class="profile-loc-wrap">
+                <div class="profile-loc-list" id="profileWorkList" hidden></div>
+                <div class="profile-input-wrap">
+                  <span class="material-symbols-outlined">apartment</span>
+                  <input class="profile-input profile-input-with-icon profile-editable" id="profile-work" type="text" value="" readonly autocomplete="off" placeholder="Search city or state…"/>
+                </div>
               </div>
             </div>
             <div class="profile-field">
               <label for="profile-home">Hometown</label>
-              <div class="profile-input-wrap">
-                <span class="material-symbols-outlined">home</span>
-                <input class="profile-input profile-input-with-icon profile-editable" id="profile-home" type="text" value="" readonly/>
+              <div class="profile-loc-wrap">
+                <div class="profile-loc-list" id="profileHomeList" hidden></div>
+                <div class="profile-input-wrap">
+                  <span class="material-symbols-outlined">home</span>
+                  <input class="profile-input profile-input-with-icon profile-editable" id="profile-home" type="text" value="" readonly autocomplete="off" placeholder="Search city or state…"/>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="profile-field" id="profileSameAsWorkWrap" hidden>
+            <label class="profile-check-row profile-same-work-row">
+              <input type="checkbox" id="profileSameAsWork"/>
+              <span>Same as work location</span>
+            </label>
           </div>
           <div class="profile-field">
             <label>Family Size</label>
@@ -78,22 +97,17 @@
                 <span id="profileFamilyDisplay">2 Adults, 1 Child</span>
               </div>
               <div class="profile-family-edit" id="profileFamilyEdit" style="display:none;">
-                <div class="profile-family-controls">
-                  <label class="profile-family-label">Adults</label>
-                  <div class="profile-family-stepper">
-                    <button type="button" class="profile-family-btn" id="profileAdultsMinus" aria-label="Decrease adults">−</button>
-                    <span id="profileAdultsVal">2</span>
-                    <button type="button" class="profile-family-btn" id="profileAdultsPlus" aria-label="Increase adults">+</button>
-                  </div>
-                </div>
-                <div class="profile-family-controls">
-                  <label class="profile-family-label">Children</label>
-                  <div class="profile-family-stepper">
-                    <button type="button" class="profile-family-btn" id="profileChildrenMinus" aria-label="Decrease children">−</button>
-                    <span id="profileChildrenVal">1</span>
-                    <button type="button" class="profile-family-btn" id="profileChildrenPlus" aria-label="Increase children">+</button>
-                  </div>
-                </div>
+                <label class="profile-family-label" for="profile-party-select">Who travels with you</label>
+                <select class="profile-input" id="profile-party-select">
+                  <option value="solo">Solo</option>
+                  <option value="couple">Couple</option>
+                  <option value="family">Family</option>
+                </select>
+                <label class="profile-family-label" for="profile-kids-select" id="profileKidsLabel" style="display:none;">Children under 10?</label>
+                <select class="profile-input" id="profile-kids-select" style="display:none;">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
               </div>
             </div>
           </div>
@@ -101,19 +115,25 @@
       </section>
 
       <!-- Annual Leaves -->
-      <section class="profile-card profile-card--quota">
+      <section class="profile-card profile-card--quota" id="profileQuotaCard">
         <div class="profile-quota-header">
-          <div class="profile-card-header">
+          <div class="profile-card-header profile-card-header--quota-title">
             <span class="profile-card-icon">
               <span class="material-symbols-outlined">event_available</span>
             </span>
             <h2>Annual Leaves</h2>
           </div>
-          <span class="profile-quota-pill">12 Days</span>
+          <div class="profile-quota-header-end">
+            <span class="profile-quota-pill" id="profileQuotaPill">12 Days</span>
+            <div class="profile-card-actions">
+              <button type="button" class="profile-card-action" id="profileQuotaToggle" aria-label="Edit annual leaves"><span class="material-symbols-outlined">edit</span></button>
+            </div>
+          </div>
         </div>
         <div class="profile-card-body">
+          <p class="profile-hint profile-quota-hint">Slide to set your annual leave quota. <strong>Used</strong> sums leaves from confirmed trips.</p>
           <div class="profile-range-wrap">
-            <input class="profile-range" type="range" min="0" max="30" value="12" id="profile-leaves"/>
+            <input class="profile-range" type="range" min="0" max="30" value="12" id="profile-leaves" disabled aria-label="Annual leave days"/>
             <div class="profile-range-labels">
               <span>0</span>
               <span>15</span>
@@ -121,8 +141,8 @@
             </div>
           </div>
           <div class="profile-quota-legend">
-            <span><span class="dot dot--green"></span> Used: 4</span>
-            <span><span class="dot dot--primary"></span> Remaining: 8</span>
+            <span><span class="dot dot--green"></span> Used: <span id="profileLeavesUsed">0</span></span>
+            <span><span class="dot dot--primary"></span> Remaining: <span id="profileLeavesRemaining">12</span></span>
           </div>
         </div>
       </section>
@@ -185,27 +205,32 @@
 
       <!-- Visited Places -->
       <section class="profile-card">
-        <div class="profile-section-header">
-          <div class="profile-card-header">
-            <span class="profile-card-icon">
-              <span class="material-symbols-outlined">beenhere</span>
-            </span>
-            <h2>Visited Places</h2>
-          </div>
-          <span class="profile-badge-small">Excluded from AI</span>
+        <div class="profile-card-header">
+          <span class="profile-card-icon">
+            <span class="material-symbols-outlined">beenhere</span>
+          </span>
+          <h2>Visited Places</h2>
         </div>
         <div class="profile-card-body">
-          <div class="profile-search-wrap">
+          <div class="profile-loc-wrap profile-search-wrap">
+            <div class="profile-loc-list" id="profileVisitedList" hidden></div>
             <span class="material-symbols-outlined">add_location_alt</span>
-            <input class="profile-input" type="text" placeholder="Add a place you've been..."/>
+            <input class="profile-input" id="profile-visited-input" type="text" placeholder="Type a city or state..." autocomplete="off"/>
           </div>
-          <div class="profile-tags">
-            <button type="button" class="profile-tag">Goa <span class="material-symbols-outlined">close</span></button>
-            <button type="button" class="profile-tag">Jaipur <span class="material-symbols-outlined">close</span></button>
-            <button type="button" class="profile-tag">Kerala <span class="material-symbols-outlined">close</span></button>
-            <button type="button" class="profile-tag">Manali <span class="material-symbols-outlined">close</span></button>
-            <button type="button" class="profile-tag">Coorg <span class="material-symbols-outlined">close</span></button>
-          </div>
+          <div class="profile-tags" id="profileVisitedTags"></div>
+        </div>
+      </section>
+
+      <!-- Favorites -->
+      <section class="profile-card" id="profileFavoritesSection" style="display:none;">
+        <div class="profile-card-header">
+          <span class="profile-card-icon profile-card-icon--fav">
+            <span class="material-symbols-outlined">favorite</span>
+          </span>
+          <h2>Favorites</h2>
+        </div>
+        <div class="profile-card-body">
+          <div class="profile-favorites-grid" id="profileFavoritesGrid"></div>
         </div>
       </section>
 
@@ -218,30 +243,21 @@
           <h2>Clear Data</h2>
         </div>
         <div class="profile-card-body">
-          <p class="profile-clear-desc">Remove stored data. Calendar reset will show the setup chat again.</p>
+          <p class="profile-clear-desc">Remove stored data. Resetting personal &amp; calendar will show the onboarding chat again.</p>
           <div class="profile-clear-buttons">
             <button type="button" class="profile-clear-btn" id="profileClearRecommendation">
               <span class="material-symbols-outlined">recommend</span>
               Clear Recommendation Preferences
             </button>
             <button type="button" class="profile-clear-btn" id="profileClearPersonal">
-              <span class="material-symbols-outlined">person_off</span>
-              Clear Personal Data
-            </button>
-            <button type="button" class="profile-clear-btn" id="profileClearCalendar">
-              <span class="material-symbols-outlined">event_busy</span>
-              Clear Calendar Data
+              <span class="material-symbols-outlined">restart_alt</span>
+              Clear Personal &amp; Calendar Data
             </button>
           </div>
         </div>
       </section>
 
-      <!-- Save / Edit button -->
-      <div class="profile-save-wrap">
-        <button type="button" class="profile-save-btn" id="profileSaveBtn">
-          <span id="profileSaveBtnText">Edit Profile</span>
-          <span class="material-symbols-outlined" id="profileSaveBtnIcon">edit</span>
-        </button>
+      <div class="profile-footer-meta">
         <p class="profile-last-updated" id="profileLastUpdated"></p>
       </div>
     </main>
@@ -253,7 +269,7 @@
           <span>Holidays</span>
         </a>
         <a href="../calendar/index.html" class="nav-item">
-          <span class="material-symbols-outlined">calendar_today</span>
+          <span class="material-symbols-outlined">calendar_month</span>
           <span>Calendar</span>
         </a>
         <a href="../plan/index.html" class="nav-item">

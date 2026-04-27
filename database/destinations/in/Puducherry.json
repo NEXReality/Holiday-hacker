@@ -1,0 +1,660 @@
+{
+  "state": "Puducherry",
+  "state_code": "PU",
+  "generated_at": "2026-03-05T12:59:45.760Z",
+  "count": 2,
+  "destinations": [
+    {
+      "slug": "puducherry-pondicherry",
+      "name": "Pondicherry",
+      "region": "",
+      "state": "Puducherry",
+      "coordinates": {
+        "lat": 11.93,
+        "lon": 79.83,
+        "source": "wikidata"
+      },
+      "description": "**Pondicherry** (Tamil: புதுச்சேரி _Putucceri_, French: _Pondichéry_), also known as **Puducherry** or **Pondy**, is a city and an enclave within Tamil Nadu , India . There is a strong French influence on the architecture of the city, especially in the old quarters, with rues and boulevards lined with Mediterranean-style houses and bakeries, although the city remains very much Indian. French is still understood, and the whole city makes for a pleasant mix of the East and the West.",
+      "category": "city",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Pondicherry",
+        "wikipedia": "https://en.wikipedia.org/wiki/Pondicherry",
+        "wikidata": "https://www.wikidata.org/wiki/Q639421"
+      },
+      "distance_km": 269,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-03-05T12:59:44.496Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Pondishéri",
+        "Pondichery",
+        "Putucceri",
+        "Pondycherry",
+        "Putuccēri",
+        "Poudouchéry",
+        "Pondichéry",
+        "Puduchchery",
+        "Pondychéry",
+        "Puducheri",
+        "Pondychery",
+        "Puduchery",
+        "Puducherry"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PondicherryFrenchWarMemorial.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pondicherry%20Panorama%201.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": "MAA",
+          "distance_km": 135
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Bangalore",
+          "Mumbai",
+          "Delhi",
+          "Chennai",
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Bangalore",
+          "Mumbai",
+          "Delhi",
+          "Chennai",
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "shopping",
+          "nightlife",
+          "dining"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 213560,
+        "content_richness_score": 1
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Pondicherry, though small in geographical size, was the largest French colony in India. The city has a long and interesting history of trade and war. It is also known as The French Riviera of the East (La Côte d'Azur de l'Est). If you have spent some time in Tamil Nadu and approached Pondicherry by land, you will very likely experience mild culture shock on discovering French architecture and restaurants serving steak and good wine. Pondicherry is very much a city with a dual personality: crossing the central canal from the east to the west reveals two different cities with very different characters.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus",
+            "car"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By car Pondicherry is well connected from all sides. Chennai is 160 km north of the city.\r\n\nYou can also hire a taxi from Chennai International Airport (** MAA **  IATA ). It costs around ₹2,500 ( Indian rupees ), as of August 2018.\r\n\nThe road from Chennai to Pondicherry (the **East Coast Road**, commonly called ECR) is a scenic highway and a normal journey would take about 3 hours. Most tourists, however, cannot resist the seashore kissing the ECR and take a number of stops en route. This route passes through Mamallapuram , Kalpakkam , Pudupattinam , Idaikkazhinadu (Alamparai or Alambara Fort), Mudaliarkuppam , which has a boat house, Marakkanam (contains large areas under salt pans), and Kanagachettikulam / Kalapet .\r\n\nAnother road from Chennai to Pondy is National Highway 45 (NH45), also called the Grand Southern Trunk (GST) Road. This route passes through Tambaram, Chengalpattu, Madhurantakam, Melmaruvathur and Tindivanam.\r\n\nThe ECR Road and NH45 are tolled roads. The journey from Chennai to Pondicherry takes about the same amount of time on each road.\r\n\nPondicherry is about 320 km away from Bangalore. Drive down National Highway 7 (NH-7) till Krishnagiri, take a left off the main highway (road signs mark the route) and then take National Highway 66 (NH-66) to Pondicherry. This route passes through Uthangarai, Chengam, Tiruvannamalai, Gingee and Tindivanam. You can reach Pondicherry either through Tindivanam (via Gingee) or Villupuram (via Thirukovilur). Gingee Fort is also on the way to Tindivanam and worth spending some time at. It's an Archaeological Survey of India (ASI) Heritage site. The total travel time should be about 5-6 hours. Pack some food or snacks for the way as there are no good restaurants en route.\r\n\nPondicherry is well connected to Cuddalore , Chidambaram , Karaikal , Nagapattinam , Velankanni , etc. to the South by National Highway 45A (NH-45A). The road is well maintained till Chidambaram.\r\n\nPondicherry connects to the GST or NH-45 in two places: at Villupuram by NH-45A and at Tindivanam by NH-66.\r\n\n\r\n By coach There are many coaches connecting to Pondicherry from a variety of cities. Getting to Pondicherry involves a 3½-hour road journey from Chennai by bus. One can board a bus from Chennai Mofussil Bus Terminus (CMBT) in Koyambedu, Thiruvanmiyur or Guindy. You can be sure of getting a seat on the bus only if you board it from CMBT in Koyambedu, which is the main bus terminus in Chennai. However, the cheapest way of reaching Pondicherry from Chennai is taking the East Coast Road (ECR) bus from Tiruvanmiyur. The fare from CMBT is around ₹150 depending on the bus service. PRTC (Puducherry Road Transport Corporation) operates air-conditioned buses and the fare is ₹280. The ECR bus will drop you at the main bus terminal in Pondicherry, on Maraimalai Adigal Salai. Auto-rickshaws are available from outside the bus station. The fare can be bargained down to ₹50 to go to the French Quarter.\r\n\nNearly all cities in Tamil Nadu are connected to Pondicherry through cheap government buses that will stop at smaller towns and villages, though no centralized timetable exists and departure times and routes must be obtained from the nearest bus station to where you are. These buses will almost certainly arrive at the Pondicherry Bus Stand.\r\n\nPrivate coaches will connect to Pondicherry from a variety of cities including Chennai and Bengaluru. The coaches along the ECR from Chennai are well frequented and a variety of coach types, from regular urban-city-bus to semi-sleepers and full-sleepers. There are long-distance coaches to Mumbai and other cities in India too. It is possible to find out which buses are available from the Redbus website.\r\n\n\r\n By train 1 ** Puducherry    SR**  ( Pondicherry ), South Blvd . Pondicherry is connected to Chennai by an electric railway line through Villupuram . There are 2 passenger trains running daily to Chennai Egmore Railway station and Tirupati and there is a weekly express train service to Bhubaneswar . In addition to this, there is also a daily express train to Chennai Egmore. Pondicherry is also connected by weekly trains to Delhi, Bangalore, Mumbai besides Mangalore, passing through Kerala.  ( updated Jun 2023 ) \r\nBangalore Yesvantapur (YPR) to Pondicherry (PDY) is connected by a 3-tier AC train called Garib Rath Express. It covers a distance of 456 km in each direction however it takes 10 hr 5 min when operating as train number 12255 at an average speed of 60 km/h (excluding halts). It leaves Puducherry as train number 12256 on Saturday at 10:05PM and at the end of 8 halts arrives at Yesvantapur the next day at 08:25. It leaves Yesvantpur as train number 12255 on Friday at 23:15 and at the end of 9 halts arrives at Puducherry the next day at 09:20AM. Coach Composition comprises 16 AC 3 tier coaches and 2 luggage cum generator coaches taking the total up to 18 coaches.\r\n\n\r\n By plane 2 ** Puducherry Airport ** ( **PNY **  IATA ). Pondicherry has an airport with facilities for the landing of small aircraft like Dorniers and Cessnas. SpiceJet operates daily flights from Hyderabad (with connections from other major Indian cities). Flights from Bangalore also operate on a daily basis. Cabs meet arriving flights at the airport and charge ₹350 to the centre of town. You can also take a 30-minute auto rickshaw from the airport to the centre of town. The rate for taking an auto rickshaw from within the airport complex to the city centre is about ₹150, as of Apr 2013. If you walk to outside the airport complex and flag down an auto you may be able to negotiate a better rate.  ( updated Jun 2023 ) \r\nChennai International Airport (** MAA **  IATA ) is the nearest international airport, approximately 135 km from Pondicherry. Chennai is nicely connected to major cities in India as well as abroad. A one-way cab ride from Chennai to Pondicherry is approximately ₹1,500 and takes around 3 hours.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "It is highly advisable that you do not attempt to drive around in a car, and instead purchase or hire a two-wheeled vehicle, such as a bicycle or motorcycle. It can however be difficult to ride smoothly in Pondicherry due to the significant number of pedestrians on smaller streets, while roads would likely be used by cars and trucks. Pedestrians have the right-of-way in the city.\r\n\nThere are several rental outlets on Mission St and MG Rd. The prices as of January 2016 are ₹300/day for a gearless scooter (light motorcycle) and ₹500/day for a geared motorcycle and ₹40-50/day for a bicycle. You will need to provide some identification documents as collateral and an advance of ₹500 only in a few rental service shops while the rest of them provide without documents or advance. Make sure you check the cycle thoroughly before taking it on rent. Many of the rentals also provide delivery and pickup at the hotel which is very useful. Usually, the number of days for these vehicles is calculated 9AM-9PM. The motorbikes are easily available in a couple of two-wheeler rental shops on Mission Street.\r\n\n\r\n By bus or shared auto-rickshaw The Pondicherry Tourism Development Corporation (PTDC) has daily bus services for tourists and it covers all the important tourist spots to be seen in Pondicherry. It is the best and most economical way to tour Pondicherry.\r\n\nThere is a sparse network of buses and shared auto-rickshaws that can be ridden for ₹5-20 per ride depending on the distance.\r\n\nShared-auto-rickshaws can be found at the bus stand, along certain points on Bussy Road and Grand Canal - the most common route is from the bus stand, along Bussy Road, around Grand Canal, and then back up Bussy Road to the bus stand - but be sure to ask if the auto goes to your destination as not all autos will follow this route. The services in informal and unorganized so it is impossible to centralise the timetables.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Bharathi Park",
+              "description": "There's a white monument at the centre of the park called **Aayi Mandapam**. It was built during the time of Napoleon III. The monument commemorates the provision of water to the French city during his reign. It was named after a lady courtesan named Āyi. She destroyed her own house to erect a water reservoir to supply water to the city.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 11.93333,
+                "lon": 79.83441
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Chunnambar Boat House",
+              "description": "You can take a motorboat to Paradise Beach from here. It is crowded on holidays and weekends.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Ousteri Lake",
+              "description": "The largest lake of Pondicherry and home to around 200 species of birds. About 40 species of migratory birds visit the sanctuary after November annually, including golden oriole, open-bill stork, tailor bird, painted stork, white ibis, white-breasted water-hen and spotted owlets. The lake also has boats run by PTDC.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Ousteri_Lake",
+              "coordinates": {
+                "lat": 11.955,
+                "lon": 79.745
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Pondicherry Botanical Garden",
+              "description": "A nice park, though a little in disarray. An aquarium, maintained by the Directorate of Fisheries, is also a must-see while in the garden.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 11.9249,
+                "lon": 79.8229
+              },
+              "price": "Free"
+            },
+            {
+              "order": 5,
+              "name": "Pondicherry Lighthouse",
+              "description": "A lighthouse was constructed in Pondicherry in the nineteenth century by the French rulers. A new lighthouse was constructed in the 20th century by the Government of India.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Pondicherry_Lighthouse",
+              "coordinates": {
+                "lat": 11.93297,
+                "lon": 79.83558
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Portuguese Governor's Mansion",
+              "description": "",
+              "wikipedia": "https://en.wikipedia.org/wiki/Portuguese_Governor%27s_Mansion",
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "French War Memorial",
+              "description": "A war memorial dedicated to the French Indians who died for the country during the First World War. A bronze plaque lists the names of soldiers who died during the First World War. Further plaques were added, listing the names of soldiers who died during World War II, the French War in Indochina and the Algerian War. The monument remains the property of France.",
+              "wikipedia": "https://en.wikipedia.org/wiki/French_War_Memorial_(Puducherry)",
+              "coordinates": {
+                "lat": 11.93192,
+                "lon": 79.83539
+              },
+              "price": null
+            },
+            {
+              "order": 8,
+              "name": "Gandhi Statue",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 11.9325,
+                "lon": 79.83625
+              },
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Pondicherry Museum",
+              "description": "An art and history museum with its collection of fine lost wax bronzes from the Chola period.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Pondicherry_Museum",
+              "coordinates": {
+                "lat": 11.93417,
+                "lon": 79.83472
+              },
+              "price": null
+            },
+            {
+              "order": 10,
+              "name": "Puducherry Science Centre &amp; Planetarium",
+              "description": "The Science Demonstration Corner conducts live demonstrations and experiments to groups of visitors and students. The Children's Corner offers simple experiments for children. A workshop equipped with tools and tackles is provided for maintenance of the exhibits and development of new ones.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Puducherry_Science_Centre_%26_Planetarium",
+              "coordinates": {
+                "lat": 11.95174,
+                "lon": 79.80786
+              },
+              "price": null
+            },
+            {
+              "order": 11,
+              "name": "Immaculate Conception Cathedral",
+              "description": "The mother church for the Roman Catholic Archdiocese of Pondicherry and Cuddalore. Established in 1791, the church has been demolished and rebuilt multiple times. The mass is conducted in Tamil and English.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Immaculate_Conception_Cathedral,_Pondicherry",
+              "coordinates": {
+                "lat": 11.93299,
+                "lon": 79.83055
+              },
+              "price": null
+            },
+            {
+              "order": 12,
+              "name": "Our Lady of Angels Church",
+              "description": "Locally known as \"Dumas Church\", the Roman Catholic church was built in 1855 with a Greco-Roman architectural style. Its masses are conducted in French, English and Tamil. Other than pilgrimage, the church area provides stunning sea views.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Our_Lady_of_Angels_Church,_Puducherry",
+              "coordinates": {
+                "lat": 11.93,
+                "lon": 79.83444
+              },
+              "price": null
+            },
+            {
+              "order": 13,
+              "name": "St. Andrew's Church",
+              "description": "Another popular Roman Catholic church in the city. The original structure was built in Gothic architecture in 1745 by Kanakaraya Mudali, the longest serving dubash of the French East India Company. During the opening of the church, Mudali hosted a feast that included all castes and religions, the first of its kind that is recorded in the history of South India. It is believed that the church was destroyed by the British in 1761 and was later rebuilt in 1830. It has hourly prayers and daily services.",
+              "wikipedia": "https://en.wikipedia.org/wiki/St._Andrew%27s_Church,_Puducherry",
+              "coordinates": {
+                "lat": 11.93167,
+                "lon": 79.79444
+              },
+              "price": null
+            },
+            {
+              "order": 14,
+              "name": "Kameeswarar Temple",
+              "description": "A Shiva temple where Shiva is worshiped as Kameeswarar and his consort Parvati is depicted as Kokilamba Amman. The temple has a number of shrines, with those of Kameeswarar, his consort KokilambaAmman and Ranganathar being the most prominent. The original complex is believed to have been built by Cholas, with later additions from different ruling dynasties.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Kameeswarar_temple",
+              "coordinates": {
+                "lat": 11.91453,
+                "lon": 79.75581
+              },
+              "price": null
+            },
+            {
+              "order": 15,
+              "name": "Varadharaja Perumal Temple",
+              "description": "",
+              "wikipedia": "https://en.wikipedia.org/wiki/Varadharaja_Perumal_Temple,_Puducherry",
+              "coordinates": {
+                "lat": 11.94083,
+                "lon": 79.83
+              },
+              "price": null
+            },
+            {
+              "order": 16,
+              "name": "Vedapureeswarar Temple",
+              "description": "A Shiva temple, which was once destroyed be French invaders in 1748 and was later reconstructed by Dewan Kandappa Mudaliar with public contributions.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Vedapureeswarar_Temple,_Pondicherry",
+              "coordinates": {
+                "lat": 11.93987,
+                "lon": 79.82978
+              },
+              "price": null
+            }
+          ],
+          "brief": "1 **Bharathi Park** . There's a white monument at the centre of the park called **Aayi Mandapam**. It was built during the time of Napoleon III. The monument commemorates the provision of water to the French city during his reign. It was named after a lady courtesan named Āyi. She destroyed her own house to erect a water reservoir to supply water to the city.  ( updated Jun 2023 ) \r\n **Chunnambar Boat House** ( 10 km (6.2 mi) south of the centre ). You can take a motorboat to Paradise Beach from here. It is crowded on holidays and weekends.  ( updated Sep 2025 ) \r\n 2 **Ousteri Lake** ( Oussudu Lake ). The largest lake of Pondicherry and home to around 200 species of birds. About 40 species of migratory birds visit the sanctuary after November annually, including golden oriole, open-bill stork, tailor bird, painted stork, white ibis, white-breasted water-hen and spotted owlets. The lake also has boats run by PTDC.  ( updated Sep 2025 ) \r\n 3 **Pondicherry Botanical Garden** , ☏ +91 413 233 9497 . A nice park, though a little in disarray. An aquarium, maintained by the Directorate of Fisheries, is also a must-see while in the garden. Free .  ( updated Sep 2025 ) \r\n 4 **Pondicherry Lighthouse** . 3–5PM . A lighthouse was constructed in Pondicherry in the nineteenth century by the French rulers. A new lighthouse was constructed in the 20th century by the Government of India.  ( updated Sep 2025 ) \r\n **Portuguese Governor's Mansion** .  ( updated Jun 2023 ) \r\n Memorials and museums 5 **French War Memorial** , Goubert Ave ( opposite Gandhi Statue ). A war memorial dedicated to the French Indians who died for the country during the First World War. A bronze plaque lists the names of soldiers who died during the First World War. Further plaques were added, listing the names of soldiers who died during World War II, the French War in Indochina and the Algerian War. The monument remains the property of France.  ( updated Jun 2023 ) \r\n 6 **Gandhi Statue**, Beach Rd .   \r\n 7 **Pondicherry Museum** . An art and history museum with its collection of fine lost wax bronzes from the Chola period.  ( updated Jun 2023 ) \r\n 8 **Puducherry Science Centre &amp; Planetarium** , Lawspet . The Science Demonstration Corner conducts live demonstrations and experiments to groups of visitors and students. The Children's Corner offers simple experiments for children. A workshop equipped with tools and tackles is provided for maintenance of the exhibits and development of new ones.  ( updated Jun 2023 ) \r\n Places of worship 9 ** Sri Aurobindo Ashram ** . One of the most common reason to visit Pondicherry is to visit this ashram of the spiritual leader Sri Aurobindo. It grew out of a small community of disciples who had gathered around Sri Aurobindo after he settled in Pondicherry in 1910. On 24 November 1926, after a major spiritual realisation, Sri Aurobindo withdrew from public view in order to continue his spiritual work. At this time he handed over the full responsibility for the inner and outer lives of the _sadhaks_ (spiritual aspirants) and the ashram to his spiritual collaborator, Mirra Alfassa, better known as \"The Mother\".  ( updated Jun 2023 ) \r\n Churches 10 ** Basilica of the Sacred Heart of Jesus ** ( Tamil: தூய இருதய ஆண்டவர் பசிலிக்கா _Tuya Irutaya Āṇṭavar Patilikkā_, French: Basilique du Sacré-Cœur de Jésus ), South Blvd . An oriental specimen of Gothic Revival architecture. It contains rare stained glass panels depicting events from the life of Christ and saints of the Catholic Church. It is also one of the most famous pilgrimage spots for Christians.  ( updated Jun 2023 ) \r\n 11 **Immaculate Conception Cathedral** ( Tamil: தூய அமலோற்பவ அன்னை பேராலயம் _Tuya Amalōṟpava Pērālayam_, French: Cathédrale de l'Immaculée-Conception; also known as Samba Kovil (சம்பா கோயில்) ). The mother church for the Roman Catholic Archdiocese of Pondicherry and Cuddalore. Established in 1791, the church has been demolished and rebuilt multiple times. The mass is conducted in Tamil and English.  ( updated Sep 2025 ) \r\n 12 **Our Lady of Angels Church** ( French: Église Notre-Dame des Agnes ), Dumas St, White Town . Locally known as \"Dumas Church\", the Roman Catholic church was built in 1855 with a Greco-Roman architectural style. Its masses are conducted in French, English and Tamil. Other than pilgrimage, the church area provides stunning sea views.  ( updated Sep 2025 ) \r\n 13 ** Our Lady of Lourdes Shrine ** ( French: Sanctuaire Notre-Dame de Lourdes ), Villianur . A Catholic Marian shrine and a parish church.  ( updated Sep 2025 ) \r\n 14 **St. Andrew's Church** , Reddiarpalayam . Another popular Roman Catholic church in the city. The original structure was built in Gothic architecture in 1745 by Kanakaraya Mudali, the longest serving dubash of the French East India Company. During the opening of the church, Mudali hosted a feast that included all castes and religions, the first of its kind that is recorded in the history of South India. It is believed that the church was destroyed by the British in 1761 and was later rebuilt in 1830. It has hourly prayers and daily services.  ( updated Sep 2025 ) \r\n Temples Most temples in Pondicherry were built during the Chola period, predating the French invasion in the area.\r\n\n\r\n 15 **Kameeswarar Temple** ( Villianur Temple, Thirukameeswarar Temple ). A Shiva temple where Shiva is worshiped as Kameeswarar and his consort Parvati is depicted as Kokilamba Amman. The temple has a number of shrines, with those of Kameeswarar, his consort KokilambaAmman and Ranganathar being the most prominent. The original complex is believed to have been built by Cholas, with later additions from different ruling dynasties.  ( updated Jun 2023 ) \r\n 16 ** Manakula Vinayagar Temple ** . Dedicated to Lord Ganesha, it is a popular pilgrimage site and tourist destination in Pondicherry due to its proximity to Promenade Beach.  ( updated Jun 2023 ) \r\n 17 **Varadharaja Perumal Temple** .  ( updated Sep 2025 ) \r\n 18 **Vedapureeswarar Temple** . 6AM–12:30PM and 4:30–8:00PM . A Shiva temple, which was once destroyed be French invaders in 1748 and was later reconstructed by Dewan Kandappa Mudaliar with public contributions.  ( updated Jun 2023 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "Casablanca and Titanic",
+              "description": "The latter is a factory outlet of the former."
+            },
+            {
+              "name": "French Quarter Architecture",
+              "description": ""
+            },
+            {
+              "name": "Eden Beach",
+              "description": "A beach known for its white sands, clear waters, and surrounding coconut groves.Activities include swimming, jet skiing, kayaking, nature trails, bird watching, etc. There are also facilities like relaxation in sit-out areas and umbrella huts."
+            },
+            {
+              "name": "Paradise Beach",
+              "description": "You need to hire a motorboat for pick up and drop to the beach from Chunnambar Boat house which will cost you around ₹200."
+            },
+            {
+              "name": "Promenade Beach",
+              "description": "A 1.2-kilometre-long stretch in Pondicherry, which starts from War Memorial and ends at Dupleix Park on Goubert Avenue."
+            },
+            {
+              "name": "Rock Beach",
+              "description": ""
+            },
+            {
+              "name": "University Beach",
+              "description": ""
+            },
+            {
+              "name": "Uppalam Harbour Beach",
+              "description": ""
+            },
+            {
+              "name": "Indira Gandhi Sports Stadium",
+              "description": ""
+            }
+          ],
+          "brief": "The latter is a factory outlet of the former.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Atithi",
+              "description": "Fantastic south Indian food. Very reasonably priced. Try out the 6 feet family masala dosa ghee roast.",
+              "location": null
+            },
+            {
+              "name": "Don Giovanni",
+              "description": "At the rooftop of Hotel Corbelli on Mission St, this authentic Italian restaurant's chef is from Bologna, and the food is fantastic.",
+              "location": null
+            },
+            {
+              "name": "Indian Delights Veg. Restaurant",
+              "description": "Opens at 5AM, delicious variety of typical south Indian dishes. Very cheap, popular with locals, not touristy.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "There are a multitude of liquor shops and wineshops around the city, perhaps owing to the French influence. Alcohol in Pondicherry is not taxed as it is in Chennai and is therefore significantly cheaper. At a takeaway shop, a beer should cost around ₹80-100 (as of 2017).\r\n\nGood branded liquor like Smirnoff, Bacardi and different Scotch whiskies are very inexpensive as there is no sales tax in Pondicherry.\r\n\n\r\n Coffee **Choco La**, Mission St . Small, cosy, clean chocolate shop on Mission St. Also features chocolate cakes, coffees, etc. A bit on the expensive side.   \r\n ** Coromandel Cafe **, 8 Rue Romain Rolland Street , ☏ +91 413 222 1100 . A colonial era style cafe. Excellent coffee. Indian and continental cuisine   \r\n ** KBS Kofi Bar **, 19 Chetty St ( second left from Raja theatre signal near Bharathi street cutting ). 5:30AM-8:30PM . Open since 1972. Excellent South Indian coffee. Mostly take away. Small sitting area. Simple veggie meals ₹15 for a coffee .   \r\n ** Le Cafe **, Promenade Hotel, Rue Labourdonnais . Water-front cafe. Excellent coffee. Desserts. Meals   \r\n Alcohol **Le Club** ( French Italian Indian Vietnamese ), 38, Dumas St ( near Park Guest house ), ☏ +91 413 2339745 . 7AM-11PM . Wonderful garden restaurant with a high class bar and chill out atmosphere, but slightly overrated and quite expensive.   \r\n **Seagulls** ( Walk south down to the end of the beach. It's at the end of the first alley on your left. ). Nice bar that organizes musical concerts occasionally. They sell imported beer.   \r\nIn addition to these listings, on the beach road abutting the French quarter enjoy fine dining in a good ambiance with continental and Indian cuisine, has a nice buffet on weekends. Mimicry artists will sometimes entertain you at your table."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Continental Hotel",
+              "description": "Reasonable little place, quite well located for beach access, bars, and wandering potential, and with a rooftop bar. Good selection of cheap beers: ₹80 for an 8% Tuborg.",
+              "price": "₹400-500 for a single with fan, ₹550 for a single with aircon, ₹1000 on up for doubles"
+            },
+            {
+              "name": "Fullmoon Guest House",
+              "description": "The guest house has seven unique AC Double twin bed rooms with attached bathroom. Five out of the seven rooms come with an equipped kitchen (refrigerator, electric stove, kitchen utensils, free wireless internet, free self-service washing machine, hot water, etc.) It is possible also to rent a room or studio apartment for weeks or months.",
+              "price": "₹600"
+            },
+            {
+              "name": "Sri Krishnas Guest House",
+              "description": "Large, clean hotel in the main shopping area. Rooms with TV with some English channels. French bakery 2 min walk. Sea 10 min walk.",
+              "price": "Regular single ₹350 AC, non AC ₹250; double: ₹750 AC, ₹500 Non AC; triple ₹900AC, ₹750 non AC (extra bed ₹100)"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "stay_safe": {
+          "warnings": [
+            "BSNL (Cellone) network available"
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "puducherry-auroville",
+      "name": "Auroville",
+      "region": "",
+      "state": "Puducherry",
+      "coordinates": {
+        "lat": 12.00179,
+        "lon": 79.80094,
+        "source": "wikidata"
+      },
+      "description": "** Auroville ** is a small town 6 km north of Pondicherry . This town was a vision of **The Mother** from _Sri Aurobindo Ashram_ at Pondicherry as it's an international town. She envisioned a town where unity will be celebrated and all will have a spiritual vocation. In July 2010, 2200 people from 43 different countries were living in the city. About 40% were Indians (more than 15% are French and 15% are German).\r\n\n_Auroville Handbook_ is the official guide to Auroville that can be bought in the Visitors' Centre and the bookshops around or Auroville's website. A",
+      "category": "city",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Auroville",
+        "wikipedia": "https://en.wikipedia.org/wiki/Auroville",
+        "wikidata": "https://www.wikidata.org/wiki/Q590361"
+      },
+      "distance_km": 263,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-03-05T12:59:44.496Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Aŭrourbo",
+        "Aŭrovilo",
+        "city of dawn",
+        "Işık Şehri",
+        "Işık Kenti",
+        "Şafak Şehri",
+        "Şafak Kenti"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Auroville.JPG?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Town%20Hall%20of%20Auroville.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [
+          "Chennai"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Chennai"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "shopping",
+          "nightlife",
+          "dining"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 85138,
+        "content_richness_score": 0
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "The city was designed by architect Roger Anger. The township of Auroville is meant to be a universal town where men and women of all countries are able to live in peace and progressive harmony, above all creeds, all politics and all nationalities. Auroville was founded as a project of the Sri Aurobindo in 1968 by his disciple Mirra Alfassa, popularly called \"The Mother\". About 2,000 people from 50 countries live in this planned village. Half of them are Indians and there are some 300 French people, 200 Germans and 150 Italians.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "bus"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "Auroville is 16 km by bus from Pondicherry and 163 km by bus from Chennai . Trains are also available and they take 6 hours. The nearest airports are at Pondicherry, 11 km and Chennai, 142 km.\r\n\n\r\n \r\n \r\nBy rickshaw (₹300-400) or taxi (₹400-500) from Pondicherry (January 2023). The local drivers have prices strictly fixed; even Uber drivers will cancel the trip if you do not agree to the above rates. \r\n\nYou may however have better luck using Ola since InterCity Cabs are sometimes the only service available on Uber and are generally more expensive than regular service on Uber and the local drivers on Ola generally stick to the fare given by the app (October 2023). Many of these drivers on Ola usually also offer taxi services to Chennai if you are in need of a taxi from Pondicherry to Chennai and the prices are negotiable. \r\n\nMany buses between Chennai and Pondicherry pass the turn off to Auroville - you can exit along the ECR (coastal highway) and into one of the waiting rickshaws at the junction (₹200). Hitchhiking between the ECR and Auroville is very easy. In Jan. 2023 there are 3 daily buses between Pondi and Auroville, with the schedule available on the Auroville.org website.\r\n\n\r\n From Allankuppan, Kottakarai village Every 30 min a bus goes to Pondi over Kootroad, where you can enter a bus to Tindivanam, Tirruvanumalai, Chennai. Often the bus is already full. It's safer to go to Pondi. The bus is ₹5. The same problem you face on the ECR (East Coast Road) if you catch a bus to Chennai.\r\n\n\r\n From Chennai airport You can also take a taxi from Chennai Airport. It costs ₹170-2500 (price quoted December 2010. If you call a taxi service in advance: +91-413-2622400 AV Transport, +91 413 2623200 Auro Cabs, +91 413 2623586 Om Travel (companies are run by Auroville township near Puducherry), they will be at the Arrivals exit with a sign with your name on it.\r\n\nAlternatively, take a taxi to Pondicherry bus station for ₹200, then take a regular bus for ₹175 to Tambaram, cross the highway through an underground and get a train connection from there to Chennai Airport for ₹4 (just a few kilometers away).\r\n\n\r\n From Pondicherry You can also rent scooters in Pondicherry and drive yourself for a day trip or arrange to keep the scooter for a few days or more.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "Rickshaws and taxis can be ordered for trips out of the town. If you have a guest card than you can use the community's bus to Pondicherry (for free).\r\n\nYou can hire e-cycles for ₹200 per day (and use free electricity), motorbikes for ₹50-100 per day and in some guesthouses you'll get a bicycle for free or a small daily fee with your rent.\r\n\nEverything is within a five km distance and walking is one of the best option here.\r\n\nAuroville is very spread out and large, so if you want to get around freely, rent an e-cycle or motorbike.\r\n\nThe challenging part is navigating the busier roads in around the village of Kaluipalayam, the largest Tamil village in or near Auroville. In addition to other motorbikes, you will encounter pedestrians, bicycles, cows, dogs, small tour buses, and the occasional ox cart loaded with hay. Traffic can be heavy at dusk, when the herds of cows head home and everybody else seems trying to get some place else.\r\n\nRemember to stay on the left and look both ways before turning or crossing a road. If you make a right turn, be sure to end up on the left side of your new road.\r\n\nThe nearest petrol station is on the sea front road (aka the Beach Road) just north of the Auroville turnoff. If you find yourself low while in Kaluipalayam village, a few of the shops have 1 liter water bottles filled with petrol for sale. Petrol goes a long way, but keep an eye on the level because running out can be very inconvenient and possibly unsafe.With e-cycles, no more petrol seek and you help to keep Auroville green and clean!\r\n\nAlways travel with a charged cellphone, and know how to use it to call your moped supplier, your guest house, and your fellow travellers. Motorbikes have a way of breaking down or not starting, so it's better to travel in pairs or groups. That way you can always catch a ride on the back some someone else's bike.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Auro Beach",
+              "description": "Walking distance from the Auroville Bus Stop on ECR (East Coast Road), Auro Beach is considered one of the best beaches on India's Eastern Coastline although it is still very polluted. Most of the people found on the beach are either Europeans or Tamils.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Organic Farms",
+              "description": "Run by the inhabitants.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "The Radiating City",
+              "description": "Radiating from Matri Mandir, are four \"zones\" of the City Area: the \"Residential Zone\", \"Industrial Zone\", \"Cultural (&amp; Educational) Zone\" and \"International Zone\". Around the City or the urban area, lies a Green Belt which is an environment research and resource area and includes farms and forestries, a botanical garden, seed bank, medicinal and herbal plants, water catchment bunds, and some communities.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Repos",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Tibetan Centre",
+              "description": "A beautiful building with a Dalai Lama seat.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 12.01214,
+                "lon": 79.79556
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Town Hall",
+              "description": "A beautiful building in a green surroundings.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            }
+          ],
+          "brief": "1 ** Matrimandir ** . Meaning \"Temple of the Mother\" in Sanskrit, this is the geographical and spiritual heart of Auroville. The outside is plated with gold, while the inside is stark white with a gigantic crystal in the center.   \r\nThis is circular structure with a golden metallic sphere in the centre. Inside the Matrimandir, a spiraling ramp leads upwards to an air-conditioned chamber of polished white marble referred to as \"a place to find one's consciousness\". Matrimandir is equipped with a solar power plant and is surrounded by manicured gardens. When there is no sun or after the sunset, the sunray on the globe is replaced by a beam from a solar powered light.\r\n\n\r\n Check with the visitor center if you're interested in seeing the inside of the temple - the rules can be very strict, and it may take 2 days or so before you get inside (you've been warned!). You'll first need a visitors pass for a little guided tour of one of the meditation chambers, and once you've done that you qualify to visit the inside of the main temple the following day. Saturday and Sunday can be particularly busy and you may need to wait in line for 30-40 minutes. Bags, cell phones and cameras are not allowed in the temple. \r\n \r\n If you have a guest card you can get a pass valid for all the days of your stay, otherwise you'll get a one day pass. Aurovillians can also take you in as a guest, though this isn't likely unless you have friends there. \r\n **Auro Beach**. Walking distance from the Auroville Bus Stop on ECR (East Coast Road), Auro Beach is considered one of the best beaches on India's Eastern Coastline although it is still very polluted. Most of the people found on the beach are either Europeans or Tamils.  ( updated Jun 2023 ) \r\n \r\n **Organic Farms**. Run by the inhabitants.  ( updated May 2015 ) \r\n **The Radiating City**. Radiating from Matri Mandir, are four \"zones\" of the City Area: the \"Residential Zone\", \"Industrial Zone\", \"Cultural (&amp; Educational) Zone\" and \"International Zone\". Around the City or the urban area, lies a Green Belt which is an environment research and resource area and includes farms and forestries, a botanical garden, seed bank, medicinal and herbal plants, water catchment bunds, and some communities.  ( updated May 2015 ) \r\n **Repos**, Private beach of Auroville .  ( updated May 2015 ) \r\n 2 **Tibetan Centre**. A beautiful building with a Dalai Lama seat.  ( updated Jun 2023 ) \r\n **Town Hall**. A beautiful building in a green surroundings.  ( updated May 2015 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "One-day Yoga programme",
+              "description": "9AM to 4:30PM (with a break from noon to 2PM)."
+            }
+          ],
+          "brief": "9AM to 4:30PM (with a break from noon to 2PM).",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Ganesh Bakery",
+              "description": "Very popular, serving full meals and baked goods, vegan food, snacks, tea, coffee, and fresh juices. Wifi available with a well-stocked market attached.",
+              "location": null
+            },
+            {
+              "name": "Le Morgan",
+              "description": "At the Town Hall is this French restaurant which is open for lunch and also some dinners, please check. They often serve delicious fresh fish.",
+              "location": null
+            },
+            {
+              "name": "The Secret Garden Restaurant",
+              "description": "South Indian cuisine",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "**Pour Tous Café**.  ( updated May 2015 ) \r\n 1 ** The Smoothie Bar **, Auroville Main Road, Kuilapalayam, Opposite to Purple Resorts , ☏ +91 9840923352 . Tu-Su 8AM - 8PM . Smoothies, cold-pressed juices, sorbets and quick bites (caprese sandwiches made with fresh pesto, other sandwiches and burgers). Vegan friendly.  ( updated Jun 2017 )"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Beach Guest House",
+              "description": "Large, clean resort. All rooms are with TV with English, Tamil, Hindi, and Kannada channels.",
+              "price": "Single AC US$350, double US$750"
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    }
+  ]
+}

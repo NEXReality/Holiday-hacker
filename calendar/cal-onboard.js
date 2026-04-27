@@ -246,6 +246,7 @@
   function saveAndTransition() {
     user.weeklyOff      = answers.weeklyOff;
     user.pendingLeaves  = parseInt(answers.pendingLeaves, 10);
+    user.annualLeaves   = user.pendingLeaves;
     user.leaveCarryOver = answers.carryOver;
     user.lastUpdated    = new Date().toISOString();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user));

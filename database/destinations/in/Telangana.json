@@ -1,0 +1,611 @@
+{
+  "state": "Telangana",
+  "state_code": "TE",
+  "generated_at": "2026-02-27T12:21:29.706Z",
+  "count": 3,
+  "destinations": [
+    {
+      "slug": "telangana-hyderabad",
+      "name": "Hyderabad",
+      "region": "",
+      "state": "Telangana",
+      "coordinates": {
+        "lat": 17.36167,
+        "lon": 78.47472,
+        "source": "wikidata"
+      },
+      "description": "_For other places with the same name, see Hyderabad (disambiguation) ._ \r\n \r\n _Hyderabad is a huge city with several district articles that contain information about specific sights, restaurants, and accommodation._ \r\n \r\n**Hyderabad,** ( Telugu : హైదరాబాదు, Urdu : حیدرآباد _Haidarābād_, Hindi : हैदराबाद _Haidarābād_), also known as the **Pearl City,** is the capital of Telangana in Southern India . **Secunderabad**, 8 km away, is its twin city. Though at one point the twins were two different cities, relentless urbanisation has meant that they are now conjoined into one metropolis, called **Greater Hyderabad**.\r\n\nLocated on the hot and dry **Deccan Plateau**, Hyderabad is a city replete with history and tradition, It now competes with Bengaluru and Chennai for the crown of India's IT capital; Microsoft and Google have their India headquarters here.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "Dec–dec",
+        "months": [
+          12
+        ],
+        "season": "winter"
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Hyderabad",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hyderabad",
+        "wikidata": "https://www.wikidata.org/wiki/Q1361"
+      },
+      "distance_km": 497,
+      "ideal_months": [
+        12
+      ],
+      "min_days": 2,
+      "weather_snippet": "Dec–dec",
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T12:21:27.987Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "City of Pearls",
+        "Hyderabad, India",
+        "Hajderabad",
+        "Haidarábád",
+        "Hyderabad, Ấn Độ",
+        "Edrabad",
+        "Haydarabad, Hindistan",
+        "Haidarābād"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyderabad_from_Char_Minar.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyderabad%20Montage%202020.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": {
+        "peak_season_months": [
+          12
+        ],
+        "off_season_months": [],
+        "monsoon_months": [],
+        "avoid_months": [],
+        "average_temp_range_celsius": {
+          "summer": null,
+          "winter": null
+        }
+      },
+      "travel_access": {
+        "nearest_airport": {
+          "name": "Rajiv Gandhi International Airport",
+          "code": "HYD",
+          "distance_km": 22
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Mumbai",
+          "Chennai",
+          "Kochi"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Mumbai",
+          "Chennai",
+          "Kochi"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 3,
+        "has_medical_facilities_nearby": true,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [
+          12
+        ],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 202764,
+        "content_richness_score": 1
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "If you are visiting Hyderabad on business, it is easy to miss the 400-year-old Hyderabad. The city that immediately hits the eye is a sprawling metropolis of shopping malls and office buildings with glass facades.\r\n\nThe magnificent \"old city\" that was once the seat of the Nizam, the ruler of the largest and the most opulent \"princely state\", and the twin city of Secunderabad where the British maintained a cantonment to keep the army within striking distance of the Nizam can be seen only if you take the time out to see them.\r\n\nHyderabad's many epithets include the **City of Pearls**, the **City of Nawabs**, the **Biryani City** and, because of its high-tech industries, **Cyberabad**.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus",
+            "car"
+          ],
+          "nearest_station": {
+            "name": "MGBS Bus Station",
+            "code": null,
+            "wikipedia": null,
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "MGBS Bus Station",
+              "code": null,
+              "wikipedia": null,
+              "distance_km": null,
+              "source": "wikivoyage"
+            },
+            {
+              "name": "JBS (Jubilee Bus Station)",
+              "code": null,
+              "wikipedia": null,
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "By plane 1 ** Rajiv Gandhi International Airport ** ( **HYD **  IATA ), Shamshabad, Ranga Reddy ( 22 km (14 mi) from the city ), ☏ +91-40-66546370 , rgia.customersupport@gmrgroup.in . The sleek and well-organised airport is one of the best in India. It has one integrated terminal (although passengers departing on international flights must now complete security, immigration and customs at the interim international terminal first, then go to the main terminal, with a free shuttle and premium check-in available) as well as a special Hajj terminal.  ( updated May 2023 ) \r\n\nAs you would expect from a major international airport, there is good domestic as well as international connectivity from many locations. It is far from the city, and with the exception of Novotel, there aren't any good hotels close by. Road connectivity to the city is excellent, though. The Nehru Outer Ring Road Expressway connects to the airport - take exit 16. The P V Narasimha Rao Expressway connects the airport with Mehdipattnam in South Hyderabad.\r\n\nThere are multiple options to get into the city.\r\n\nThe ** Pushpak - Airport Liner [dead link] **, an air-conditioned bus service operated by the Telangana government, goes to various designated points - Secunderabad (Jubilee Bus Station), Miyapur, BHEL and the Mahatma Gandhi Bus terminal (Imlibun) near Charminar. These routes cover most major areas of the city. The airport website has detailed information about pickup and stop points, along with timings. Tickets cost between ₹106 and ₹265 depending on the bus stop. The frequency of the buses is 10-40 minutes depending on time of the day and route.\r\n\n** Meru ** and ** Sky cabs ** are the two metered cab services approved by the airport @ ₹20/km. You can book your rides at counters in the airport departure area and they are available just after exiting the terminal building. The two major app-based ride-hailing services, ** Ola [dead link] ** and ** Uber **, are also available. You can book your ride using the app at the baggage carousel, walk into the designated area where the cabs are waiting and get into any that is available.\r\n\nThere is a **pre-paid taxi counter** operated by the Hyderabad Traffic Police. That is also a good option. Another pre-paid option, available only for women, is the ** She Cab [dead link] **, a government service that features cabs driven only by women drivers. You can avail yourself of this service as long as at least one of the passengers is a woman. Beware of taxi soliciting touts at the airport greeting area; they will try to charge exorbitant rates.\r\n\nThere are other counters where you can hire a taxi. These may be on the more expensive side, but the cars will be more luxurious.\r\n\n\r\n By train See also: Rail travel in India \r\n \r\nSecunderabad in Hyderabad is the headquarters of the South Central Railway (SCR) zone of the Indian Railways . It is an important junction with connectivity to many parts of India.\r\n\nThere are three major railway stations serving the twin cities: 2 **Hyderabad [HYB]** ( Deccan, Nampally ).   , 3 **Secunderabad Junction [SC]** .   , and 4 **Kacheguda [KCG]** .   and a minor station at Begumpet. Note that as these stations are on different routes, the train you are taking will start or end at only one of them, so you won't have a choice regarding which station to alight at or embark from.\r\n\nDestinations include:\r\n\n\r\n New Delhi (toward north via Nagpur , Bhopal , Jhansi , Agra , 1677 km, 26-29 hr) \r\n Chennai (toward south via Vijayawada , Warangal , Nellore , 790 km, ~14 hr) \r\n Mumbai (toward west via Solapur , Pune . 790 km, 14 hr) \r\n Kolkata ( Howrah ) (toward east via Vijayawada , Visakhapatnam , Bhubaneswar , 1592 km, over 30 hours) \r\n Thiruvananthapuram (Trivandrum; toward south-southwest via Nellore , Tirupati , Chittoor , Katpadi, Tiruppur , Coimbatore , Thrissur , Ernakulam , Kottayam , Kollam 1568 km, 30½ hr) \r\nFrom these major railway stations, you can easily get connected buses or taxis which will take you to the destination of your choice. There are no interchanges to transfer to the MMTS or metro lines, however.\r\n\n\r\n By car Hyderabad lies on the North-South Corridor, the national highway NH44 that runs from Srinagar to Kochi . This highway is excellent, and will take you to Bengaluru , 560 km away, in hours. It is 752 km from Chennai (using highways NH65 and NH16) and 800 km from Mumbai (NH65 till Pune and the expressway to Mumbai).\r\n\n\r\n By bus Hyderabad is well-connected to all parts of Telangana and Andhra Pradesh, most parts of southern India, Maharashtra , Chhattisgarh and Odisha . Connectivity to some cities of Gujarat and Madhya Pradesh is also available. It is served by the ** Telangana State Road Transport Corporation (TSRTC) ** run by the Telangana government, government bus services of neighbouring states, and multiple private services. There are two major bus terminals:\r\n\n\r\n 5 **MGBS Bus Station** ( Mahatma Gandhi Bus Station or Imliban or Gowliguda Bus Station ), ☏ +91 40 24614406 , +91 99 59226257 (inquiry counter), +91 40 24613955 (ticket reservation office) , toll-free: +91 1 800 200 4599 (24/7 Customer Support) . With 84 bus bays side-by-side, this large bus station is a local landmark.  ( updated Oct 2020 ) \r\n 6 **JBS (Jubilee Bus Station)**, ☏ +91 40 27802203 . In Secunderabad. TSRTC runs direct air-conditioned coaches to Mumbai, Bengaluru and Chennai.  ( updated Oct 2020 ) \r\nPrivate bus services which provide decent to excellent services to major cities are Orange Travels, Kaveri Travels and many more. The advantage of private services is that they may serve cities that government bus services do not. Secondly, they provide pick-up and drop-off from many locations all over the city, unlike government services that start from and end at designated bus terminals only. Important private travel hubs are KPHB Colony, Lakdi-Ka-Pool, Paradise Centre in Secunderabad and Dilsukhnagar.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "Hyderabad's public transport options have been increasing over the years. It has an overcrowded bus network and a rudimentary local train network. In the past 5 years, it has had its own elevated metro rail service that provides fast and cheap connectivity to some areas.\r\n\nThe ubiquitous yellow and black auto-rickshaws have now been supplemented by the app-based taxi services that provide fairly good service all over the city. Driving yourself around the city may be an excellent option or a terrible choice, depending on which areas you want to go to, and how comfortable you are with other people driving like utter lunatics.\r\n\n\r\n By metro The 1 ** Hyderabad Metro ** ( HMR ).  ( updated May 2023 ) rail system opened in November 2017. For the areas it does serve, the metro is a fast, clean and efficient mode of travel, better than driving or taking a cab.\r\n\nTrains run at every 4 minutes from early morning to late in the night, although as of October 2020, due to COVID conditions, the timings are 07:00-21:00.\r\n\nThe trains run on an elevated corridor. Ticketing and platforms are above ground level. Lifts from street level are available at all stations. Many stations have escalators as well. You can buy single journey tickets or reloadable cards. Ticket vending machines are available but may not work reliably.\r\n\nParking is available in most stations, but car parking is likely to be inadequate during rush hours. Bike parking is more available. A couple of stations have shopping malls with adequate parking areas attached to them. The metro has a tie-up with Ola, which has installed kiosks at all stations to easily order a cab to get you to your destination.\r\n\nTicket prices start from ₹10, while ₹60 will take you from one end of the city to another.\r\n\nSignage at the stations and the trains is quite good and is available in all three languages, including English. Announcements in the trains are clear and helpful, and overall, the travel experience is a pleasant one.\r\n\nThe metro has three lines: **Red, Blue** and **Green** connecting 57 stations.\r\n\n\r\n The Red Line starts from Miyapur in North Hyderabad, goes via Central and Old City and terminates at L B Nagar in East Hyderabad. \r\n The Blue Line supports West Hyderabad, Secunderabad and East Hyderabad. It starts at Raidurg at HITEC City, and ends at Nagole. \r\n The Green Line connects Secunderabad and the Old City, starting at Jubilee Bus Station and terminates at the Mahatma Gandhi Bus Station (MGBS). \r\nAmeerpet, Parade Ground and MGBS are the interchanges where easy transfers between lines are available.\r\n\n\r\n By train The Multi-Modal Transport System, or MMTS, is the result of Hyderabad's earlier attempt to set up a local-train network. It serves only a few places in Hyderabad. The peak frequency is about every 10 minutes and the frequency is much less during off-peak hours and on Sundays (see schedule ). It is a fast way of travel to the few stations it covers, and the cheapest option as well. You are advised to take the first class if you don't fancy travelling in packed trains. Daily, monthly and quarterly passes are also available at the MMTS stations.\r\n\n\r\n By bus Hyderabad has good local bus connectivity run by ** TSRTC **. Most buses start at the Mahatma Gandhi Bus Terminus more commonly known as Imlibun. Apart from normal local buses, you have a choice of Metro Express and Metro Deluxe aka Veera. Local buses tend to get extremely overcrowded and traveling on the footboard of a bus is very common.\r\n\nThe routes displayed on buses are normally shown in at least two languages, one of which is English. The best way to get to a location by bus would be to get to a bus stop and ask people waiting there. You could also get into a bus going in your direction and ask the conductor for help.\r\n\n\r\n 2 **Dilsukhnagar Bus Depot**, Santhoshi Maatha Temple Rd, Krishna Nagar, Dilsukhnagar .   \r\n 3 **Koti Bus Depot**, Turrebaz Khan Rd, Esamiya Bazaar .   \r\n By autorickshaw Autorickshaws in Hyderabad should be metered, though it can be difficult to find an auto-rickshaw driver who ever agrees to a metered fare. You will have to negotiate a fare with the driver before your journey. The traffic police can be helpful and will help engage an Auto with metered fare. Keep extra change with you since most of the auto drivers will claim that they don't have change, even if they have. If you have a choice opt for a prepaid auto which are available at some places. The app-based taxi services, Ola and Uber, also have the option of calling for an auto. You can try your luck with them, but in general, they aren't an improvement over hailing the autos off the street.\r\n\nAutos can carry a maximum of 3 passengers excluding the driver, but it is common to find them being overloaded to carry up to six passengers. The minimum fare is ₹20 which covers the first 1.6 km. Each additional km is another ₹11. There are also shared 8 seater Maxi Vans available to and from the suburbs to a main location of the city. Fares are mostly ₹2 more than bus fares, but are more comfortable and fast for short distances up to 5 km. Fix the fare before you step in.\r\n\nSometimes, auto drivers act as touts for tourist shops, and may want you to check out pearl shops in exchange for a lower fare. They are okay if you don't buy anything from these shops as long as you visit for 10 minutes. However, the pearl shops are notorious for persuasive sales tactics and they won't let you out easily. So pay the complete fare to auto drivers instead of being diverted to one.\r\n\nAuto drivers get some per cent of the entry fees (around ₹10) if they take you to the places like Chow Mahalla or Salarjung museum for free. If you are around these areas get into some auto instead of walking down and ask them to drop you there.\r\n\n\r\n By taxi Taxis cannot be hailed off the street, but using the two major mobile app based providers, **Ola** or **Uber**, comes close. Coverage and availability is good. The apps do a decent job of showing cab availability and your expected wait time. Relying on just these two, keeping your schedule flexible and ordering the cabs when you need them is a feasible way of travelling around Hyderabad as long as you are prepared for the occasional frustration. During peak hours, you may have to deal with surge pricing, drivers cancelling on you and long wait times. You can also schedule your ride with them, and you are advised to do so if you have a fight or bus to catch.\r\n\nIf you want more certainty, you can hire a car with a driver who will stay with you for a specified period. There are many options to choose from, and many of these listed operators also offer short term flexible rides. Check their websites or call their call centres.\r\n\n\r\n By car Hyderabad has an underdeveloped road system, leading to traffic jams during rush hours. The 160-km-long **Nehru Outer Ring Road** expressway, commonly called the **ORR,** circles the city, and may be faster than driving straight through the city. The **P V Narasimha Rao Expressway,** fully elevated, serves South Hyderabad and the airport and is a great way of bypassing the crowded Old City. There is also an **Inner Ring Road** connecting Central, South and East Hyderabad. These roads are helping take some pressure of NH65 and NH44 that, in addition to being national highways, also happen to serve as the arterial roads of the city. Several modern flyovers now link the arterial roads.\r\n\nLike elsewhere in India, driving is \"exciting\" in Hyderabad. You find cycles, motor cycles, rickshaws, hand carts, autos, share autos, mini trucks, buses and vestibule buses jostling along. There are long stretches of roads passing through thickly populated areas that have no median breaks, so vehicles, including motorbikes and cars, simply drive on the wrong side of the road.\r\n\n\r\n On foot Hyderabad is not a walkable city. It lacks good quality footpaths. The ones that exist are encroached upon by hawkers, shops, garbage or by motorcyclists trying to beat the traffic. As in any other Indian city, crossing the road is a nightmare. An urban renewal initiative aimed at improving its infrastructure has been in progress for a few years. The good news is that some attention is being paid to construction of footpaths and foot over bridges. This is especially true around metro stations (and note that metro stations can be used to cross the road).\r\n\nThe bad news is that this has not solved the problem of encroachment, and the ongoing construction has made things worse in the process of making it better. The exceptions to the rule of poor quality pavements are the upscale areas like Banjara Hills, where walking is enjoyable. That said, the weather in Hyderabad makes walking a pleasant experience outside of the torrid summer months.\r\n\nThe Old City is composed of a maze of disorienting alleyways that expand outward from the Charminar. Getting lost in the markets (where you can buy anything from hand-sequined saris to freshly slaughtered goats) and alleyways in the Old City can make for a thoroughly enjoyable afternoon. The famous Chudi Bazaar (Lad Bazaar) across from the Charminar is a chaotic tumble of goods, people, animals and vehicles, and is navigated quickly on foot. The Chowmahalla palace and the Mecca Masjid are easily accessed from the Charminar. Necklace Road, Sultan Bazar (Koti) and Abids are worth taking some time to wander around.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [],
+          "brief": "_Individual listings can be found in Hyderabad's district articles_ \r\n As you would expect from a city with a rich heritage, Hyderabad has many **historical monuments**, but there is much more to see. While the specific attractions are on the district pages, here is a quick rundown of attractions to visit and where they are located:\r\n\n Monuments By Indian standards, Hyderabad's monuments are not very old, which means that they are better preserved. Many of the attractions including the iconic **Char Minar** are in Old City and the surrounding southern Hyderabad , albeit the even older **Golconda fort** is in central Hyderabad . In central Hyderabad, you find some of the major attractions built after independence, such as the **Buddha Statue** located on an island in the midst of the Hussain Sagar Lake, and the **Birla Temple.**\r\n\n\r\n Museums and galleries Hyderabad offers a feast for history buffs. It has many museums and palaces displaying historical objects collected by the Nizams or their aristocrats, the most recognizable among them being the **Salar Jung Museum**. The **Chowmahalla** and the **Falak Numa** palaces, both under private ownership, have artefacts, photographs and memorabilia from the times of the Nizams, and there is a **Nizam's museum** as well. All of these are in Old City.\r\n\nThe Banjara Hills area has some art galleries including the **State Gallery of Art.**\r\n\n\r\n Lakes There are quite a few artificial lakes and water bodies in and around Hyderabad, built over the past few centuries to alleviate the water shortage. **Hussain Sagar,** located as it is in the centre of the city, is a major waterfront attraction, surrounded by parks, statues and monuments. **Durgam Cheruvu** which opened in 2019, is a natural lake and worth a visit. ** Osman Sagar ** and **Mir Alam tank** are also worth a mention. There are many others in and around the city in varying states of upkeep.\r\n\n\r\n Parks Hyderabad certainly does not lack green spaces. The **Nehru Zoological Park** in southern Hyderabad has a decent collection of animals and birds. The **Kasu Brahmananda Reddy National Park (KBR Park)** spread over 1.6 sq km between Jubilee and Banjara hills serves as a green lung to the city, with a wide variety of flora and fauna. Around Hussain Sagar Lake you will find many gardens and amusement parks, the largest among them being **NTR Gardens** and **Sanjeevaiah Park.** Around Hi tec city, **Botanical Gardens, Biodiversity Park** and **Shilparamam** are worth visiting.\r\n\n\r\n Ramoji Film City ** Ramoji Film City ** near Hyderabad is a destination that does not easily fit into any of the other categories. The world's largest film studio and also a theme park modelled on Universal Studios. Many Telugu and Hindi films are produced here. Tourists can tour the studios or enjoy the many attractions and rides. There are two hotels if you are inclined to stay. No trip to Hyderabad is complete without a visit to nearby Ramoji, and there are many who visit it only to make a trip here.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "Friends of Snakes Society",
+              "description": "For reptile conservation work and field trips."
+            }
+          ],
+          "brief": "For reptile conservation work and field trips.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Hyderabadi dum biryani",
+              "description": "_Dum_ refers to the baking process and basmati rice and meat or vegetables are mixed in a pot and heated for a long time. During the Nizam's time, the biryani was made with goat carefully cooked with rice.",
+              "location": null
+            },
+            {
+              "name": "Double Ka Meetha",
+              "description": "A dessert made from bread, milk and dry fruits.",
+              "location": null
+            },
+            {
+              "name": "Falooda",
+              "description": "A favourite drink of Hyderabad.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "_Individual listings can be found in Hyderabad's district articles_ \r\nThere is plenty to do at night in Hyderabad, though local regulations have most places serving last drinks by 23:00. On weekdays, drinks in some of the pubs have the best offers, as most clubs are empty until Thursday or Friday nights, when the clubbers emerge. But the sheer number of nightlife spots makes it hard to choose which ones to list. As a general rule they tend to be clustered around Begumpet ( Secunderabad ) and Road No.1, Banjara Hills ( Central ).\r\n\nAlcohol is available easily from numerous liquor shops, known as **wine shops** in local parlance, spread across the twin cities, in restaurants with bars attached (including most upscale ones) and in pubs.\r\n\nWarning: Drunk driving is not tolerated, and police enforce the rule strictly. After 11:00PM, almost all the roads have police patrols and check for drunk driving. If caught, you may end up paying fines, apart from the vehicle being seized and a couple of rounds to the police station in worst scenarios.\r\n\nSome of the good pubs and bars are part of hotels, and they have been covered along with their hotel listing under **Sleep**."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "stay_safe": {
+          "warnings": [
+            "Since 2014 Hyderabad has remained free of any terrorist attack, however from 2007 until 2013 the city suffered from several of them. These bomb blasts took place at Mecca Masjid, Lumbini Park, places often frequented by travellers and also at busy marketplaces. Though the chance that you will be in danger is quite low now, you should obviously make your own risk assessment. Rather than physical danger, it is more likely that the **intrusive security** will dampen your enjoyment of your Hyderabad vacation. Every shopping mall, theatre and palace has metal detectors and security guards patting you down.\r\n\nThe **old city** area used to be a **communally sensitive zone** and a venue for religiously aggravated riots between Hindus and Muslims. It was common for the police to impose a curfew in that area while the rest of the city went about life without any problems. The old city continues to be at the heart of Hyderabad's crime wave and though many tourist attractions including Charminar are in this area, it is best to avoid late night visits.\r\n\nOutside of these, Hyderabad is rather safe. Muggings and violent crime are uncommon, most crime involves thefts. Avoid staying out late at night, especially if you are a woman.\r\n\nThe usual tourist-oriented scams in India are not as bad in Hyderabad as in other places. However, foreigners will be hounded for money at tourist sites like the old city. Just ignore the beggars and they will go away.\r\n\nChain snatchings have become common in the city. One has to be watchful in crowded areas.\r\n\n\r\n Emergency numbers **Medical**, ☏ 108 .   \r\n **Child Line Facility**, ☏ 1098 .   \r\n **Police**, ☏ 100 .   \r\n **Fire**, ☏ 102 .   \r\n **Blood Bank**, ☏ +91 40 24745243 .   \r\n **Crime Stopper**, ☏ 1090 .   \r\n **Railway Enquiry**, ☏ 131, 135 .   \r\n **Traffic Help**, ☏ 1073 ."
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "telangana-ramoji-film-city",
+      "name": "Ramoji Film City",
+      "region": "",
+      "state": "Telangana",
+      "coordinates": {
+        "lat": 17.2523,
+        "lon": 78.6802,
+        "source": "wikidata"
+      },
+      "description": "The **Southern Suburbs** of Hyderabad consists of most of the **Ranga Reddy** district. It is home to **Ramoji Film City** and large reservoirs like **Himayat Sagar** and **Osman Sagar**.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Ramoji_Film_City",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ramoji_Film_City",
+        "wikidata": "https://www.wikidata.org/wiki/Q1786944"
+      },
+      "distance_km": 490,
+      "ideal_months": [],
+      "min_days": 1,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T12:21:27.987Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 0.6,
+        "last_verified": null
+      },
+      "alt_names": [],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ramoji%20Film%20City.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 2,
+      "ideal_for_weekend_trip": true,
+      "ideal_leave_block_type": [
+        "2_day_weekend"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration"
+        ],
+        "activity_density_score": 0.3,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 44569,
+        "content_richness_score": 0
+      },
+      "section_briefs": {
+        "get_in": {
+          "options": [],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "—",
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Novotel Hyderabad Airport",
+              "description": "",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "telangana-warangal",
+      "name": "Warangal",
+      "region": "",
+      "state": "Telangana",
+      "coordinates": {
+        "lat": 17.95,
+        "lon": 79.5,
+        "source": "wikidata"
+      },
+      "description": "**Warangal** is in East Telangana in Southern India . Historically known as _Orugallu_ and also _Ekashila Nagaram_ (City carved in single stone). _Warangal_ is part of a tertiary city including **Kazipet** and **Hanamkonda** cities. The region once came under _Kakatiya dynasty_.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Warangal",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hanamkonda_district",
+        "wikidata": "https://www.wikidata.org/wiki/Q213077"
+      },
+      "distance_km": 590,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T12:21:27.987Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Hanamkonda district",
+        "Ekasila Nagaram",
+        "Oragallu",
+        "Warangal Urban",
+        "distritu de Warangal Urban",
+        "Warangal Urban (distritu)",
+        "Hanumakonda district"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_at_Bhadrakali_Lake_01.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WarangalMontage.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 4,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "3_day_bridge",
+        "4_day_extended"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration"
+        ],
+        "activity_density_score": 0.7,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 77926,
+        "content_richness_score": 0.211
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "bus",
+            "car"
+          ],
+          "nearest_station": {
+            "name": "Warangal railway station",
+            "code": null,
+            "wikipedia": "https://en.wikipedia.org/wiki/Warangal_railway_station",
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "Warangal railway station",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Warangal_railway_station",
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "The nearest airport is in Hyderabad , approximately 130 km away. It falls on the New Delhi - Chennai trunk train route so many important trains like _Grand Trunk express_ call on here. By road its connected to Hyderabad through NH202.\r\n\nWarangal is very well connected by bus to Hyderabad , the closest big city with a high frequency of various quality services.\r\n\nPossibly the best way to reach Warangal is by a train since there are ample number of trains that stop here throughout the day. Situated on the major railway line connecting the north and south of India it is possible to take a train from all the major cities of the country like Delhi , Mumbai , Kolkata , Chennai , Hyderabad .\r\n\n\r\n 1 **Warangal railway station** , Station Rd .  ( updated Jun 2020 )",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "Auto-rickshaws, which are three wheeled motor powered vehicles, with a carrying capacity of up to three.\r\nAutos ply on the main road between Warangal railway station and Kazipet railway station which is about 20 km away. There is no standardised metered tariff and one has to either share a single auto with others or negotiate a charge for single occupancy.\r\nOne can drop down at Kazipet or Warangal railway stations, both are like twin cities. You also have Hanamkonda in between Warangal and Kazipet which are like Tricities. These 3 cities are well connected and together they are called Tri-City. In between the Warangal and Kazipet there is a major railway crossing which divides the trains towards Chennai, Delhi and Hyderabad.\r\nYou can take a two day trip to Warangal the places listed except Ramappa are within the 10-20 km circle. and one day you can spend for Ramappa which is about 70 km from the Warangal city. Roaming in an auto will be very cheap. You can also travel using city bus.\r\nThe railway station in Kazipet is Junction.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Warangal Fort",
+              "description": "",
+              "wikipedia": "https://en.wikipedia.org/wiki/Warangal_Fort",
+              "coordinates": {
+                "lat": 17.9564,
+                "lon": 79.61536
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Bhadrakali Temple",
+              "description": "One of the oldest temples for Goddess Bhadrakali, believed to be built in 625 AD by King Pulakeshin II of Chalukya dynasty.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Bhadrakali_Temple,_Warangal",
+              "coordinates": {
+                "lat": 17.99694,
+                "lon": 79.57972
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Padmakshi Temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Palakurthy Someshwaraswamy Temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Shiva temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Rayaparthy Shiva Temple",
+              "description": "Built in 18th century",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "Siddeshwara Temple",
+              "description": "Built in 3rd century",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 8,
+              "name": "Thousand Pillar Temple",
+              "description": "Renovated in 2004.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Thousand_Pillar_Temple",
+              "coordinates": {
+                "lat": 18.00376,
+                "lon": 79.5747
+              },
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Pandavula Gutta",
+              "description": "Geo heritage site near Warangal. Cliffs, stone arches, overhangs. Place for rock climbing, rappelling, camping, stargazing and other adventure activities. 10,000-year-old cave paintings.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Pandavula_Gutta",
+              "coordinates": {
+                "lat": 18.24944,
+                "lon": 79.81642
+              },
+              "price": null
+            }
+          ],
+          "brief": "For the religious, a trip to Yadagirigutta (a holy shrine of Lord Narasimha), Jeedkal (Shrine of lord Rama - who sat there while looking for Sita), Kolunupaka (a holy shrine of Jains - with a statute of Mahavir in jade) can be immensely satisfying. On the way back to Warangal one can also visit Pembrathi to see the brass craftsmen at work.\r\n\n\r\n 1 **Warangal Fort** .  ( updated Jun 2020 ) \r\n Temples 2 **Bhadrakali Temple** ( భద్రకాళీ దేవాలయం ). One of the oldest temples for Goddess Bhadrakali, believed to be built in 625 AD by King Pulakeshin II of Chalukya dynasty.  ( updated Jun 2020 ) \r\n **Padmakshi Temple**.  ( updated Jun 2020 ) \r\n **Palakurthy Someshwaraswamy Temple**.  ( updated Jun 2020 ) \r\n **Shiva temple** ( Kondaparthy district ).  ( updated Jun 2020 ) \r\n **Rayaparthy Shiva Temple**. Built in 18th century  ( updated Jun 2020 ) \r\n **Siddeshwara Temple**. Built in 3rd century  ( updated Jun 2020 ) \r\n 3 **Thousand Pillar Temple** . Renovated in 2004.  ( updated Jun 2020 ) \r\n Parks **Eturnagaram Forest Wildlife Refuge** \r\n **Govindarajula Gutta** \r\n **Kakatiya Musical Garden** \r\n **Kakatiya Rock Garden** \r\n Beyond Warangal 4 **Pandavula Gutta** . Geo heritage site near Warangal. Cliffs, stone arches, overhangs. Place for rock climbing, rappelling, camping, stargazing and other adventure activities. 10,000-year-old cave paintings.  ( updated Oct 2025 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "There are many Dhabas, bars and restaurants in Warangal. The food quality is the best, and has the authentic 'Dhaba' taste."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Ashoka Hotel",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "Hima Residency",
+              "description": "Located near to National Institute Of Technology.",
+              "price": null
+            },
+            {
+              "name": "Hotel Landmark Residency",
+              "description": "A 3 star hotel in Warangal, one of the few upscale hotels around, which in addition to the 3 in-house restaurants, also carries 2 banquet halls for official meetings and parties. Its features include king-size beds, flat screen TVs, elegant interiors, centralized AC's, exemplary service.",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    }
+  ]
+}

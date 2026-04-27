@@ -1,0 +1,2529 @@
+{
+  "state": "Andhra_Pradesh",
+  "state_code": "AN",
+  "generated_at": "2026-02-27T11:54:51.161Z",
+  "count": 10,
+  "destinations": [
+    {
+      "slug": "andhrapradesh-visakhapatnam",
+      "name": "Visakhapatnam",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 17.69389,
+        "lon": 83.29222,
+        "source": "wikidata"
+      },
+      "description": "**Visakhapatnam** ( Telugu : విశాఖపట్నం _Viśākhapaṭnaṁ_), popularly known as **Vizag** (_vigh-ZAG_), is the largest city in Andhra Pradesh . It is primarily an industrial city, but also attracts tourists due to its unspoilt sandy beaches, well built and maintained parks, Buddhist Remnant sites and nearby scenic areas, such as Araku Valley . The city has a population of about 2 million.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Visakhapatnam",
+        "wikipedia": "https://en.wikipedia.org/wiki/Visakhapatnam",
+        "wikidata": "https://www.wikidata.org/wiki/Q200016"
+      },
+      "distance_km": 805,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Wiśakhapatnam",
+        "Vizag",
+        "Vaishakhapuram",
+        "Vishakhapatnam",
+        "Vishakapatnam",
+        "Visha khapatnam",
+        "Vizagapatnam",
+        "Vishākhapatnam",
+        "Visha-khapatnam",
+        "Vizagapatam",
+        "Visakhapattanamu",
+        "Vizag City",
+        "Waltair",
+        "Vizagapatnamas",
+        "Višakapatnamas",
+        "Višakhapatnamas",
+        "The City of Destiny",
+        "Vizaga"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Visakhapatnam_2010.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Visakhapatnam%20Montage.png?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": "Visakhapatnam Airport",
+          "code": "VTZ",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "good",
+        "direct_train_available_from_major_cities": [
+          "Chennai",
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Chennai",
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 235094,
+        "content_richness_score": 1
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Visakhapatnam ( vih-shah-k h uh-puhtt-nuhm ) is sometimes called _The Goa of the East_. Just like its west coast counterpart , it has beautiful virgin beaches, laterite hillocks, smooth roads and stunning landscape. Medical tourism is a fast-developing industry. Vizag is variously called _Jewel of the East Coast_, _Steel City_, and the _City of Destiny_.\r\n\nThere is a considerable concentration of Marwaris, Odias, Bengalis, Punjabis, Tamils and Malayalis. In addition, there is a large population of migrant workers from other parts of India who have been drawn to the area by the abundance of work at locally based companies, such as Vizag Steel Plant and Hindustan Shipyard.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus",
+            "car"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By plane 1 ** Visakhapatnam Airport ** ( **VTZ **  IATA ), Viman Nagar ( opposite NH 16 ), ☏ +91 891 2851169 . Visakhapatnam is connected by air to Hyderabad , Bangalore , Chennai , Tirupati , Delhi , Mumbai , Bhubaneswar , Kochi , Dubai , Kuala Lumpur and Singapore through its customs airport, an airport with restricted access, by Air India, SpiceJet and IndiGo. AirAsia and Batik Air from Malaysia operate scheduled flights from Kuala Lumpur.  ( updated Oct 2023 ) \r\n By train 2 ** Visakhapatnam Junction    ECoR**  is on the Kolkata – Chennai line and is connected to several cities of the country by rail. All trains including fast expresses stop at the station. Visakhapatnam comes under the East Coast Railway (ECoR) zone and is one of the principal divisional headquarters (under the British name Waltair). It has eight platforms, the first in ECoR to have this many, and all of them can accommodate trains with up to 28 coaches.\r\n\nYou may want to verify the timings with Indian Railways , since they change from time to time. Train berths can be reserved online [dead link] . However, this being a major destination, availability of seats is at times difficult even with a one month's advance planning.\r\n\n\r\n By car Visakhapatnam is connected to Chennai and Kolkata via Bhubaneswar and Vijayawada by National Highway 16 (dual-carriageway, 120 km/h).\r\n\n\r\n By bus The Andhra Pradesh State Road Travel Corporation (APSRTC) runs buses from almost every city and town to Visakhapatnam, along with some private operators, who run buses from a few of the major cities. Please check with APSRTC for timings. There is also a Garuda fleet of bus service (Volvo) to Vizag from Chennai, Bangalore, Vijayawada and Hyderabad which is very comfortable and happy going. This is the best way to do it if you want to travel by bus. APSRTC has several other bus services which have varied luxury levels and transit speeds. You might want to check the APSRTC at least 3 days in advance to be sure you have a reservation.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "However, apart from the bus service, taxis or autorickshaws can also be hired.\r\n\n\r\n By bus APSRTC operates a lit of buses from 6 principal bus complexes in the city. They are:\r\n\n\r\n Simhachalam \r\n Gajuwaka \r\n Maddilapalem \r\n Visakha Steel City \r\n Waltair \r\n Madhurawada \r\nDwarka Bus Station or RTC Complex depot is the largest bus station and complex in the city.\r\n\nThere are mainly two types of buses operated for suburban travel in Visakhapatnam.\r\n\n\r\n **City Ordinary:** can be identified by its orange or red colour. It is operated on almost all suburban routes. Some of the main routes include RTC Complex–Gajuwaka (via NAD), Maddilapalem–Railway Station, RTC Complex–Gajuwaka (via Scindia), Railway Station–Madhurawada, etc. These buses stop at almost every bus stop. The frequency is more than that of Metro Express buses. These buses sometimes become overcrowded during peak hours on weekdays. Some popular route numbers include 222, 400, 99, 25, 900, 60C, 300, 6A, 28, 38 and 12D. \r\n **Metro Express:** can be identified by their blue and white colour. These buses run in most important routes such as 400, 211, 500, 99, 28, 38 etc. These buses don't stop at all bus stops and the fare for these buses is also a bit higher than that for city ordinary buses. Many of these buses are JNNURM funded and sport digital display boards which display route number and route details in both English and Telugu. Also most of these have cushioned seats which are comfortable and many of them also have air-suspension which makes the journey more comfortable. These buses don't get as crowded as City Ordinary buses. \r\nThe junction and Maddilapalem joins the Asilametta-Ramatalkies road to the National Highway 5. Buses from Madilapalem ply to the extreme ends of the city, including Anakapalle and Thagarapuvalasa.\r\n\n\r\n Fares The bus fare to get to Madilapalem from the railway station is only ₹8. Buses operate within a 5 minute frequency in routes with high demand. The minimum frequency in which buses operate is 40 minutes, i.e., every route is covered by an APSRTC bus once in every 40 minutes.\r\n\nApart from buying tickets on the bus, you may also avail an _RTC-Pass_, which is a special type of pass that can be renewed once in a month. With the pass, you can board any APSRTC bus and travel anywhere within the city limits. An ordinary RTC-Pass costs just ₹750 . The RTC complex is to the southeast of Asilametta. RTC complex is generally referred to as _complex_ and is connected to every other region in the city.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Dolphin's Nose Lighthouse",
+              "description": "A lighthouse providing an aerial view of the port and the city.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.67642,
+                "lon": 83.29272
+              },
+              "price": "₹10 for adults"
+            },
+            {
+              "order": 2,
+              "name": "Kailasagiri",
+              "description": "The ride to this hill offers a spectacular view of the sea. There is a park atop the hill, with a beautiful view of the city, the sea and Eastern Ghats merging into the sea. Sagar Nagar Beach and Rushikonda Beach are on the right and left-hand sides. There is a colossal statue of the couple Shiva and Parvati. One can take a ropeway directly facing the sea and the city. On the hilltop, there is a beautiful toy train offering a tour of nature. Several viewpoints give a pleasant look at nature, especially in the evening, when the city is lit up. This is less commercial than other hill stations and there is less hassle from tourist guides. There are several points from which the beautiful rocky beach down beneath can be seen. This provides spectacular views of sunrise, sunset and the pristine waters. Many movies were shot here. Hillocks in the park, which are about 50 ft (15 m) in elevation, give a beautiful view of the sea, beach road and the beach park. The hilltop includes a children's play area, a doll museum and a couple of eating areas. It has several viewpoints offering wonderful views of the city on one side and winding beaches adjoining green hills on the other side.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Kailasagiri",
+              "coordinates": {
+                "lat": 17.74899,
+                "lon": 83.34224
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Shilparamam Jathara",
+              "description": "A crafts village showcasing and preserving the old, including woodwork, jewellery, clothes and local crafts of rural India. There are 36 stalls where you can buy assorted handicrafts and artwork. There is also an entire village where you can find realistic-looking sculptures of villagers carrying out their traditional crafts.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Shilparamam_Jathara",
+              "coordinates": {
+                "lat": 17.8052,
+                "lon": 83.35324
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Hawa Mahal",
+              "description": "A summer residential palace of the royal family of Jeypore , and one of the most iconic historical buildings of the city. The palace is made of stone with twin octagonal projections on either side. The wooden windows are framed by segmented arched openings and the high Madras roofing within the halls are extensively employed by Burma teak to ensure cool comfort during the scorching hot summers of the coast. The main structure has semi-circular arched verandas and the rectangular wooden windows in the central porch with ventilators leading into the palace. The building has sixteen rooms and a massive hall that hosted dinners and parties for guests.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Hawa_Mahal,_Visakhapatnam",
+              "coordinates": {
+                "lat": 17.70746,
+                "lon": 83.31184
+              },
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Matsya Darshini",
+              "description": "It has marine and freshwater fish. The exit gate of the aquarium resembles the open mouth of a huge white tipped shark. 'Kala Shrusti', a handicrafts shop, is atop the aquarium.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.71281,
+                "lon": 83.31984
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Sea Harrier Museum",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.71722,
+                "lon": 83.32835
+              },
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "TU-142 Aircraft Museum",
+              "description": "This museum houses a decommissioned Tupolev Tu-142 anti-submarine aircraft of Russian origin, which has been restored for the public. It is possible to see the inside of the aircraft, and real engines are displayed.",
+              "wikipedia": "https://en.wikipedia.org/wiki/TU_142_Aircraft_Museum",
+              "coordinates": {
+                "lat": 17.718,
+                "lon": 83.32981
+              },
+              "price": "₹70 for adults, ₹40 for children (4-10)"
+            },
+            {
+              "order": 8,
+              "name": "UH3H Helicopter Museum",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.71745,
+                "lon": 83.32909
+              },
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Victory at Sea Memorial",
+              "description": "This is a remembrance of the Victory at Sea in the 1971 Indo-Pakistan war. It is on the Beach Road, opposite the Submarine Museum. There is a fighter plane, a tank and few replicas of missiles kept as exhibits. There is no entry fee and it can be viewed from the road.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Victory_at_Sea_Memorial",
+              "coordinates": {
+                "lat": 17.7187,
+                "lon": 83.3322
+              },
+              "price": null
+            },
+            {
+              "order": 10,
+              "name": "Visakha Museum",
+              "description": "It houses the historical treasures and artefacts of Northern Andhra. Collections available for viewing in the museum include ancient armoury, crockery, coins, silk costumes, jewellery, stuffed animals, portraits, manuscripts, letters, diaries, scrapbooks, periodicals and maps.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Visakha_Museum",
+              "coordinates": {
+                "lat": 17.72071,
+                "lon": 83.33383
+              },
+              "price": null
+            },
+            {
+              "order": 11,
+              "name": "Panchadharla",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.53827,
+                "lon": 82.92533
+              },
+              "price": null
+            },
+            {
+              "order": 12,
+              "name": "Ross Hill Church",
+              "description": "A house built by Monsieur Ross in 1864, later converted into a Mother Mary's Church. The pathway to the shrine is strewn with Catholic icons.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.69043,
+                "lon": 83.28709
+              },
+              "price": null
+            },
+            {
+              "order": 13,
+              "name": "Sri Venkateswara Swamy Temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 17.6892,
+                "lon": 83.28889
+              },
+              "price": null
+            },
+            {
+              "order": 14,
+              "name": "Bojjannakonda",
+              "description": "It offers architectural remnants of the Buddhist period, one of the earliest of its class in Southern India. It constitutes one of the most remarkable groups of Buddhist monuments dated from 200 BCE to 700 CE, found during excavations in 1906. On the eastern hill, there are a series of rock-cut caves, numerous groups of monolithic dagobas, standing on rock platform in tiers above each other and, crowning all, a rock-cut stupa with extensive structural remains. On the western side of the eastern hill is a stairway, partly rock-cut and partly structural, which leads up to a large double-storied cave. The cave is entered by a doorway and is flanked on each side by huge dwarapalas. The cave chamber is rectangular in shape and is divided into 20 compartments by four cross rocks of 16 massive pillars. In the centre is the rock-cut stupa standing on a square platform.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Bojjannakonda",
+              "coordinates": {
+                "lat": 17.71,
+                "lon": 83.0161
+              },
+              "price": null
+            },
+            {
+              "order": 15,
+              "name": "Bavikonda",
+              "description": "",
+              "wikipedia": "https://en.wikipedia.org/wiki/Bavikonda",
+              "coordinates": {
+                "lat": 17.81722,
+                "lon": 83.39083
+              },
+              "price": null
+            },
+            {
+              "order": 16,
+              "name": "Pavurallakonda",
+              "description": "",
+              "wikipedia": "https://en.wikipedia.org/wiki/Pavurallakonda",
+              "coordinates": {
+                "lat": 17.88861,
+                "lon": 83.43722
+              },
+              "price": null
+            },
+            {
+              "order": 17,
+              "name": "Thotlakonda",
+              "description": "A collection of Buddhist monuments at the hilltop. It consists of a Maha Stupa, along with other votive stupas. It has a beautiful beach nearby.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Thotlakonda",
+              "coordinates": {
+                "lat": 17.8264,
+                "lon": 83.4094
+              },
+              "price": null
+            }
+          ],
+          "brief": "1 **Dolphin's Nose Lighthouse**. A lighthouse providing an aerial view of the port and the city. ₹10 for adults .  ( updated Jul 2025 ) \r\n 2 **Kailasagiri** ( 6 km (3.7 mi) away from the city centre ). The ride to this hill offers a spectacular view of the sea. There is a park atop the hill, with a beautiful view of the city, the sea and Eastern Ghats merging into the sea. Sagar Nagar Beach and Rushikonda Beach are on the right and left-hand sides. There is a colossal statue of the couple Shiva and Parvati. One can take a ropeway directly facing the sea and the city. On the hilltop, there is a beautiful toy train offering a tour of nature. Several viewpoints give a pleasant look at nature, especially in the evening, when the city is lit up. This is less commercial than other hill stations and there is less hassle from tourist guides. There are several points from which the beautiful rocky beach down beneath can be seen. This provides spectacular views of sunrise, sunset and the pristine waters. Many movies were shot here. Hillocks in the park, which are about 50 ft (15 m) in elevation, give a beautiful view of the sea, beach road and the beach park. The hilltop includes a children's play area, a doll museum and a couple of eating areas. It has several viewpoints offering wonderful views of the city on one side and winding beaches adjoining green hills on the other side.  ( updated Jul 2025 ) \r\n 3 **Shilparamam Jathara** . A crafts village showcasing and preserving the old, including woodwork, jewellery, clothes and local crafts of rural India. There are 36 stalls where you can buy assorted handicrafts and artwork. There is also an entire village where you can find realistic-looking sculptures of villagers carrying out their traditional crafts.  ( updated Jun 2025 ) \r\n 4 ** Telugu Samskruthika Niketanam ** .  ( updated Apr 2024 ) \r\n Beach Road 5 **Hawa Mahal** . A summer residential palace of the royal family of Jeypore , and one of the most iconic historical buildings of the city. The palace is made of stone with twin octagonal projections on either side. The wooden windows are framed by segmented arched openings and the high Madras roofing within the halls are extensively employed by Burma teak to ensure cool comfort during the scorching hot summers of the coast. The main structure has semi-circular arched verandas and the rectangular wooden windows in the central porch with ventilators leading into the palace. The building has sixteen rooms and a massive hall that hosted dinners and parties for guests.  ( updated Jul 2025 ) \r\n 6 ** INS Kursura Museum ** , RK Beach Rd, Kirlampudi Layout, Chinna Waltair, Pandurangapuram , ☏ +91 89125 63429 . A museum in a decommissioned submarine of the Indian Navy. This is the first of its kind in South Asia. This submarine is one of the earliest submarines procured from Russia. The experience of working in the submarine is explained. The museum is manned by retired naval people. There is a fee to take a camera or video camera inside. ₹40 for adults, ₹20 for children .  ( updated Jul 2025 ) \r\n 7 **Matsya Darshini**, Beach Rd . It has marine and freshwater fish. The exit gate of the aquarium resembles the open mouth of a huge white tipped shark. 'Kala Shrusti', a handicrafts shop, is atop the aquarium.  ( updated Jul 2025 ) \r\n 8 **Sea Harrier Museum**.  ( updated Jun 2025 ) \r\n 9 **TU-142 Aircraft Museum** ( opposite INS Kursura Museum ). This museum houses a decommissioned Tupolev Tu-142 anti-submarine aircraft of Russian origin, which has been restored for the public. It is possible to see the inside of the aircraft, and real engines are displayed. ₹70 for adults, ₹40 for children (4-10) .  ( updated Jul 2025 ) \r\n 10 **UH3H Helicopter Museum** ( Sea King Museum ).  ( updated Jun 2025 ) \r\n 11 **Victory at Sea Memorial** . This is a remembrance of the Victory at Sea in the 1971 Indo-Pakistan war. It is on the Beach Road, opposite the Submarine Museum. There is a fighter plane, a tank and few replicas of missiles kept as exhibits. There is no entry fee and it can be viewed from the road.  ( updated Jun 2025 ) \r\n 12 **Visakha Museum** . It houses the historical treasures and artefacts of Northern Andhra. Collections available for viewing in the museum include ancient armoury, crockery, coins, silk costumes, jewellery, stuffed animals, portraits, manuscripts, letters, diaries, scrapbooks, periodicals and maps.  ( updated Apr 2024 ) \r\n Religious attractions 13 **Panchadharla**.  ( updated Jul 2025 ) \r\n 14 **Ross Hill Church** . A house built by Monsieur Ross in 1864, later converted into a Mother Mary's Church. The pathway to the shrine is strewn with Catholic icons.  ( updated Jun 2025 ) \r\n 15 ** Simhachalam Temple ** . This is an architectural splendour, although some of the sculptures were defaced during the Islamic invasions. The temple inscriptions date the earliest donors to the 10th-11th centuries. The exact date of construction is unknown. It is 15 km from the city and is dedicated to the Narasimha avatar of Lord Vishnu, which is his half-man, half-lion avatar. The temple bears reference to the Chola and Chalukya styles of architecture. It also has a local railway station.  ( updated Apr 2024 ) \r\n 16 **Sri Venkateswara Swamy Temple** , Ross Hill .  ( updated Jun 2025 ) \r\n Buddhist sites Bojjannakonda, Thotlakonda and Bavikonda in and around Visakhapatnam were centres of Buddhism during the second century CE. Several Buddhist monuments such as stupas and chaityas were erected at these places. It is said that some of the corporal relics of the Buddha were preserved at these places. Hence all these places became sacred places.\r\n\n\r\n 17 **Bojjannakonda** . It offers architectural remnants of the Buddhist period, one of the earliest of its class in Southern India. It constitutes one of the most remarkable groups of Buddhist monuments dated from 200 BCE to 700 CE, found during excavations in 1906. On the eastern hill, there are a series of rock-cut caves, numerous groups of monolithic dagobas, standing on rock platform in tiers above each other and, crowning all, a rock-cut stupa with extensive structural remains. On the western side of the eastern hill is a stairway, partly rock-cut and partly structural, which leads up to a large double-storied cave. The cave is entered by a doorway and is flanked on each side by huge dwarapalas. The cave chamber is rectangular in shape and is divided into 20 compartments by four cross rocks of 16 massive pillars. In the centre is the rock-cut stupa standing on a square platform.  ( updated Apr 2024 ) \r\n 18 **Bavikonda** .  ( updated Apr 2024 ) \r\n 19 **Pavurallakonda** .  ( updated Jun 2025 ) \r\n 20 **Thotlakonda** . A collection of Buddhist monuments at the hilltop. It consists of a Maha Stupa, along with other votive stupas. It has a beautiful beach nearby.  ( updated Apr 2024 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "Bheemili Beach",
+              "description": "About 25 km from the city centre and is what used to be a small village also called \"Bheemunipatnam\". Apart from the beach, the village has the remains of a Portuguese church, Dutch cemeteries and a Buddhist Monastery (Pavurallakonda)."
+            },
+            {
+              "name": "Crescent Beach",
+              "description": ""
+            },
+            {
+              "name": "Ramakrishna Beach",
+              "description": "R.K.Beach is the most popular beach in the sense that you can find the locals hanging out during the hot summers, and relatively less hot winters. On weekends and holidays, one can see that the entire beach comes alive, but not in a Western sense where people take a plunge in the water or surf. You can see people dressed in their best clothes, just sitting on the benches, or walking along. Take an evening stroll at RK Beach; it offers good pedestrian tracks, beautiful parks, museums, beaches and some wonderful open-air restaurants."
+            },
+            {
+              "name": "Rushikonda Beach",
+              "description": "11 km away from the city, this has become a popular tourist spot that even the locals frequent. A lot safer to wade into than the R.K. Beach, cradled among hills, this used to be an excellent beach away from the madding crowds. AP Tourism Development Corporation has a beach resort (Punnami) on the hillside overlooking the beach."
+            },
+            {
+              "name": "Sagarnagar Beach",
+              "description": ""
+            },
+            {
+              "name": "Thotlakonda Beach",
+              "description": ""
+            },
+            {
+              "name": "Yarada Beach",
+              "description": "It is perceived as a private beach but actually it is not. Tourists can visit the beach directly or through the village. Yarada is the village behind the dolphin's nose. To go to this beach, a bus facility is available from Scindia junction. Also you can hire a cab to go there. The view of the beach and Vizag city from the top of the Dolphin's nose is memorable. The drive from Scindia to the top of the dolphin nose, dolphin nose to Yarada is really enjoyable."
+            },
+            {
+              "name": "Indira Gandhi Zoological Park",
+              "description": "The zoo is home to native mammals like elephants , one-horned rhinos, tigers , lions, leopards, striped hyenas, dholes, sloth bears, gaurs, sambar deer and rhesus macaques, as well as exotic mammals like hippos, giraffes, zebras and chimpanzees. It also has birds including ostriches, rosy pelicans, grey herons, Indian peafowl and black swans. Furthermore, there are reptiles like crocodiles and gavials."
+            },
+            {
+              "name": "Kondakarla Ava",
+              "description": "A bird sanctuary with a unique and endangered forest."
+            },
+            {
+              "name": "Lumbini Park",
+              "description": "Not to be confused with the one in Central Hyderabad ."
+            },
+            {
+              "name": "Meghadri Gedda Reservoir",
+              "description": ""
+            },
+            {
+              "name": "Tenneti Park",
+              "description": "A coastal park in the city, known for its scenery and recreational amenities. It is named after Tenneti Viswanadham, a freedom fighter and social reformer. Overlooking the Bay of Bengal, the park has views of the sea with the surrounding coastline and the cityscape. Its beauty and luxuriant carpet grass intertwined with concrete pathways make it ideal for romantic couples. Additionally, Tenneti Park is a destination for outdoor activities such as picnics, family outings, and photography, attracting both locals and tourists alike."
+            },
+            {
+              "name": "ACA–VDCA Cricket Stadium",
+              "description": ""
+            },
+            {
+              "name": "VMRDA City Central Park",
+              "description": ""
+            },
+            {
+              "name": "VMRDA Park",
+              "description": ""
+            }
+          ],
+          "brief": "About 25 km from the city centre and is what used to be a small village also called \"Bheemunipatnam\". Apart from the beach, the village has the remains of a Portuguese church, Dutch cemeteries and a Buddhist Monastery (Pavurallakonda).",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Blue Sea Fine Dining",
+              "description": "",
+              "location": null
+            },
+            {
+              "name": "Daspalla Executive Court",
+              "description": "",
+              "location": null
+            },
+            {
+              "name": "Flying Spaghetti Monster",
+              "description": "The 'Flying Spaghetti Monster' a.k.a. FSM is Vizag's first authentic Italian restaurant. Great place with amazing Italian fare. Be sure not to miss out the Chocolate bomb.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Some interesting bars in the city are in the Five Star hotels mentioned above and typically are expensive even by Western standards. The **Park Hotel** has a decent bar - try the Screwdriver. Daspalla has another bar and restaurant called **Dimple** that serves various drinks and can be noisy at time. Two new really cool breweries have opened up in the city.\r\n\n\r\n **Punnami**, near Rishikonda has pub very close to the beach and serves alcohol. \r\n **Vihar**, Near Rishikonda, Opp. GITAM University ( 8 km from the city ). Best hangout place with friends, only concern is it was too far from the city. Even though, worth visiting \"Offshores\" at Vihar. There's an Awesome beach view from the middle of the hill.   \r\n Ironhill brewery- above PMJ Jewellers, Siripuram."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "99 Residency",
+              "description": "",
+              "price": "starting from ₹1,500 per night"
+            },
+            {
+              "name": "Athidhi The Guest House",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "Beach View Guest House",
+              "description": "All rooms face the beach. Wi-Fi available.",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-vijayawada",
+      "name": "Vijayawada",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 16.51667,
+        "lon": 80.61667,
+        "source": "wikidata"
+      },
+      "description": "**Vijayawada** is the second largest city in Andhra Pradesh , India . It is on the banks of the Krishna River, bounded by the Indrakeeladri Hills on the west and the Budameru stream on the north. Its name literally translates to \"The Place of Victory\". It is also known as Bezawada.\r\n\nVijayawada is in Krishna District and is known as the business capital of Andhra Pradesh. It is just 20 km from the state capital Amaravati . It is spread over an area of 61 km² (urban area) with a population of over 1 million people (agglomeration 1.4 million) (2011).",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Vijayawada",
+        "wikipedia": "https://en.wikipedia.org/wiki/Vijayawada",
+        "wikidata": "https://www.wikidata.org/wiki/Q200017"
+      },
+      "distance_km": 511,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Vijayavada",
+        "Vidžajavada",
+        "Bezawada",
+        "Bezwada",
+        "Vidyayavada",
+        "Bezvada"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Krishna_river_near_Vijayawada_Prakasam_Barrage.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vijayawada%20from%20Gandhi%20Hill.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": "NTR Amaravati International Airport",
+          "code": "VGA",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 119573,
+        "content_richness_score": 0.462
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train"
+          ],
+          "nearest_station": {
+            "name": "Vijayawada Junction railway station",
+            "code": null,
+            "wikipedia": "https://en.wikipedia.org/wiki/Vijayawada_Junction_railway_station",
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "Vijayawada Junction railway station",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Vijayawada_Junction_railway_station",
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "1 ** NTR Amaravati International Airport ** ( **VGA **  IATA , Vijayawada Airport ), ☏ +91 86762 52729 . This is an international airport roughly 12 miles (20 km) to the east of Vijayawada. It has only one integrated terminal (although passengers departing on international flights must now complete security, immigration and customs at the interim international terminal first, then go to the main terminal, with a free shuttle and premium check-in available).  ( updated Jan 2016 ) \r\nUnlike major international airports, there is only domestic connectivity from several cities in India. There was only one international flight to Singapore in 2018. There are several hotels close to the airport, including the guest house provided by the Airports Authority of India (AAI).\r\n\nIndiGo connects the city with Bangalore , Delhi , Chennai , Hyderabad , Tirupati , Visakhapatnam and Mumbai . SpiceJet connects the city with Bangalore , Hyderabad and Pondicherry . Air India connects the city with Delhi and Hyderabad .\r\n\n\r\n By train Vijayawada is along the Chennai - Howrah , and Chennai- Delhi rail routes, the largest railway junction of the South Central Railways, and with frequent service to Hyderabad .\r\n\n\r\n 2 **Vijayawada Junction railway station** .  ( updated Apr 2020 )",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "By rickshaw Travel by rickshaw was once the most common mode of transportation in city. It is now rarely seen on the road. If you can find a rickshaw, they are often a good, cheap ride to most locations within the city.\r\n\n\r\n By autorickshaw Not to be confused with a regular rickshaw, these metal and motorized vehicles can take you around the city. Ensure you bargain the fare with the driver before making the trip. There is commonly no meter fitted, so if you don't bargain you might end up paying a lot more based on excuses such as 'there was too much traffic' or 'you didn't know the directions'. There are also pre-paid auto kiosks at the railway station (near the front entrance) and at the bus station, where a policeman or a clerk can give you a printed or written bill for the auto fare, and the driver cannot charge anything more than that amount.\r\n\n\r\n By taxi There are very few car-taxis in Vijayawada. You can, though, call up a cab hire (Jahnavi Car Travels, 0866-2474394) and have the taxi pick you up. Ola Cabs is the latest addition in this sector which allows you to hire a taxi via Android, iOS and Windows applications.\r\n\n\r\n By car There are many car rental companies available.\r\n\n\r\n By bus Most parts of the city and suburbs are knitted together by the bus network run by the APSRTC. A local bus is generally referred to as a 'City bus', and can be boarded at numerous bus-stops spread all across the city. Most bus-stops do not have a timetable displayed, so you have to catch a bus simply by reading the nameplate on the top. Also, during rush hour (which is usually around 8:30AM and 4:30PM and evening rush-hour may continue well until 7.30PM), there is a lot of hassle when a bus halts, as people trying to get on and off the same time. Overcrowded buses can be tedious and suffocating and are best avoided. If you have to take a bus at all, it is better to try boarding one that has enough room inside.\r\n\nYou have to purchase a ticket when you board a bus, and make sure you have the right amount of change with you.\r\n\nThe inter-city bus station is in Krishnalanka, from where state-owned transport corporation APSRTC plies buses to every corner of state. You go to almost any place in the Andhra Pradesh from here.\r\n\nThere are private buses that connect the city with Guntur, Hyderabad, Visakhapatnam, Bangalore, Pune and Tirupati over a comfortable night-journey, though there are also options for the day-traveller. The tickets for these have to be booked at the offices of the operators.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Gandhi Hill",
+              "description": "The first Gandhi Memorial with seven stupas in the country was constructed on this hill at a height of 500 ft (150 m). The 52 ft (16 m) stupa was unveiled on 6 October 1968 by Dr. Zakir Hussain, the President of India. Gandhi Memorial Library, a Sound and Light Show on Mahatma Gandhi's life and a planetarium are the other attractions. A toy train journey will be a memorable experience at that height on the hill.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.52016,
+                "lon": 80.61695
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Krishnaveni Mandapam",
+              "description": "This is in front of Prakasham Barrage. It was constructed by Vijayawada Industrialists &amp; Fertilizers Association. It consists of 4 rooms depicting the story of Krishna River and also statue of Krishnaveni. Krishna River on the bank consists of Bridge Museum, just beside the bus stand. Some more places to visit nearby are Swathantra Samarayodhula Samsthanam which too is beside Pushkar Ghat.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Lenin Statue",
+              "description": "Vijayawada was governed by communists in the 1980s, and Vladimir Lenin and Karl Marx can be found as statues in the city.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Victoria Museum",
+              "description": "A place for archaeology lovers, Victoria Museum has a carefully preserved collection of ancient sculptures, paintings, idols, weapons, cutlery, and inscriptions.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Statue of Social Justice",
+              "description": "Dedicated to Indian polymath, statesman and social reformer B. R. Ambedkar, a father of the Indian Constitution. It's 38 m tall and stands on a 25 m tall base building, making its total height 63 m, the 4th tallest statues in India. It was unveiled by Y. S. Jagan Mohan Reddy, Chief Minister of Andhra Pradesh, on 19 January 2024.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Gunadala Matha Shrine",
+              "description": "In 1925, Rf. Arlati, the Rector of St. Joseph's Orphanage at Gunadala, installed a statue of Our Lady. Later, a church was built and consecrated in 1971 and is known as St. Mary's church. Since then, the Feast of Our Lady of Lourdes has become an annual event, attended by hundreds of people. The church is situated on a hillock on the eastern side of the city.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "Hazarat Bal Mosque",
+              "description": "A holy relic of the Prophet Mohammed is kept here and displayed once a year. A large number of non-Muslims join the celebrations, too.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 8,
+              "name": "Hinkar Thirtha",
+              "description": "Hinkar Thirtha is a Jain temple. It is stated to be the biggest Jain temple in the region.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Kanaka Durga Temple",
+              "description": "This temple is on a hill (Indrakeeladri) overlooking the city and the River Krishna. One can either motor up the _ghat_ road or take the steps on foot. Inscriptions of different dynasties are found in the temple. During the Dasara Festival, thousands of devotees come from the city and its environs throng to the temple after a holy dip in the River Krishna.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 10,
+              "name": "Sri Nagarala Sri Maha Lakshmi Ammavaru Temple",
+              "description": "This temple is in the area of Chiitinagar. During the Dasara Festival, thousands of devotees arrive from the city. It is maintained by the Nagaralu Community.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 11,
+              "name": "Subramanya Swamy Temple",
+              "description": "This temple is on a hill (Indrakeeladri) overlooking the city as well as the River Krishna. One can take to the steps on foot. During Skanda Shashti Festival, thousands of devotees come from the city. Some even come from as far away as Tamil Nadu. This Temple is maintained by the Iddipilli Family.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 12,
+              "name": "Bhavani Island",
+              "description": "Bhavani Island is on Krishna River close to the city. AP Tourism is converting this 133-acre (54-hectare) island into a tourist spot and a river-front resort. The island offers some cottages to stay in and some adventure and fun sports. The journey to the island by boat is very pleasant.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.52311,
+                "lon": 80.57301
+              },
+              "price": null
+            },
+            {
+              "order": 13,
+              "name": "Mogalarajapuram Caves",
+              "description": "These caves are said to have been excavated in the 5th century AD. The caves are reputed to be the first of their kind in South India. The idols of Lord Nataraja, Vinayaka &amp; Arthanareeswara are carved here.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.511,
+                "lon": 80.64
+              },
+              "price": null
+            },
+            {
+              "order": 14,
+              "name": "Prakasam Barrage",
+              "description": "Built across the river Krishna connecting this city with Amaravati , Prakasam Barrage has created a panoramic lake. Its three canals that run through the city give Vijayawada a Venetian look.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Prakasam_Barrage",
+              "coordinates": {
+                "lat": 16.50611,
+                "lon": 80.605
+              },
+              "price": null
+            },
+            {
+              "order": 15,
+              "name": "Rajiv Gandhi Park",
+              "description": "Created by the Vijayawada Municipal Corporation with great care, this park is at the entrance of the city and features an impressive horticultural network. It also has a mini zoo and a musical water fountain.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.50921,
+                "lon": 80.61222
+              },
+              "price": null
+            }
+          ],
+          "brief": "History 1 **Gandhi Hill**. The first Gandhi Memorial with seven stupas in the country was constructed on this hill at a height of 500 ft (150 m). The 52 ft (16 m) stupa was unveiled on 6 October 1968 by Dr. Zakir Hussain, the President of India. Gandhi Memorial Library, a Sound and Light Show on Mahatma Gandhi's life and a planetarium are the other attractions. A toy train journey will be a memorable experience at that height on the hill.   \r\n **Krishnaveni Mandapam** ( River Valley Museum ). This is in front of Prakasham Barrage. It was constructed by Vijayawada Industrialists &amp; Fertilizers Association. It consists of 4 rooms depicting the story of Krishna River and also statue of Krishnaveni. Krishna River on the bank consists of Bridge Museum, just beside the bus stand. Some more places to visit nearby are Swathantra Samarayodhula Samsthanam which too is beside Pushkar Ghat.   \r\n **Lenin Statue**. Vijayawada was governed by communists in the 1980s, and Vladimir Lenin and Karl Marx can be found as statues in the city.   \r\n **Victoria Museum**. A place for archaeology lovers, Victoria Museum has a carefully preserved collection of ancient sculptures, paintings, idols, weapons, cutlery, and inscriptions.   \r\n **Statue of Social Justice** ( Dr. B. R. Ambedkar Memorial ). Dedicated to Indian polymath, statesman and social reformer B. R. Ambedkar, a father of the Indian Constitution. It's 38 m tall and stands on a 25 m tall base building, making its total height 63 m, the 4th tallest statues in India. It was unveiled by Y. S. Jagan Mohan Reddy, Chief Minister of Andhra Pradesh, on 19 January 2024.  ( updated Feb 2024 ) \r\n Religion **Gunadala Matha Shrine**. In 1925, Rf. Arlati, the Rector of St. Joseph's Orphanage at Gunadala, installed a statue of Our Lady. Later, a church was built and consecrated in 1971 and is known as St. Mary's church. Since then, the Feast of Our Lady of Lourdes has become an annual event, attended by hundreds of people. The church is situated on a hillock on the eastern side of the city.  ( updated Jan 2016 ) \r\n **Hazarat Bal Mosque**. A holy relic of the Prophet Mohammed is kept here and displayed once a year. A large number of non-Muslims join the celebrations, too.  ( updated Jan 2016 ) \r\n **Hinkar Thirtha** ( Jain Temple ), Mangalagiri . Hinkar Thirtha is a Jain temple. It is stated to be the biggest Jain temple in the region.  ( updated Jan 2016 ) \r\n **Kanaka Durga Temple**. This temple is on a hill (Indrakeeladri) overlooking the city and the River Krishna. One can either motor up the _ghat_ road or take the steps on foot. Inscriptions of different dynasties are found in the temple. During the Dasara Festival, thousands of devotees come from the city and its environs throng to the temple after a holy dip in the River Krishna.  ( updated Jan 2016 ) \r\n **Sri Nagarala Sri Maha Lakshmi Ammavaru Temple**. This temple is in the area of Chiitinagar. During the Dasara Festival, thousands of devotees arrive from the city. It is maintained by the Nagaralu Community.   \r\n **Subramanya Swamy Temple**. This temple is on a hill (Indrakeeladri) overlooking the city as well as the River Krishna. One can take to the steps on foot. During Skanda Shashti Festival, thousands of devotees come from the city. Some even come from as far away as Tamil Nadu. This Temple is maintained by the Iddipilli Family.   \r\n Scenery 2 **Bhavani Island**. Bhavani Island is on Krishna River close to the city. AP Tourism is converting this 133-acre (54-hectare) island into a tourist spot and a river-front resort. The island offers some cottages to stay in and some adventure and fun sports. The journey to the island by boat is very pleasant.   \r\n 3 **Mogalarajapuram Caves**. These caves are said to have been excavated in the 5th century AD. The caves are reputed to be the first of their kind in South India. The idols of Lord Nataraja, Vinayaka &amp; Arthanareeswara are carved here.   \r\n 4 **Prakasam Barrage** . Built across the river Krishna connecting this city with Amaravati , Prakasam Barrage has created a panoramic lake. Its three canals that run through the city give Vijayawada a Venetian look.   \r\n 5 **Rajiv Gandhi Park**. Created by the Vijayawada Municipal Corporation with great care, this park is at the entrance of the city and features an impressive horticultural network. It also has a mini zoo and a musical water fountain.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "Indira Gandhi Stadium",
+              "description": ""
+            }
+          ],
+          "brief": "",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Hotel Anjaneya Vilas",
+              "description": "This location serves authentic Andhra food in the Kaleswara Rao Market. There can be long lines but the food is often worth it. The thalis are priced around ₹30. Only vegetarian food is served.",
+              "location": null
+            },
+            {
+              "name": "Minerva Coffee Shop",
+              "description": "The Minerva Coffee Shop offers purely vegetarian food.",
+              "location": null
+            },
+            {
+              "name": "Seven Days Café",
+              "description": "There are three locations in Vijayawada: one on Prakasam Road (this one also goes by Sarada foods), not far from Karl Marx Road; one on Museum Road; and the other on Pinnamaneni Polyclinic Road, close to 6th Lane. Serves coffee, cake, and pizza.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "**Café Coffee Day**, M.G. road . Daily . No bathrooms for customers.  ( updated Jan 2016 ) \r\n Vijayawada has a special take on south Indian filter coffee which can be purchased almost anywhere."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-chittor",
+      "name": "Chittor",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 24.88944,
+        "lon": 74.62389,
+        "source": "wikidata"
+      },
+      "description": "**Chittoor** is a city in Andhra Pradesh , India . It is the headquarters of Chittoor district \r\n\nChittoor, very close to the revered temple of lord Balaji or Venkateswara at Tirupati, is also close to two eminent wildlife sanctuaries and the famous Horsley Hills , a famous hill resort named after W.D Horsley.\r\n\nSituated in the valley of the **Ponni river**, Chittoor is a market for grain, sugarcane, and peanuts. Its industries include oilseed and rice milling. **Jaggery** from Aragonda area, a small town near Chittor is famous throughout the country. Chittor is a major place for producing hatcheries and mangoes. The city is surrounded by mango and tamarind groves, and cattle are bred in the area. A district administrative centre, Chittoor was a British military post until 1884.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Chittoor",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chittorgarh",
+        "wikidata": "https://www.wikidata.org/wiki/Q41827"
+      },
+      "distance_km": 1361,
+      "ideal_months": [],
+      "min_days": 1,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 0.6,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Chittorgarh",
+        "Chitor",
+        "Chittorgârh",
+        "Chittaur",
+        "Chittaurgarh",
+        "Surajpur"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chiitaurgarh%20(5089621718).jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 2,
+      "ideal_for_weekend_trip": true,
+      "ideal_leave_block_type": [
+        "2_day_weekend"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.3,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 20191,
+        "content_richness_score": 0
+      },
+      "section_briefs": {
+        "get_in": {
+          "options": [
+            "train",
+            "bus"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By bus From Chennai: Take Route No:144 bus from Chennai Koyembedu Bus Stand (CMBT) or Lalbagh train to Katpadi. There will be\r\nplenty of buses from Katpadi to Chittoor. Try to take a government bus as the private buses stop at too many places during the route.\r\n\nFrom Bangalore: Take any KSRTC (Karnataka State Transport) bus from Bangalore Bus Stand (Majestic) going to Tirupati, Nellore, Vijayawada and Guntur. Get down in CTR. Take any APSRTC (Andhra Pradesh Transport) bus (Bangalore Majestic) going to Tirupati, Nellore, Vijayawada and Guntur. Get down in CTR. **Don't take the private bus \"Kalasipalya\" as there are too many stops**.\r\n\nFrom Hyderabad: Take Kesineni (Volvo), Deepna, JBT, TTS travels by bus from Ameerpet X roads which usually runs everyday, APSRTC buses (7 buses) from MGBS and train is VENKATADRI express starts from Kachiguda at 8:05PM and reaches Chittoor by morning at 9AM.\r\n\nFrom Tirupati: APSRTC buses ply every 10 minutes to and from Chittoor (72 km).\r\n\nFrom Vijayawada, Vizag and Machlipatnam: Take any APSRTC or private bus going to Bangalore. Get down in CTR. Two APSRTC buses one in morning and one in evening starts from Vijayawada to Chittoor and by train you can catch Sheshadri, Hatia, Sabari, or the KK Express to reach Chittoor.\r\n\nKanipakkam: 12 km from Chittoor. For the devotees' convenience there are direct buses to Hyderabad, Vijayawada, Bangalore, Chennai, Nellore and Ananathapur.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [],
+          "brief": "**Church** in church Street \r\n **Darga** near Srinivasa theater \r\n **Deer Park** \r\n **Forest Reserve** \r\n **Masonics Chittoor Sports Stadium ** \r\n **Nutrine Confectionery**---Now **Godrej and Hersheys Foods** \r\n **Sugar Factory** \r\n Temples **Ardhagiri Anjenaya Swamy Temple**, Aragonda 20 km from Chittoor \r\n **Durgamma Gudi**, Greamspet \r\n **Eswar Temple**, Eruvaram \r\n **Hanuman Temple**, near Ponniyamman Temple street \r\n **Lakshmi Narayana Swamy Temple**, Vepanjeri 12 km from Chittoor \r\n **Muthyalamma Temple**, Thenabanda \r\n **Ponniamma Gudi** \r\n **RamulaVari Gudi**, Bazaar Veedhi \r\n **Sai baba Temple**, Kattamanchi \r\n **Shirdi Sai Baba Temple** which is at kattamanchi \r\n **Subramanya Swamy Temple** on Hill \r\n **Puligundlu Temple** on Two Rocks \r\n **Varasiddi Vinayaka Swamy Temple**, Kanipakam 9 km from Chittoor is a very powerful temple in Andhra Pradesh, the lord Vinayaka is _swayambu_ (\"self-manifested\") and is known to be famous for doing justice. \r\n **Venkateswara Temple**, Thangal \r\n **Venkateswara Temple**, Near Govt Hospital \r\n **Vinayaka Temple**, Ram Nagar Colony \r\n Theatres **Ananda** \r\n **Chanakya**, a/c dts \r\n **Gurunatha**, a/c dts \r\n **MSR MovieLand**, dts \r\n **Raghavaa**, a/c dts \r\n **Srinivasa**, a/c dts \r\n **Sri Venkateswara** \r\n **VijayaLakshmi**, a/c dts \r\n **Vivekananda** \r\n Chanakya, VijayaLakshmi, Raghava, and MSR are nice theatres to watch movies.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "Trekking **Bodi konda** - Its near Ramnagar colony and the best landmark to locate is Kings School.It is a great hill to climb. \r\n **Chase pillar** - It is 2 km from B.V. Reddy school in konga reddy palli. It is a very beautiful place to trek. On the way you can see a lake on the hill. This Chase pillar was built by British people in 18th century. On the way to chase pillar we can see camp areas built by British people.b.v.reddy is one of the best schools in town. \r\n **Puligundu** - It is 17 km from Chittoor, on the way to Penumur. This is a tall and huge rock, and it is a challenge to climb this rock. This rock is 2.5 km from Penumur. Penumur is also one of the historical villages. \r\n **Turtle Neck Hill** - It is in Durganagar Colony, Greamspet. The rocks at the top of the hill formed like Turtle Neck. \r\n **Yelampalli forest** - It is 20 km from Chittoor near Aragonda. People go hunting of white pigs and some wild animals in the forest. \r\n Walking There is a walking trail inside Chittoor town.This trail is inside a redsandalwood forest. It is worth walking there. It is near Mesanicals ground. \r\n Kannan College Grounds. Very big ground for morning pleasant walk",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "**Bans Spiritz Bar &amp; Restaurant** (3star). Cell No. 09704771333 \r\n **Blue Heaven restaurants**, Church street \r\n **N.P.S bar and restaurant**, Kongareddypalli opposite the Chittoor tennis club \r\n **N.P.S bar and restaurant**, Naidu buildings \r\n **Nandi bar and restaurant**, beside MSR Movieland theater \r\n **Nirmala bar and restaurant**, Palamaner Road \r\n **Mayuri bar and restaurant**, Bye pass road, Reddigunta"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Hotel Saroj Krishna",
+              "description": "",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-araku",
+      "name": "Araku",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 18.3333,
+        "lon": 82.8667,
+        "source": "wikidata"
+      },
+      "description": "**Araku Valley** is hill station in the North Coast region of Andhra Pradesh in Southern India . It is about 110 km (68 mi) from Visakhapatnam and many travellers visit this town as part of their trip to Visakhapatnam. In 2011, it was home to 57,000 people. It is a coffee plantation, and there is also a honey industry.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Araku_Valley",
+        "wikipedia": "https://en.wikipedia.org/wiki/Araku_Valley",
+        "wikidata": "https://www.wikidata.org/wiki/Q3536505"
+      },
+      "distance_km": 821,
+      "ideal_months": [],
+      "min_days": 1,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 0.6,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Araku Valley"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Araku-valley-4%20big.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 2,
+      "ideal_for_weekend_trip": true,
+      "ideal_leave_block_type": [
+        "2_day_weekend"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.3,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 21627,
+        "content_richness_score": 0.007
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Araku is blessed with enchanting beauty of the hills and greenery, interspersed with streams and rivulets. The morning fog is particularly lovely here. This area is often referred to as Ooty of Andhra. It is a valley in the Eastern Ghats inhabited by several tribes.\r\n\nAraku Valley is definitely not a day trip, but the APTDC facilities can serve as a decent lodging. Book your APTDC rooms early. November to February are the best months to visit and making an early reservation in the lodges is advisable as Araku Valley has few lodges and hotels.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "train",
+            "bus",
+            "car"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By train 1 **Araku railway station** . A slow, passenger train leaves the Vizag station early in the morning (at 6:50AM), and the train ride is enjoyable. Arrive at least an hour before its departure to get a seat. The train runs through small mountains and tunnels. \"Shimiliguda\" railway station, on the route, is the highest railway station in India on broad-gauge track. \r\n\n\r\n By bus There are buses that operate from APSRTC that have a daily tour as well as normal operations.\r\n\n\r\n By car You can also hire a taxi or car for as much as ₹2500 for a round trip and a night stay at Araku.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "Getting around Araku Valley is limited by limited public bus service. At APTDC lodge, cabs can be hired for a day trip through the valley to Borra caves; the ride is amazing.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Aruku valley has coffee plantations, and you can taste their coffee at Aruku valley coffee house near to the bus station in Aruku"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "stay_safe": {
+          "warnings": [],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-nellore",
+      "name": "Nellore",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 14.43333,
+        "lon": 79.96667,
+        "source": "wikidata"
+      },
+      "description": "**Nellore** (also called Simhapuri in previous centuries) is one of the more prominent towns/cities in the State of Andhra Pradesh in Southern India .",
+      "category": "city",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Nellore",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nellore",
+        "wikidata": "https://www.wikidata.org/wiki/Q61434"
+      },
+      "distance_km": 303,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Nelluru",
+        "Vikrama Simhapuri",
+        "Néllúru"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sri_Ranganathaswamy_Temple%2C_Galigopuram%2C_Nellore_(3).jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Chennai",
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Chennai",
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 3,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "shopping",
+          "nightlife",
+          "dining"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 66145,
+        "content_richness_score": 0.214
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Known for its agriculture, and for its educational institutions and business, is coming to terms with its new-found stature as a city. Nellore is fast blossoming into a hub for shipping and rail/road connections, a major port being built at Krishnapatnam. Nellore has been an exporter of Rice, Sugarcane/cane-based products, prawn/shrimp and a varied set of crops. Nellore has expanded enormously over the years, with newer flyovers, roads and highways. It has a rich historical past with the Archeological Department of India findings in places such as Duvvuru.\r\n\nThe weather is typically hot and humid from extensive deforestation in the area. Nellore is about 177 km from Chennai and 500 km from Hyderabad, well connected by rail and road.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus",
+            "car"
+          ],
+          "nearest_station": {
+            "name": "Nellore railway station",
+            "code": null,
+            "wikipedia": "https://en.wikipedia.org/wiki/Nellore_railway_station",
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "Nellore railway station",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Nellore_railway_station",
+              "distance_km": null,
+              "source": "wikivoyage"
+            },
+            {
+              "name": "Nellore South railway station",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Nellore_South_railway_station",
+              "distance_km": null,
+              "source": "wikivoyage"
+            },
+            {
+              "name": "Nellore bus station",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Nellore_bus_station",
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "By plane The nearest airport with vast connectivity to the rest of India and other parts of the world is Chennai (Madras) about 177 km south of Nellore on NH5.\r\nYou also have the Tirupati airport that is about 130 km south-west; however the connectivity to Tirupati airport is limited to Hyderabad, Vishakapatnam and other cities in AP.\r\n\n\r\n By train It takes 3 hr by train from Chennai and 10 hr from Hyderabad. Nellore railway station is on the Howrah-Chennai main line and Chennai-New Delhi rail route,\r\n\n\r\n 1 **Nellore railway station** .  ( updated Mar 2022 ) \r\n 2 **Nellore South railway station** .  ( updated Mar 2022 ) \r\n By car A beautiful and modern four-lane highway connects Nellore to Chennai. It takes about 2.5 hours to reach Nellore from the outskirts Chennai.\r\n\n\r\n By bus There are so many buses connecting Nellore from Chennai and Hyderabad. There are 2 main bus stations available to connect rural areas of district called PSR Bus Station (more recognized as Atmakur bus stand) and RTC Bus Stand. All APSRTC buses to Hyderabad and Chennai start from RTC bus stand. There are also many private luxury bus services available to connect Hyderabad and Chennai from the Railway station area. Buses of Tamil Nadu state road transport corporations start from Madras bus stand very close to the RTC bus stand and they operate mainly to Chennai.\r\n\n\r\n **Nellore bus station** .  ( updated Mar 2022 )",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "—",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Sri Ranganthaswami Temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Ranganatha Temple",
+              "description": "The most famous temple on the southern bank of the River Pennar, the Galigopuram of the temple is 29 m high and has seven gold Kalasams. The most beautiful chamber of the temple is the Addalamantapam (mirror parlor), walled with high-class mirrors arranged at proper angles to reflect only the deity seated in an elevated ornate seat for the Lord in the centre.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            }
+          ],
+          "brief": "Places to visit include temples such as Jonnavada/Narasimhaswamy Temple, Ramalingeswara Temple in Nellore besides several other temples in towns across Nellore district. There is a \"dargah\" called the barah shaheed dargah which is very popular around this part of the world. \r\n\n\r\n **Sri Ranganthaswami Temple**.  ( updated Mar 2022 ) \r\n **Ranganatha Temple**. The most famous temple on the southern bank of the River Pennar, the Galigopuram of the temple is 29 m high and has seven gold Kalasams. The most beautiful chamber of the temple is the Addalamantapam (mirror parlor), walled with high-class mirrors arranged at proper angles to reflect only the deity seated in an elevated ornate seat for the Lord in the centre.  ( updated Mar 2022 ) \r\nOther temples include:\r\n\n\r\n Buchireddy Palyem (Temple), \r\n Golagamudi Venkaya Swamy (Temple), \r\n Narsimaha Konda (Temple), \r\n Jonnvada Kamakshi Temple \r\n Sri Venugopala Swamy Temple \r\n Penchilokana (forest and temple) \r\n Ramatheertham (Beach Temple) \r\nNaidupeta,\r\nSomasila (Dam),\r\nKrishnapatnam (port),\r\nMypadu (Beach),\r\nKoduru (Beach),\r\nPaturu (sarees),\r\nPennar River.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "Don't miss watching movie in Nellore. Nellore has some of the best movie theaters from years.Nartaki, Siri multiplex, complex (krishna, kaveri, kalyani) now remodelled as **S2** are some of the state-of-the-art theaters. It charges ₹80-100 for first class depending on the theatre/screen.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Nellore has got a lot of bars and wine shops. You can find almost all the major varieties of drinks, with some imported types as well."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "stay_safe": {
+          "warnings": [
+            "The traffic here is dangerous for pedestrians due to rash driving by auto-rickshaws and city buses."
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-anantapur",
+      "name": "Anantapur",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 14.68333,
+        "lon": 77.6,
+        "source": "wikidata"
+      },
+      "description": "**Anantapur** is a city in Andhra Pradesh in India with historic forts and temples.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Anantapur",
+        "wikipedia": "https://en.wikipedia.org/wiki/Anantapur",
+        "wikidata": "https://www.wikidata.org/wiki/Q760144"
+      },
+      "distance_km": 190,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Ananthapuram",
+        "Anantapur (stad)",
+        "Anantapuramu"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nandi_Lepakshi_Temple_Hindupur_5.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anantapur%20Clock%20tower%20at%20night.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": null,
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 54964,
+        "content_richness_score": 0.162
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Anantapur has a population of over 500,000 and is well connected by road and rail. It is located between Hyderabad, Bangalore Highway and Railway line. The nearest Airport is at Puttaparty 70 km. Sri Krishnadevaraya University and JNT University are in the city. 200 km south of Anantapur is Bangalore and 350 km north of Anantpur is Hyderabad.\r\n\nThe primary language is Telugu. Getting along with English alone is also not very difficult.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "train",
+            "bus"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "Anantapur is well connected with major cities like Hyderabad, Chennai, Bangalore with regular and frequent train and bus services. \r\n\n\r\n By train You have Garib Rath service to Hyderabad / Bangalore.\r\n\n\r\n By bus Along with the government-operated _**APSRTC**_ bus services, there are many private operators with very good bus services from Hyderabad, Vellore and Bengaluru.\r\n\nAnantapur is well connected with outside city through Road-ways. There are above 8 private travels for Hyderabad (like, SNSMS, Sri Balaji, Kesineni, Diwakar, Ganesh...). Also, many other services to Bengaluru, and many short services to the nearby towns &amp; villages.\r\n\nOne private service running from Kurnool to Vellore Daily, through Anantapur is also there.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "—",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Clock Tower",
+              "description": "The Clock Tower is a historic structure at the centre of Anantapur town, built in memory of martyrs of the Indian freedom movement by the initiative of M. Ramachandra Naidu (then district judge) and other citizens. The height of the Clock Tower is 47 ft (14 m) which signifies the year 1947. The Tower's radius is 15 ft (4.6 m) which signifies the date 15th. The Tower has 8 faces which signifies August, the eighth month of the year.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Clock_Tower,_Anantapur",
+              "coordinates": {
+                "lat": 14.68114,
+                "lon": 77.59625
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Arts college",
+              "description": "to see ancient architecture.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 14.68336,
+                "lon": 77.59592
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "ISKCON Temple",
+              "description": "7 km from town. Built by ISKON in 2008.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 14.71903,
+                "lon": 77.60451
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Cheruvu Katta",
+              "description": "This is holy place both for Hindus and Muslims. All the temples are located at one place (Shirdi Sai Baba, Ayyappa, Ganesh &amp; Hanuman Temples)",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Sarada Temple",
+              "description": "It's a peaceful place and very famous.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 14.65763,
+                "lon": 77.61326
+              },
+              "price": null
+            }
+          ],
+          "brief": "1 **Clock Tower** . The Clock Tower is a historic structure at the centre of Anantapur town, built in memory of martyrs of the Indian freedom movement by the initiative of M. Ramachandra Naidu (then district judge) and other citizens. The height of the Clock Tower is 47 ft (14 m) which signifies the year 1947. The Tower's radius is 15 ft (4.6 m) which signifies the date 15th. The Tower has 8 faces which signifies August, the eighth month of the year.  ( updated Jan 2016 ) \r\n 2 **Arts college** ( center of town ). to see ancient architecture.  ( updated Jan 2016 ) \r\n 3 **ISKCON Temple**, Hare Krishna Land, Somuladoddi, National Highway No.7 . 7 km from town. Built by ISKON in 2008.  ( updated May 2022 ) \r\n **Cheruvu Katta**. This is holy place both for Hindus and Muslims. All the temples are located at one place (Shirdi Sai Baba, Ayyappa, Ganesh &amp; Hanuman Temples)  ( updated Jan 2016 ) \r\n 4 **Sarada Temple**, at SaradaNagar . It's a peaceful place and very famous.  ( updated Jan 2016 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "BlooMoon Restaurant",
+              "description": "An outdoor restaurant."
+            }
+          ],
+          "brief": "An outdoor restaurant.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Bajjis",
+              "description": "Famous restaurant in 1st road, near Police Training College",
+              "location": null
+            },
+            {
+              "name": "Biriyani",
+              "description": "Spice touch",
+              "location": null
+            },
+            {
+              "name": "Dosa",
+              "description": "Famous restaurant in I-Road Gurukrupa hotel, Sujatha Hotel, Indira Priyadarshini Hotel-near Clock Tower.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Nannari (a kind of root beer) and butter milk are the most consumed drinks in summer. Bottles of nannari syrup (₹45/ 750ml bottle ) are usually available at stores."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Nama Residency",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "Naveed Residency",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "SRS Residency",
+              "description": "",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-tirupati",
+      "name": "Tirupati",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 13.65,
+        "lon": 79.42,
+        "source": "wikidata"
+      },
+      "description": "**Tirupati** is the spiritual capital of Andhra Pradesh , India . It is most famous for its **Sri Venkateswara Temple** dedicated to Vishnu, also known as Balaji in Northern India and Govinda in Southern India. The temple is on top of Tirumala hills, while the town is in the foothills. The Tirumala hill has seven peaks (\"Sapthagiri\"), said to represent the seven hoods of Adisesha, the serpent under whose hood Vishnu resides in Vaikuntha.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Tirupati",
+        "wikipedia": "https://en.wikipedia.org/wiki/Tirupati",
+        "wikidata": "https://www.wikidata.org/wiki/Q1436816"
+      },
+      "distance_km": 211,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Tirumala Venkateswara Temple",
+        "Tirumala - Tirupati"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tirupathi_City_and_Tirumala_Hills_View_from_Tirupathi_Railway_station.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tirumala%20090615.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": "Tirupati Airport",
+          "code": "TIR",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "good",
+        "direct_train_available_from_major_cities": [
+          "Bangalore",
+          "Chennai",
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Bangalore",
+          "Chennai",
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 106810,
+        "content_richness_score": 0.403
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Tirupati is in the southern part of Andhra Pradesh , in the Eastern Ghats, a mountain range that runs along the southeastern India. The temple of Venkateswara is on the seventh peak _Venkatachala_. The nearby town called Tiruchanoor (also known as Alamelu-Mangapuram) is covered in this page too.\r\n\nTirupati is considered a major holy city for Hinduism and receives a significant amount of pilgrimage traffic. Many attractions here are geared towards religious tourism.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "car"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By plane 1 ** Tirupati Airport ** ( **TIR **  IATA , Renigunta Airport ), Renigunta Airport Road , ☏ +91 877 227 5354 . This airport is a domestic airport. It is possible to get connecting flights to and from Hyderabad and Chennai airport.  ( updated Jan 2016 ) \r\nThe nearest international airport is in Chennai (** MAA **  IATA ).\r\n\nFrom Chennai airport to Tirupati: _Use this route if you have little luggage and are comfortable walking for short distances (and want to try a cheaper, alternative route to Chennai Central)_. From Chennai airport, you can walk over to the local suburban railway station (Tirusulam, about 5 minutes away) and take a local train to Park Station (₹7, about 30 minutes). Chennai Central is a 5-10 minute walk from Park Station. From Chennai Central, there are frequent long-distance train services to Tirupati.\r\n\n\r\n By train 2 **Tirupati Central**. This is a major railway station in the South-Central Railways system. There are direct trains from nearby metro cities of Bangalore, Chennai , Hyderabad and others.  ( updated Jan 2016 ) \r\nTrains can also be boarded at nearby cities - Renigunta (10 km from Tirupati) and Gudur (100 km). Frequent bus service is available between Tirupati, Renigunta, and Gudur.\r\n\n\r\n By road National Highway NH 205 passes through Renigunta and hence is accessible from Chennai (3-4 hr), Bangalore (at least 5 hours), Hyderabad (10-12 hours) and other nearby cities.\r\n\n\r\n Andhra Pradesh State Road Transport Corporation (APSRTC) - from Hyderabad or from within Andhra Pradesh \r\n Tamil Nadu State Express Transport Corporation [dead link] (SETC) - from Chennai \r\n Karnataka State Road Transport Corporation [dead link] (KSRTC) - from Bangalore \r\n Book your bus tickets to Tirupati from any place in AP (APSRTC Bus Booking) [dead link]",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "It is called Divya Darshan. Take a local bus to Alipiri . You can start the walk from there. The walk way is open all day. It consists of 3550 steps. An average person takes 3-4 hours to reach the top. The last 100 to 200 steps are steep. After the walk you can take a bath at the free bathrooms. You have to deposit the luggage and enter the divya darshan queue.\r\n\nBefore starting climbing steps to the seven hills you can deposit your luggage at Alipiri and take a token, so that the temple authorities will bring the luggage to the top of hills by the time you reach there at free of cost. along the steps way to hills shelter is provided to protect from sun light. further drinking water supply is provided throughout the way. In addition to this there is a zoo park on the way that will please the pilgrims. Those who came to hills by walk have another facility in Darsan also.\r\n\nThere are two step ways to the top of the seven hills. The first one starts from Alipiri at Tirupati as discussed above. The other steps way starts at Srivaari meTTu near chandragiri, the historical fort town. This way is a very short route. An average man can climb all the steps and reach the top within hundred minutes. The temple authorities playing free buses from Alipiri to Srivaari mettu the second steps way.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Chandragiri Fort",
+              "description": "This fort was built in the 11th century. This site features stucco work and abundance natural light. The fort hosts a sound and light show twice a day in English and Telugu. There is a Hanuman Temple at the entrance of the fort.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Chandragiri_Fort,_Andhra_Pradesh",
+              "coordinates": {
+                "lat": 13.58298,
+                "lon": 79.30516
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Govindaraja Swamy Temple",
+              "description": "This temple is a few blocks north from the Tirupati train station.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Govindaraja_Temple,_Tirupati",
+              "coordinates": {
+                "lat": 13.63002,
+                "lon": 79.4162
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Kapila Theertham Falls",
+              "description": "This is a holy waterfall with a temple dedicated to Venkateshwar near its base. To see the full glory of this waterfall, visit during the monsoon season when the falls are at their fullest. It can be a disappointing visit if there is not much water flowing over the falls.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Kapila_Theertham",
+              "coordinates": {
+                "lat": 13.65598,
+                "lon": 79.42098
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Hare Rama Hare Kishna Mandir",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.64691,
+                "lon": 79.414
+              },
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Regional Science Centre",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.64297,
+                "lon": 79.39796
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Sri Kalyana Venkateswara Swamy temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.61084,
+                "lon": 79.32769
+              },
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "Kalyani Dam",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.65699,
+                "lon": 79.26864
+              },
+              "price": null
+            },
+            {
+              "order": 8,
+              "name": "Mukkoti",
+              "description": "This is Sri Agastheeswarar Swamy (Shiva) Temple along with Goddess Aanandavalli. It's near Kaloor village which is around 12 km from Tirupati.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.5972,
+                "lon": 79.3396
+              },
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Srivari Padalu View Point",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.67904,
+                "lon": 79.33309
+              },
+              "price": null
+            },
+            {
+              "order": 10,
+              "name": "Sri Venkateshwara Museum",
+              "description": "The museum features a collection of temple architecture and historical artifacts, such as ancient weaponry, pooja items and idols. It has a photo gallery that gives insight into the region's culture and traditions. It also has a meditation center.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 13.68404,
+                "lon": 79.34321
+              },
+              "price": null
+            },
+            {
+              "order": 11,
+              "name": "Talakona waterfall",
+              "description": "The highest waterfall in Andhra Pradesh, with a 270-feet (82-m) fall. Near the falls is the Lord Siddheswara Swamy Temple.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Talakona",
+              "coordinates": {
+                "lat": 13.81167,
+                "lon": 79.21556
+              },
+              "price": null
+            },
+            {
+              "order": 12,
+              "name": "Venkateswara Temple",
+              "description": "Millions of pilgrims from all over India and abroad visit the temple of Venkateswara throughout the year. It is regarded as one of the most ancient temples. One can avail free meals at the Tarigonda Vengamamba Annaprasadam complex near to temple. The simple meal consists of rice, sambhar (heavily dal/lentil vegetarian soup), chutney, rasam (light soup), and vegetable curry. The temple is one of the most sacred Hindu pilgrimage sites. Dedicated to Lord Venkateswara, an incarnation of Vishnu, the temple has rich history, spiritual significance, and magnificent Dravidian architecture.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Venkateswara_Temple,_Dwaraka_Tirumala",
+              "coordinates": {
+                "lat": 13.68325,
+                "lon": 79.34734
+              },
+              "price": null
+            }
+          ],
+          "brief": "In addition to various shrines scattered all over Tirupati, there are holy water falls, sacred rivers and archaeological wonders.\r\n\n\r\n 1 **Chandragiri Fort** , Chandragiri . This fort was built in the 11th century. This site features stucco work and abundance natural light. The fort hosts a sound and light show twice a day in English and Telugu. There is a Hanuman Temple at the entrance of the fort.  ( updated Jan 2016 ) \r\n 2 **Govindaraja Swamy Temple** , GS Mada St . This temple is a few blocks north from the Tirupati train station.  ( updated Jan 2016 ) \r\n 3 **Kapila Theertham Falls** . This is a holy waterfall with a temple dedicated to Venkateshwar near its base. To see the full glory of this waterfall, visit during the monsoon season when the falls are at their fullest. It can be a disappointing visit if there is not much water flowing over the falls.  ( updated Jan 2016 ) \r\n 4 ** Sri Venkateswara Zoological Park ** , Alipiri- Bypass Road, Thatithopu , ☏ +91 877 224 9235 . Asia's second largest zoo, with an area of 5,500 acres. It is built on the concept of Hindu mythology and exhibits only animals that are mentioned in ancient epics.  ( updated Jan 2016 ) \r\n 5 **Hare Rama Hare Kishna Mandir** ( ISKCON Temple ).   \r\n 6 **Regional Science Centre**.   \r\n 7 **Sri Kalyana Venkateswara Swamy temple** ( Srinivasa Mangapuram ).   \r\n 8 **Kalyani Dam**.   \r\n 9 ** Tiruchanur **. Tiruchanur is the abode of Goddess Padmavathi Devi. It is 5 km from Tirupati.  ( updated Jan 2018 ) \r\n 10 **Mukkoti**. This is Sri Agastheeswarar Swamy (Shiva) Temple along with Goddess Aanandavalli. It's near Kaloor village which is around 12 km from Tirupati.  ( updated May 2016 ) \r\n Tirumala Tirumala is home to the revered Tirumala Venkateswara Temple, managed by the Tirumala Tirupati Devasthanam, which ensures the smooth operation and maintenance of the temple. Nestled atop the Tirumala Hills, the temple attracts millions of devotees annually.\r\n\n\r\n 11 **Srivari Padalu View Point**.  ( updated Jan 2016 ) \r\n 12 **Sri Venkateshwara Museum** ( SV Museum ), Tirumala . The museum features a collection of temple architecture and historical artifacts, such as ancient weaponry, pooja items and idols. It has a photo gallery that gives insight into the region's culture and traditions. It also has a meditation center.  ( updated Jan 2016 ) \r\n 13 **Talakona waterfall** , Sri Venkateswara National Park . The highest waterfall in Andhra Pradesh, with a 270-feet (82-m) fall. Near the falls is the Lord Siddheswara Swamy Temple.  ( updated Jul 2021 ) \r\n 14 **Venkateswara Temple** , S Mada St, Tirumala . Millions of pilgrims from all over India and abroad visit the temple of Venkateswara throughout the year. It is regarded as one of the most ancient temples. One can avail free meals at the Tarigonda Vengamamba Annaprasadam complex near to temple. The simple meal consists of rice, sambhar (heavily dal/lentil vegetarian soup), chutney, rasam (light soup), and vegetable curry. The temple is one of the most sacred Hindu pilgrimage sites. Dedicated to Lord Venkateswara, an incarnation of Vishnu, the temple has rich history, spiritual significance, and magnificent Dravidian architecture.  ( updated Jan 2016 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "Visit the Sri Varahaswami temple before taking the darshan of Sri Venkateswaraswami. As per traditions and legend, Varahaswami owned the seven hills and agreed to give them to Sri Venkateswaraswami with the stipulation that he too is worshiped. Therefore, Sri Venkateswaraswami asked his pilgrims to visit the Sri Varahaswami temple before visiting him. \r\n Carry extra locks for your vehicle and rooms.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Indian Coffee House",
+              "description": "",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Tirupati is a pilgrimage town. People on pilgrimage don't drink or eat meat (non-vegetarian food) including egg and fish. Consumption of liquor is prohibited in Tirumala. Smoking is not allowed in Tirumala.\r\n\nFor drinking it is advisable to use bottled mineral water only as the water available here might be sour in taste. As mentioned in the later section, the laddu of Tirupati is considered to be \"nearly\" as famous as the deity himself.\r\n\n\r\n **Taj Tirupati** \r\n **Bhimas** \r\n **Mayura** \r\n **Ekante Bliss**"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-guntur",
+      "name": "Guntur",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 16.3,
+        "lon": 80.45,
+        "source": "wikidata"
+      },
+      "description": "**Guntur** is a major city in the Indian state of Andhra Pradesh , close to the state capital Amaravati , 65 km (40 mi) West of Bay of Bengal. In ancient times, the city was referred as \"Garthapuri\". Its estimated population is around 700,000.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Guntur",
+        "wikipedia": "https://en.wikipedia.org/wiki/Guntur",
+        "wikidata": "https://www.wikidata.org/wiki/Q3120966"
+      },
+      "distance_km": 481,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Gunturu",
+        "Guntur district",
+        "Garthapuri"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NTR_Bus_Station_Bepartye_Block.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pleasant%20Valley%2C%20Guntur.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": null,
+          "code": "VGA",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": [
+          "Hyderabad"
+        ]
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 105222,
+        "content_richness_score": 0.396
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus"
+          ],
+          "nearest_station": null,
+          "stations": [],
+          "brief": "By plane The nearest airport is in Vijayawada (** VGA **  IATA ), which takes about two hours to reach by bus.\r\n\n\r\n By train There are two railway stations serving the city, namely 1 ** Guntur Junction    SCoR**  and 2 ** New Guntur    SCoR**  . The former is reserved for long-distance trains while the latter is reserved for passenger and local trains.\r\n\nGuntur has long-distance service from many cities, including Hyderabad , Chennai , Bangalore , Kochi , Howrah , Puri , Visakhapatnam , Lucknow , Delhi , Jammu and Tirupati . See the Indian Railway site for detailed schedule and pricing information. It's also possible to travel to nearby Vijayawada , which is connected to even more destinations, and change to a local train for the last leg. Local trains are plentiful and connect Guntur, Vijayawada, Tenali and numerous smaller towns in between.\r\n\n\r\n By bus Local city buses are run by state owned APSRTC and also private City buses are also there. They cover not only the entire city region, but also the suburban and near by rural areas with a bit low frequency.\r\n\n\r\n Deluxe buses travel to longer distances with in the state as well outside the state, for example to Hyderabad and Bangalore . \r\n Private buses -- many private buses travel across the region covering both center city, suburban and rural areas. But the draw back of the private buses is that they don't maintain good schedules. \r\n Parking in the city is improving. It may be easy to park two wheelers, but finding parking for Cars bit harder. Generally parking is provided by the city government as well as the business owners.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "—",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Bhattiprolu",
+              "description": "Formerly the Kingdom of Prati Palaputra, appears to be the earliest-known kingdom in the region.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Bhattiprolu",
+              "coordinates": {
+                "lat": 16.1,
+                "lon": 80.78
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Kondaveedu Fort",
+              "description": "This historical fort was built during the reign of the Reddy kings in the 14th century CE. There are 21 structures in the fort. The ruins of the fort located on the hilltop offer unravelled mysteries to the tourist. A place of natural scenic beauty with natural wonders it is an ideal place for trekking. The Gopinatha temple and Kathulabave at the foot of the hillock, numerous temples, residential structures, pillared halls on the hill and the entrance gateways on the east and west sides are the attractions at Kondavidu.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Kondaveedu_Fort",
+              "coordinates": {
+                "lat": 16.2597,
+                "lon": 80.2653
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Guthikonda Caves",
+              "description": "Kotappakonda, the temporal abode of Trikoteswara Swamy, is a village, 40 km (25 miles) southwest of Guntur City near Narsaraopet. Its original name is Kondakavuru, but is more popularly known as Kotappakonda or Trikutaparvatham, a three-peaked hill nearby. Though surrounded by other hills, the three hills, also known by the names of Trikutachalam or Trikutadri, can be distinctly seen from a distance from any direction. The three peaks are named after the Hindu Triumvirate, Brahma, Vishnu and Maheswara. Guthikonda, popularly known as Dakshina Kasi, is located near Narasaraopeta. The Guthikonda Caves are a place of deep mystery attracting many tourists to explore.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.39589,
+                "lon": 79.8264
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Jinnah Tower",
+              "description": "The water here is used for crocodile breeding.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Jinnah_Tower",
+              "coordinates": {
+                "lat": 16.29346,
+                "lon": 80.44753
+              },
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Uppalapadu Nature Conservation",
+              "description": "The water tanks in the village are unique as they provide refuge to many species birds including endangered Spot-Billed Pelicans and Painted Storks. The bird population in these tanks used to be around 12,000, although lately only about 7,000 birds roost in this dwindling habitat through the year.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.30676,
+                "lon": 80.51294
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Garikapadu",
+              "description": "A small village in Jaggayyapeta Mandal, in the Khammam district. It is near Madhira and Wyra. It has approximately 1000 houses, which includes the 700 houses of Kammas (Chowdaries) and 150 houses of members of Scheduled Castes and 150 houses of members of Scheduled Tribes from the lower castes. About 80% of the lands are owned by the Kammas. They take the help of people from lower caste. This is the main resources of earning for the people of lower caste. One of the main incomes in the village is milk from buffalos. A unique thing about the village is its water system. Britishers dug the big canal from Vijayawada to Madras. “Krista kaluva” canal, originally named “Bakim Ham” Canal, is 480 km long. In this canal 2 cusecs of water will pass, the total cultivated land depends on this canal.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Garikapadu",
+              "coordinates": {
+                "lat": 16.33495,
+                "lon": 79.70072
+              },
+              "price": null
+            }
+          ],
+          "brief": "Ancient &amp; archaeological 1 **Bhattiprolu** ( 20 miles (32 km) southwest of the city ). Formerly the Kingdom of Prati Palaputra, appears to be the earliest-known kingdom in the region.   \r\n 2 **Kondaveedu Fort** ( 17 miles (27 km) from Guntur City ). This historical fort was built during the reign of the Reddy kings in the 14th century CE. There are 21 structures in the fort. The ruins of the fort located on the hilltop offer unravelled mysteries to the tourist. A place of natural scenic beauty with natural wonders it is an ideal place for trekking. The Gopinatha temple and Kathulabave at the foot of the hillock, numerous temples, residential structures, pillared halls on the hill and the entrance gateways on the east and west sides are the attractions at Kondavidu.  ( updated Nov 2023 ) \r\n 3 **Guthikonda Caves**. Kotappakonda, the temporal abode of Trikoteswara Swamy, is a village, 40 km (25 miles) southwest of Guntur City near Narsaraopet. Its original name is Kondakavuru, but is more popularly known as Kotappakonda or Trikutaparvatham, a three-peaked hill nearby. Though surrounded by other hills, the three hills, also known by the names of Trikutachalam or Trikutadri, can be distinctly seen from a distance from any direction. The three peaks are named after the Hindu Triumvirate, Brahma, Vishnu and Maheswara. Guthikonda, popularly known as Dakshina Kasi, is located near Narasaraopeta. The Guthikonda Caves are a place of deep mystery attracting many tourists to explore.   \r\n City centre Guntur is known for its modest city centre, business district and residential areas. To name a few, Center of Brodipet and Arundelpet, 4 **Jinnah Tower** , 5 **Naaz Center** , 6 **Inner Ring Road** , Outer Ring Road, and 7 **Old Guntur** . 8 **Brindavan Gardens** is one of the famous residential areas. 9 **Manasa Sarovar** is like the Central Park for Guntur City. Located on the eastern part of the city, it is one of the man-made parks located in Guntur. Managed by the GMC and UDA together.\r\n\n\r\n Nature 10 **Ethipothala Falls** ( 11 km (7 miles) from Nagarjuna Sagar ). The water here is used for crocodile breeding.   \r\n 11 **Uppalapadu Nature Conservation** ( The southern part of the Guntur City (4 miles) ). The water tanks in the village are unique as they provide refuge to many species birds including endangered Spot-Billed Pelicans and Painted Storks. The bird population in these tanks used to be around 12,000, although lately only about 7,000 birds roost in this dwindling habitat through the year.   \r\n Spiritual **Viswa Nagar**. southwest of the City near Chowdavaram (10 miles/16 km), easily accessible using the GNT-Chennai Express way (NH5). This is the place of Sri Viswayogi Viswamji and the Universal Integration Pillar. It is an envisioned symbol of oneness of humanity. Also located here is the VIMS/Viswayogi Institute of Medical Sciences (Mother and Child Care Hospital). \r\n Famous temples and other shrines **Temple of Chaturmukha Brahma Lingeswaralayam** 8 miles (13 km) to the center city of Guntur. It is one of rare temples of India built for Lord Brahma. \r\n **Sri Anjaneya Swamy Temple** at Ponnuru (which has large idols) and Kothapet. \r\n **Sri Bhavanarayanaswamy Temples** at Bapatla (built at the time of Shri Krishna Deva Raya) and Ponnuru. \r\n **Temple at Ramalingeswara Agraharam**. It has old inscriptions dating to 1000 years ago. \r\n **Kakani Malleswara Swamy Temple** at Pedda Kakani built during the era of Krishnadevaraya. \r\n Nearby 12 **Garikapadu** . A small village in Jaggayyapeta Mandal, in the Khammam district. It is near Madhira and Wyra. It has approximately 1000 houses, which includes the 700 houses of Kammas (Chowdaries) and 150 houses of members of Scheduled Castes and 150 houses of members of Scheduled Tribes from the lower castes. About 80% of the lands are owned by the Kammas. They take the help of people from lower caste. This is the main resources of earning for the people of lower caste. One of the main incomes in the village is milk from buffalos. A unique thing about the village is its water system. Britishers dug the big canal from Vijayawada to Madras. “Krista kaluva” canal, originally named “Bakim Ham” Canal, is 480 km long. In this canal 2 cusecs of water will pass, the total cultivated land depends on this canal.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "Visit Guntur mirch (red chilly) yard, which is the biggest in Asia.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [
+            {
+              "name": "Ananda Bhavan Hotel",
+              "description": "Well-known for tasty and delicious vegetarian meals, and tiffins. Andhra style meals are famous.",
+              "location": null
+            },
+            {
+              "name": "Hotel Surya Mahabodhi",
+              "description": "Famous for its delicacies. Especially the Vada Sambar variety they serve is a feast for your appetite. Also don't forget to taste Guntur Mirchi Bajji. You may get it elsewhere in AP also but the taste that you get in Guntur is absolutely matchless. Two more restaurants namely Nakshatra (a 3-star hotel, located at Lakshmipuram main road) and Grand Nagarjuna are very famous in Guntur.",
+              "location": null
+            },
+            {
+              "name": "Bismillah Biryani Point",
+              "description": "This hotel serves authentic Guntur biryani. Its mutton biryani is special and its chicken biryani is also worthwhile. Also try side dishes of mutton and chicken.",
+              "location": null
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "1 **Tonique Restaurant &amp; Bar**, JKC College Rd, Bapaiaha Nagar . Daily 10AM-11PM . Known for its cocktails. Has separate areas for smokers and non-smokers.  ( updated Feb 2022 )"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-amaravati",
+      "name": "Amaravati",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 16.5275,
+        "lon": 80.4681,
+        "source": "wikidata"
+      },
+      "description": "**Amaravati** or **Amaravathi** (అమరావతి) is the capital of the state of Andhra Pradesh in Southern India .",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Amaravati",
+        "wikipedia": "https://en.wikipedia.org/wiki/Amaravati",
+        "wikidata": "https://www.wikidata.org/wiki/Q19881964"
+      },
+      "distance_km": 502,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Amaravati city"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Night_view_of_Prakasam_Barrage.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Highcourt%20of%20AP.jpg?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": "NTR Amaravati International Airport",
+          "code": "VGA",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": null,
+        "direct_train_available_from_major_cities": [],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 4,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "3_day_bridge",
+        "4_day_extended"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.7,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 43958,
+        "content_richness_score": 0.111
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "Amaravati is a planned capital city established in 2015. It was established as the seat of government of Andhra Pradesh in 2019. However, the state government passed an act in 2020 to establish three capital cities in AP for inclusive development of all the regions.\r\n\nIts name was derived from the historic town named Amaravathi, which is also covered in this article. The region was once a capital of the Satavahana dynasty. The city is located on the banks of Krishna River and the capital region of the city is spread over the districts of Krishna and Guntur.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "train",
+            "bus"
+          ],
+          "nearest_station": {
+            "name": "NTR Amaravati International Airport",
+            "code": null,
+            "wikipedia": null,
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "NTR Amaravati International Airport",
+              "code": null,
+              "wikipedia": null,
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "By plane The nearest airport is NTR Amaravati International Airport (** VGA **  IATA ) in Vijayawada .\r\n\n\r\n By train Amaravati does not have any railway station of its own. The most convenient way is to arrive at the railway station in nearby Vijayawada and then continue by bus or taxi. Some trains call at 1 ** Krishna Canal Junction    SCR**  , a few kilometres east of Amaravati.\r\n\n\r\n By bus **APSRTC** runs bus services from Vijayawada, Guntur, Mangalagiri, Sattenapalle, Piduguralla, Narasaraopet and Hyderabad to Amaravathi Bus Station.",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "Otherwise, you can get around by taxi, personal car, auto-rickshaw or on foot. Alternatively, motorbiking/bicycle motorbiking or cycling in downtown and busy areas can often be quicker than taking the auto-rickshaw or a taxi.\r\n\n\r\n By car Parking in the city is improving. It may be easy to park two wheelers, but finding parking for cars is a bit harder. Generally parking is provided by the city administration as well as the business owners.",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Amareswara Temple",
+              "description": "Serves Lord Amareswara, has a history of about 2000 years.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Dhyana Buddha Statue",
+              "description": "This 38 m (125 ft) tall statue of the Buddha in a meditative (Dhyana) position was completed in 2015 to celebrate the Buddhist heritage of the city in ancient times.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Dhyana_Buddha_statue",
+              "coordinates": {
+                "lat": 16.5789,
+                "lon": 80.3531
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Prakasam Barrage",
+              "description": "Built across the river Krishna connecting this city with Vijayawada , Prakasam Barrage has created a panoramic lake.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Prakasam_Barrage",
+              "coordinates": {
+                "lat": 16.50611,
+                "lon": 80.605
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Sitanagaram",
+              "description": "on the banks of river Krishna with a vast sandy beach for recreation and leisure. The famous Someswara Swamy temple is situated here. According to the legend, Lord Rama wept here for Sita when she was abducted by Ravana, hence the name Sitanagaram.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 16.49368,
+                "lon": 80.609
+              },
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Undavalli Caves",
+              "description": "These caves are said to have been carved in the 7th century AD. Buddhist monks used this two-storeyed cave structure as a rest house during the monsoon. A huge monolith of the Lord Anantha Padmanabha Swamy in reclining posture is a magnificent sight.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Undavalli_Caves",
+              "coordinates": {
+                "lat": 16.49667,
+                "lon": 80.58168
+              },
+              "price": null
+            }
+          ],
+          "brief": "**Amareswara Temple** ( 2 km (1.2 mi) form Amaravathi Bus Station ). Serves Lord Amareswara, has a history of about 2000 years.  ( updated Jun 2023 ) \r\n 1 **Dhyana Buddha Statue** ( 3 km from bus station ). This 38 m (125 ft) tall statue of the Buddha in a meditative (Dhyana) position was completed in 2015 to celebrate the Buddhist heritage of the city in ancient times.  ( updated Mar 2021 ) \r\n 2 ** Lakshmi Narasimha Temple ** , Mangalagiri . One of the eight sacred places of Lord Vishnu in India. It is also known for being one of the eight mahakshetras Narasimha in India. The hill where the temple is on used to be an active volcano. It is at an altitude of 30 m (98 ft) above the sea level. Here at the temple, jaggery water is offered to the lord by the devotees. According to the ancient scriptures, the lord has been worshipped since Satya Yuga (The first of the four yugas). In the downhill, there is another temple dedicated to Lakshmi Narasimha Swamy. It is said that Yudhishthira (Dharmaraju, the eldest of the Pandavas) installed the main deity in this temple. The temple has a very tall tower with a beautiful sculpture, which has 11 stairs.  ( updated Jul 2023 ) \r\n 3 **Prakasam Barrage** . Built across the river Krishna connecting this city with Vijayawada , Prakasam Barrage has created a panoramic lake.   \r\n 4 **Sitanagaram** ( 16 miles (26 km) northeast of Guntur City ). on the banks of river Krishna with a vast sandy beach for recreation and leisure. The famous Someswara Swamy temple is situated here. According to the legend, Lord Rama wept here for Sita when she was abducted by Ravana, hence the name Sitanagaram.   \r\n 5 **Undavalli Caves** . These caves are said to have been carved in the 7th century AD. Buddhist monks used this two-storeyed cave structure as a rest house during the monsoon. A huge monolith of the Lord Anantha Padmanabha Swamy in reclining posture is a magnificent sight.",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [
+            {
+              "name": "Bhavani Island",
+              "description": "Bhavani Island is on Krishna River close to the city. AP Tourism is converting this 133-acre (54-hectare) island into a tourist spot and a river-front resort. The island offers some cottages to stay in and some adventure and fun sports. The journey to the island by boat is very pleasant."
+            },
+            {
+              "name": "Old Museum",
+              "description": "Contains ruins of **Mahachaithya**."
+            },
+            {
+              "name": "Archaeology Museum",
+              "description": ""
+            },
+            {
+              "name": "Pedavadlapudi",
+              "description": "A sixth-century town, used to be famous for oranges. Now, it is very famous for curry leaves. Few believe that the farmers from this village are able to make a living earning hundreds of thousands from the curry leaves. Other crops like rice, cauliflower, bananas, flowers, and vegetables are the main crops. The village contains 75% Hindus, but there are also Muslims and other religions."
+            }
+          ],
+          "brief": "Bhavani Island is on Krishna River close to the city. AP Tourism is converting this 133-acre (54-hectare) island into a tourist spot and a river-front resort. The island offers some cottages to stay in and some adventure and fun sports. The journey to the island by boat is very pleasant.",
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "1 **Pragathi Wines**, Amaravathi Rd . Daily 10AM-9PM .  ( updated Jul 2022 )"
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    },
+    {
+      "slug": "andhrapradesh-kurnool",
+      "name": "Kurnool",
+      "region": "",
+      "state": "Andhra_Pradesh",
+      "coordinates": {
+        "lat": 15.82222,
+        "lon": 78.035,
+        "source": "wikidata"
+      },
+      "description": "**Kurnool** is a city in Rayalaseema , Andhra Pradesh state. It is home to the 16th-century Konda Reddy Fort.",
+      "category": "destination",
+      "best_time_to_visit": {
+        "text": "",
+        "months": [],
+        "season": null
+      },
+      "links": {
+        "wikivoyage": "https://en.wikivoyage.org/wiki/Kurnool",
+        "wikipedia": "https://en.wikipedia.org/wiki/Kurnool",
+        "wikidata": "https://www.wikidata.org/wiki/Q3635276"
+      },
+      "distance_km": 321,
+      "ideal_months": [],
+      "min_days": 2,
+      "weather_snippet": null,
+      "vibe": "Sightseeing",
+      "metadata": {
+        "extracted_at": "2026-02-27T11:54:48.837Z",
+        "sources": [
+          "wikivoyage",
+          "wikidata",
+          "wikipedia"
+        ],
+        "quality_score": 1,
+        "last_verified": null
+      },
+      "alt_names": [
+        "Kurnul"
+      ],
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Andhra_chicken_fry.jpg?width=1024",
+          "caption": null,
+          "source": "wikivoyage"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/23%20-%20Telugu%20Talli%20Statue%20with%20Kondareddy%20Buruju%20as%20background.JPG?width=1024",
+          "caption": null,
+          "source": "wikidata"
+        }
+      ],
+      "climate_profile": null,
+      "travel_access": {
+        "nearest_airport": {
+          "name": "Kurnool Airport",
+          "code": "KJB",
+          "distance_km": null
+        },
+        "nearest_railway_station": {
+          "name": null,
+          "distance_km": null
+        },
+        "road_access_quality": "excellent",
+        "direct_train_available_from_major_cities": [
+          "Bangalore",
+          "Chennai",
+          "Hyderabad"
+        ],
+        "direct_flight_available_from_major_cities": []
+      },
+      "safety_profile": {
+        "general_safety_score": 4,
+        "has_medical_facilities_nearby": false,
+        "requires_permit": false,
+        "wildlife_caution": false
+      },
+      "crowd_profile": {
+        "peak_crowd_months": [],
+        "festival_risk_dates": null
+      },
+      "recommended_max_days": 5,
+      "ideal_for_weekend_trip": false,
+      "ideal_leave_block_type": [
+        "4_day_extended",
+        "5_day_plus"
+      ],
+      "activity_profile": {
+        "primary_activities": [
+          "sightseeing",
+          "exploration",
+          "heritage"
+        ],
+        "activity_density_score": 0.9,
+        "requires_advance_booking": false
+      },
+      "ranking_signals": {
+        "wikivoyage_content_bytes": 73843,
+        "content_richness_score": 0.25
+      },
+      "section_briefs": {
+        "understand": {
+          "brief": "This district derives its name from its chief town, Kurnool, the capital of former Nawabs, capital of Andhra Pradesh State from 1953 to 1956, and now the headquarters of the district.",
+          "source": "wikivoyage"
+        },
+        "get_in": {
+          "options": [
+            "plane",
+            "bus"
+          ],
+          "nearest_station": {
+            "name": "Kurnool Airport",
+            "code": null,
+            "wikipedia": "https://en.wikipedia.org/wiki/Kurnool_Airport",
+            "distance_km": null,
+            "source": "wikivoyage"
+          },
+          "stations": [
+            {
+              "name": "Kurnool Airport",
+              "code": null,
+              "wikipedia": "https://en.wikipedia.org/wiki/Kurnool_Airport",
+              "distance_km": null,
+              "source": "wikivoyage"
+            }
+          ],
+          "brief": "Kurnool is on NH7 and is well connected to major towns and cities. Kurnool is 210 km from Hyderabad , 365 km from Bangalore and 487 km from Chennai . By bus, it takes 5 hours from Hyderabad, 8-9 hours from Bangalore and 12 hours from Chennai to reach Kurnool. There are few trains to Kurnool from both Bangalore and Hyderabad.\r\n\n\r\n By plane 1 **Kurnool Airport** ( **KJB **  IATA ), NH 40 . Also known as Orvakal Airport and Uyyalawada Narasimha Reddy Airport, IndiGo is the only airline that flies directly to Kurnool, from Bangalore , Chennai and Visakhapatnam .  ( updated Feb 2024 )",
+          "source": "wikivoyage"
+        },
+        "get_around": {
+          "brief": "—",
+          "source": "wikivoyage"
+        },
+        "see": {
+          "itinerary": [
+            {
+              "order": 1,
+              "name": "Anjanaya Statue, Jagannatha Hill",
+              "description": "Located in the outskirts of Kurnool (5 km).",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 15.7392,
+                "lon": 78.03474
+              },
+              "price": null
+            },
+            {
+              "order": 2,
+              "name": "Ayyappa Swamy Temple",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 15.46229,
+                "lon": 78.16063
+              },
+              "price": null
+            },
+            {
+              "order": 3,
+              "name": "Konda Reddy Fort",
+              "description": "Remains of old Kurnool Fort.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Konda_Reddy_Fort",
+              "coordinates": {
+                "lat": 15.83356,
+                "lon": 78.04865
+              },
+              "price": null
+            },
+            {
+              "order": 4,
+              "name": "Kotla Vijaya Bhaskar Reddy",
+              "description": "Ghat on the banks of Hundri River in Kurnool Town, named after the former Chief Minister of Andhra Pradesh state.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 15.82418,
+                "lon": 78.03738
+              },
+              "price": null
+            },
+            {
+              "order": 5,
+              "name": "Kurnool Archaeological Museum",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 15.82468,
+                "lon": 78.03932
+              },
+              "price": null
+            },
+            {
+              "order": 6,
+              "name": "Orvakal Rock Garden",
+              "description": "Small park with igneous rock formations and a cave museum. This site was used in the making of several Indian movies.",
+              "wikipedia": "https://en.wikipedia.org/wiki/Orvakal_Rock_Garden,_Kurnool",
+              "coordinates": {
+                "lat": 15.69163,
+                "lon": 78.15253
+              },
+              "price": null
+            },
+            {
+              "order": 7,
+              "name": "RajaVihar Center",
+              "description": "",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            },
+            {
+              "order": 8,
+              "name": "Shirdisai Baba Temple",
+              "description": "The premises of the temple are very pleasant.",
+              "wikipedia": null,
+              "coordinates": {
+                "lat": 15.47753,
+                "lon": 77.40358
+              },
+              "price": null
+            },
+            {
+              "order": 9,
+              "name": "Tungabhadra River Banks",
+              "description": "There are many temples along the banks of the Tungabhadra River. This river is heavily polluted. It flows through three states: Andhra Pradesh, Telangana and Karnataka.",
+              "wikipedia": null,
+              "coordinates": null,
+              "price": null
+            }
+          ],
+          "brief": "7392 78.03474 1 **Anjanaya Statue, Jagannatha Hill**. Located in the outskirts of Kurnool (5 km).   \r\n 2 **Ayyappa Swamy Temple**.   \r\n 3 **Konda Reddy Fort** ( Kondareddy Burj ). Remains of old Kurnool Fort.   \r\n 4 **Kotla Vijaya Bhaskar Reddy**. Ghat on the banks of Hundri River in Kurnool Town, named after the former Chief Minister of Andhra Pradesh state.   \r\n 5 **Kurnool Archaeological Museum**.   \r\n 6 **Orvakal Rock Garden** ( Oravakallu Rock Garden ). Small park with igneous rock formations and a cave museum. This site was used in the making of several Indian movies.   \r\n **RajaVihar Center**.   \r\n 7 **Shirdisai Baba Temple** ( Shirdi Sai Baba Temple ) ( near the old bus stand, 2 km from Kurnool APSRTC bus stand ). The premises of the temple are very pleasant.  ( updated Jan 2019 ) \r\n **Tungabhadra River Banks**. There are many temples along the banks of the Tungabhadra River. This river is heavily polluted. It flows through three states: Andhra Pradesh, Telangana and Karnataka.  ( updated Jan 2019 )",
+          "source": "wikivoyage"
+        },
+        "do": {
+          "activities": [],
+          "brief": "Swimming in Mahanandi Kolanu. Here the water is very pure and clean. \r\n Very big rock marble of Vrishab at temple premises.",
+          "source": "wikivoyage"
+        },
+        "eat": {
+          "items": [],
+          "source": "wikivoyage"
+        },
+        "drink": {
+          "items": [
+            {
+              "name": "Local drinks",
+              "description": "Lassi at Babar Lassi shop near Gadiyaram Hospital and Dilbahar near Lal Masjid is really worth trying. \r\n Nannari is a drink consumed cold made from a local herb with medicinal properties. Eswar Soda shop near Shroff Bazar is famous for this."
+            }
+          ],
+          "source": "wikivoyage"
+        },
+        "sleep": {
+          "items": [
+            {
+              "name": "Hotel DVR, Near Children park",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "Hotel Maurya Inn",
+              "description": "",
+              "price": null
+            },
+            {
+              "name": "Hotel Rajvihar",
+              "description": "",
+              "price": null
+            }
+          ],
+          "source": "wikivoyage"
+        }
+      },
+      "image_override": null
+    }
+  ]
+}

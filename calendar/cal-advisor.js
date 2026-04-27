@@ -6,6 +6,7 @@
   var CAL_DONE_KEY  = 'holidayHacker_calSetup';
   var ADVISOR_SEEN_KEY = 'holidayHacker_advisorSeen';
   var SELECTED_BRIDGES_KEY = 'holidayHacker_selectedBridges';
+  var CONFIRMED_TRIPS_KEY = 'holidayHacker_confirmedTrips';
   var DB_BASE       = '../database/holiday';
   var SC_JSON       = '../database/state-city/data.json';
 
@@ -18,11 +19,91 @@
   var splitHandle   = document.getElementById('calSplitHandle');
   var splitBottom   = document.getElementById('calSplitBottom');
   var advisorMsgs   = document.getElementById('advisorMessages');
+  var advisorReopenBtn = document.getElementById('calAdvisorReopenBtn');
 
   var user, stateData = { states: [] };
   var workHolidays = [];
   var DELAY = 1000;
   var MAX_WAIT = 3000;
+  var advisorStarted = false;
+  var advisorFlowInstant = false;
+
+  function getAnnualLeavesBudget(u) {
+    if (!u) return 0;
+    if (u.annualLeaves != null && u.annualLeaves !== '') return parseInt(u.annualLeaves, 10) || 0;
+    return parseInt(u.pendingLeaves, 10) || 0;
+  }
+
+  function getLeavesUsedFromConfirmedTrips() {
+    try {
+      var trips = JSON.parse(localStorage.getItem(CONFIRMED_TRIPS_KEY) || '[]');
+      return trips.reduce(function (s, t) {
+        return s + (parseInt(t.leaves, 10) || 0);
+      }, 0);
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function getRemainingLeaveBudget(u) {
+    return Math.max(0, getAnnualLeavesBudget(u) - getLeavesUsedFromConfirmedTrips());
+  }
+
+  function setAdvisorReopenVisible(isVisible) {
+    if (!advisorReopenBtn) return;
+    advisorReopenBtn.classList.toggle('is-visible', !!isVisible);
+  }
+
+  function getStoredAdvisorData() {
+    try {
+      return JSON.parse(localStorage.getItem('holidayHacker_advisorData') || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function collapseAdvisorPanel() {
+    calSplit.classList.remove('cal-split--active');
+    calSplit.classList.add('cal-split--seen');
+    if (splitTop) splitTop.style.height = '';
+  }
+
+  function openAdvisorRecap() {
+    if (calSplit.classList.contains('cal-split--active')) {
+      collapseAdvisorPanel();
+      return;
+    }
+
+    var data = getStoredAdvisorData();
+    var gifts = (window._advisorGifts || data.gifts || []).slice();
+    var bridges = (window._advisorBridges || data.bridges || []).slice();
+    var megas = (window._advisorMegaBridges || data.megas || []).slice();
+    if (!gifts.length && !bridges.length && !megas.length) return;
+
+    user = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+    if (advisorMsgs.childElementCount > 0) {
+      calSplit.classList.remove('cal-split--seen');
+      activateSplit();
+      syncAdvisorToggles();
+      scrollBottom();
+      return;
+    }
+
+    advisorMsgs.innerHTML = '';
+    calSplit.classList.remove('cal-split--seen');
+    activateSplit();
+    if (!localStorage.getItem(ADVISOR_SEEN_KEY)) {
+      runConversation(gifts, bridges, megas);
+    } else {
+      advisorMsgs.classList.add('cal-advisor-messages--instant');
+      advisorFlowInstant = true;
+      runConversation(gifts, bridges, megas);
+      advisorFlowInstant = false;
+      advisorMsgs.classList.remove('cal-advisor-messages--instant');
+    }
+    scrollBottom();
+  }
 
   /* ─── Data helpers ─────────────────────────────────── */
 
@@ -110,6 +191,7 @@
     var set = {};
     holidays.filter(function (h) { return h.type === 'gazetted'; }).forEach(function (h) {
       var patch = ov[h.date];
+      if (patch && patch._hidden) return;
       var date = patch ? (patch.date || h.date) : h.date;
       var name = patch ? (patch.name || h.name) : h.name;
       set[date] = name;
@@ -121,6 +203,7 @@
 
   function findGiftWeekends(holidaySet) {
     var now = new Date();
+    now.setHours(0, 0, 0, 0);
     var results = [];
     var checked = {};
 
@@ -170,6 +253,7 @@
 
   function findGoldenBridges(holidaySet) {
     var now = new Date();
+    now.setHours(0, 0, 0, 0);
     var results = [];
     var used = {};
 
@@ -315,6 +399,7 @@
 
     var spanDays = cfg.spanDays;
     var now = new Date();
+    now.setHours(0, 0, 0, 0);
     var year = now.getFullYear();
     var results = [];
     var usedDates = {};
@@ -410,6 +495,18 @@
   }
 
   function addBotMsg(html, cb) {
+    if (advisorFlowInstant) {
+      var rowInstant = document.createElement('div');
+      rowInstant.className = 'advisor-row';
+      rowInstant.innerHTML =
+        '<div class="advisor-avatar"><span class="material-symbols-outlined">smart_toy</span></div>' +
+        '<div class="advisor-bubble">' + html + '</div>';
+      advisorMsgs.appendChild(rowInstant);
+      scrollBottom();
+      if (cb) cb();
+      return;
+    }
+
     var typing = document.createElement('div');
     typing.className = 'advisor-row';
     typing.innerHTML =
@@ -490,7 +587,7 @@
   function runConversation(gifts, bridges, megas) {
     var name = user.name || 'there';
     var year = new Date().getFullYear();
-    var pending = user.pendingLeaves || 0;
+    var remaining = getRemainingLeaveBudget(user);
     var totalGiftDays = gifts.reduce(function (s, g) { return s + g.days; }, 0);
     var totalBridgeDays = bridges.reduce(function (s, b) { return s + b.days; }, 0);
     var totalMegaDays = (megas || []).reduce(function (s, m) { return s + m.days; }, 0);
@@ -510,10 +607,24 @@
       msg1 += '<p class="advisor-legend advisor-legend--mega">🏆 Mega-Bridges: 8–9 days off in a row. When 2+ holidays fall in a week, take 2–4 leaves to bridge them (based on your weekly off).</p>';
     }
 
+    if (advisorFlowInstant) {
+      var msg2Instant = '<p>If we unlock all upcoming opportunities, you\'ll turn your <strong>' + remaining +
+        ' remaining leave' + (remaining === 1 ? '' : 's') + '</strong> into a massive <strong>' + totalDays +
+        ' days</strong> of time off in <strong>' + year + '</strong>. Let\'s review!</p>';
+      addBotMsg(msg1, null);
+      addBotMsg(msg2Instant, null);
+      if (gifts.length) {
+        addBotMsg('<p>Here are your <strong class="advisor-legend advisor-legend--free">Free Holidays</strong> — 3+ day breaks that cost 0 leaves.</p>', null);
+        gifts.forEach(function (g) { addCard(buildGiftCard(g)); });
+      }
+      showMegasThenBridges(megas || [], bridges);
+      return;
+    }
+
     addBotMsg(msg1, function () {
-      var msg2 = '<p>If we unlock all of them, you\'ll turn your <strong>' + pending +
-        ' pending leaves</strong> into a massive <strong>' + totalDays +
-        ' days</strong> of time off this year. Let\'s review!</p>';
+      var msg2 = '<p>If we unlock all upcoming opportunities, you\'ll turn your <strong>' + remaining +
+        ' remaining leave' + (remaining === 1 ? '' : 's') + '</strong> into a massive <strong>' + totalDays +
+        ' days</strong> of time off in <strong>' + year + '</strong>. Let\'s review!</p>';
       addBotMsg(msg2, function () {
         if (gifts.length) {
           addBotMsg('<p>Here are your <strong class="advisor-legend advisor-legend--free">Free Holidays</strong> — 3+ day breaks that cost 0 leaves.</p>', function () {
@@ -537,7 +648,15 @@
         monthLabels.push(MONTHS[s.getMonth()]);
       });
       var monthStr = monthLabels.length === 1 ? monthLabels[0] : monthLabels.slice(0, -1).join(', ') + ' and ' + monthLabels[monthLabels.length - 1];
-      addBotMsg('<p>Wait... I\'ve found something special for <strong>' + monthStr + '</strong>! 🤯</p>', function () {
+      if (advisorFlowInstant) {
+        var m0 = megas[0];
+        addBotMsg('<p>Wait... I\'ve found something special coming up in <strong>' + monthStr + ' ' + new Date().getFullYear() + '</strong>! 🤯</p>', null);
+        addBotMsg('<p>By using <strong>' + m0.leaves + ' leave' + (m0.leaves > 1 ? 's' : '') + '</strong>, you can trigger a Mega-Bridge — <strong>' + m0.days + ' days</strong> in a row off, based on your weekly off pattern.</p>', null);
+        megas.forEach(function (m) { addCard(buildMegaCard(m)); });
+        showBridges(bridges, megas);
+        return;
+      }
+      addBotMsg('<p>Wait... I\'ve found something special coming up in <strong>' + monthStr + ' ' + new Date().getFullYear() + '</strong>! 🤯</p>', function () {
         var m0 = megas[0];
         addBotMsg('<p>By using <strong>' + m0.leaves + ' leave' + (m0.leaves > 1 ? 's' : '') + '</strong>, you can trigger a Mega-Bridge — <strong>' + m0.days + ' days</strong> in a row off, based on your weekly off pattern.</p>', function () {
           megas.forEach(function (m, i) {
@@ -579,15 +698,34 @@
   function showBridges(bridges, megas) {
     megas = megas || [];
     if (!bridges.length && !megas.length) {
-      addBotMsg('<p>No Golden Bridges found this year — but you can still tap any weekend on the calendar to manually bridge it!</p>', function () {
+      if (advisorFlowInstant) {
+        addBotMsg('<p>No upcoming Golden Bridges found in ' + new Date().getFullYear() + ' — but you can still tap any weekend on the calendar to manually bridge it!</p>', null);
+        showPassportNav();
+        return;
+      }
+      addBotMsg('<p>No upcoming Golden Bridges found in ' + new Date().getFullYear() + ' — but you can still tap any weekend on the calendar to manually bridge it!</p>', function () {
         setTimeout(showPassportNav, 1000);
       });
       return;
     }
     if (!bridges.length) {
+      if (advisorFlowInstant) {
+        addBotMsg('<p>Still have leaves left? Swipe through the calendar months to discover more opportunities!</p>', null);
+        wireToggles(bridges, megas);
+        showPassportNav();
+        return;
+      }
       addBotMsg('<p>Still have leaves left? Swipe through the calendar months to discover more opportunities!</p>');
       wireToggles(bridges, megas);
       setTimeout(showPassportNav, 1000);
+      return;
+    }
+    if (advisorFlowInstant) {
+      addBotMsg('<p>These are the <strong class="advisor-legend advisor-legend--bridge">Golden Bridges</strong>. A tiny investment of 1–2 leaves unlocks a longer vacation.</p>', null);
+      bridges.forEach(function (b, i) { addCard(buildBridgeCard(b, i)); });
+      addBotMsg('<p>Still have leaves left? Swipe through the calendar months to discover more opportunities!</p>', null);
+      wireToggles(bridges, megas);
+      showPassportNav();
       return;
     }
     addBotMsg('<p>These are the <strong class="advisor-legend advisor-legend--bridge">Golden Bridges</strong>. A tiny investment of 1–2 leaves unlocks a longer vacation.</p>', function () {
@@ -605,6 +743,7 @@
   function showPassportNav() {
     if (document.getElementById('advisorNavBlock')) return;
     localStorage.setItem(ADVISOR_SEEN_KEY, '1');
+    setAdvisorReopenVisible(true);
     var block = document.createElement('div');
     block.id = 'advisorNavBlock';
     block.className = 'advisor-row';
@@ -632,7 +771,7 @@
     row.innerHTML =
       '<div class="advisor-avatar"><span class="material-symbols-outlined">smart_toy</span></div>' +
       '<div class="advisor-bubble advisor-bubble--warning">' +
-        '<p>You\'ve selected more bridges than your pending leaves allow. Your leave budget for the year is over.</p>' +
+        '<p>You\'ve selected more bridges than your remaining leave budget allows (after confirmed trips). Ease off a bridge or adjust your annual quota on Profile.</p>' +
       '</div>';
     advisorMsgs.appendChild(row);
     scrollBottom();
@@ -668,11 +807,13 @@
   window.addEventListener('bridgeSelectionChange', syncAdvisorToggles);
 
   function wireToggles(bridges, megas) {
-    var pending = parseInt(user.pendingLeaves, 10) || 0;
     var toggles = advisorMsgs.querySelectorAll('.advisor-card--bridge .advisor-toggle, .advisor-card--mega .advisor-toggle');
 
     toggles.forEach(function (btn) {
       btn.addEventListener('click', function () {
+        var u = {};
+        try { u = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e2) { u = {}; }
+        var pending = getRemainingLeaveBudget(u);
         var card = btn.closest('.advisor-card--bridge, .advisor-card--mega');
         var start = card ? card.getAttribute('data-bridge-start') : null;
         btn.classList.toggle('is-on');
@@ -743,7 +884,10 @@
   /* ─── Init ─────────────────────────────────────────── */
 
   function startAdvisor() {
+    if (advisorStarted) return;
+    advisorStarted = true;
     if (!localStorage.getItem(CAL_DONE_KEY)) return;
+    setAdvisorReopenVisible(true);
     user = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     if (!user.workLocation) return;
 
@@ -823,6 +967,16 @@
         setTimeout(function () { runConversation(gifts, bridges, megas); }, 600);
       }
     }, DELAY);
+  }
+
+  if (advisorReopenBtn) {
+    advisorReopenBtn.addEventListener('click', openAdvisorRecap);
+  }
+
+  setAdvisorReopenVisible(!!localStorage.getItem(CAL_DONE_KEY));
+
+  if (localStorage.getItem(CAL_DONE_KEY)) {
+    startAdvisor();
   }
 
 })();

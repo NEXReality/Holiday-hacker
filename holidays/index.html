@@ -18,16 +18,15 @@
     <!-- Hero -->
     <div class="timeline-hero">
       <div class="timeline-hero-text">
-        <p>Plan your leave</p>
-        <h1>Holiday Hacker</h1>
+        <h1>Holidays</h1>
       </div>
-      <div class="timeline-progress-wrap">
+      <!-- <div class="timeline-progress-wrap">
         <svg viewBox="0 0 36 36" aria-hidden="true">
           <path class="timeline-progress-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor"/>
           <path class="timeline-progress-fill" id="progressFill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor"/>
         </svg>
         <span class="timeline-progress-label" id="progressLabel">–</span>
-      </div>
+      </div> -->
     </div>
 
     <!-- Location row -->
@@ -74,9 +73,9 @@
           </button>
         </div>
       </div>
-      <button type="button" class="btn-tune" aria-label="Filters">
+      <!-- <button type="button" class="btn-tune" aria-label="Filters">
         <span class="material-symbols-outlined">tune</span>
-      </button>
+      </button> -->
     </div>
 
     <!-- Timeline scroll -->
@@ -117,6 +116,9 @@
             <span class="material-symbols-outlined">arrow_back</span>
           </button>
           <h1>Edit Holiday</h1>
+          <button type="button" class="edit-popup-delete" id="editDeleteBtn" style="display:none;" aria-label="Delete holiday">
+            <span class="material-symbols-outlined">delete</span>
+          </button>
         </header>
 
         <main class="edit-popup-body">
@@ -171,7 +173,7 @@
           <span>Holidays</span>
         </a>
         <a href="../calendar/index.html" class="nav-item">
-          <span class="material-symbols-outlined">calendar_today</span>
+          <span class="material-symbols-outlined">calendar_month</span>
           <span>Calendar</span>
         </a>
         <a href="../plan/index.html" class="nav-item">

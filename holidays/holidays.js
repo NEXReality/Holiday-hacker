@@ -47,6 +47,7 @@
   var editSaveBtn    = document.getElementById('editSaveBtn');
   var editCatSection = document.getElementById('editCatSection');
   var editPopupTitle = document.querySelector('.edit-popup-header h1');
+  var editDeleteBtn  = document.getElementById('editDeleteBtn');
   var fabAddCustom   = document.getElementById('fabAddCustom');
 
   /* ─── State ──────────────────────────────────────────── */
@@ -175,6 +176,7 @@
       var origDate = h._origDate || h.date;
       var patch = ov[origDate];
       if (patch) {
+        if (patch._hidden) return null;
         return {
           name: patch.name  || h.name,
           date: patch.date  || h.date,
@@ -186,7 +188,7 @@
         };
       }
       return h;
-    });
+    }).filter(function (h) { return h !== null; });
   }
 
   /* ─── Custom (personal) holidays stored locally ─────── */
@@ -213,6 +215,19 @@
       }
     }
     localStorage.setItem(CUSTOM_KEY, JSON.stringify(list));
+  }
+
+  function deleteCustomHoliday(id) {
+    var list = getCustomHolidays();
+    list = list.filter(function (c) { return c.id !== id; });
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(list));
+  }
+
+  function deleteOverride(origDate) {
+    var ov = getOverrides();
+    ov[origDate] = ov[origDate] || {};
+    ov[origDate]._hidden = true;
+    localStorage.setItem(OVERRIDES_KEY, JSON.stringify(ov));
   }
 
   function injectCustomHolidays(holidays) {
@@ -519,6 +534,16 @@
   }
 
   function setupLocationDropdown() {
+    var sameLocation = user.workLocation && user.homeLocation &&
+        user.workLocation.toLowerCase() === user.homeLocation.toLowerCase();
+
+    if (sameLocation) {
+      locationChevron.style.display = 'none';
+      btnLocation.style.pointerEvents = 'none';
+      locationDropdown.hidden = true;
+      return;
+    }
+
     btnLocation.addEventListener('click', function (e) {
       e.stopPropagation();
       var hidden = locationDropdown.hidden;
@@ -550,12 +575,6 @@
       e.stopPropagation();
       setActiveLocation('personal');
     });
-
-    /* Hide home option if same as work */
-    if (user.workLocation && user.homeLocation &&
-        user.workLocation.toLowerCase() === user.homeLocation.toLowerCase()) {
-      locOptHome.hidden = true;
-    }
 
     /* Show personal option only if custom holidays exist */
     updatePersonalOptionVisibility();
@@ -630,6 +649,7 @@
     var isPersonal = ctx === 'personal';
     editPopupTitle.textContent = isPersonal ? 'Edit Personal Holiday' : 'Edit Holiday';
     editName.value = name;
+    editDeleteBtn.style.display = '';
 
     /* Hide category for personal holidays */
     editCatSection.style.display = isPersonal ? 'none' : '';
@@ -648,6 +668,7 @@
 
     editPopupTitle.textContent = 'Add Personal Holiday';
     editName.value = '';
+    editDeleteBtn.style.display = 'none';
 
     /* Hide category — always personal */
     editCatSection.style.display = 'none';
@@ -665,6 +686,23 @@
   editPopupClose.addEventListener('click', closeEditPopup);
   editOverlay.addEventListener('click', function (e) {
     if (e.target === editOverlay) closeEditPopup();
+  });
+
+  editDeleteBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (!editingHoliday) return;
+    var name = editingHoliday.name || 'this holiday';
+    if (!confirm('Delete "' + name + '"?\nThis action cannot be undone.')) return;
+
+    if (editingHoliday.customId) {
+      deleteCustomHoliday(editingHoliday.customId);
+    } else {
+      deleteOverride(editingHoliday.origDate);
+    }
+
+    closeEditPopup();
+    updatePersonalOptionVisibility();
+    setActiveLocation(activeCtx);
   });
 
   /* Category dropdown icon sync */
@@ -910,17 +948,20 @@
     locWorkVal.textContent = work || '–';
     locHomeVal.textContent = home || '–';
 
+    var sameLocation = work.toLowerCase() === home.toLowerCase();
+    var defaultCtx = sameLocation ? 'work' : 'merged';
+
     /* Load state-city data for code mapping, then start */
     fetch(SC_JSON)
       .then(function (r) { return r.json(); })
       .then(function (d) {
         stateData = d;
         setupLocationDropdown();
-        setActiveLocation('merged');
+        setActiveLocation(defaultCtx);
       })
       .catch(function () {
         setupLocationDropdown();
-        setActiveLocation('merged');
+        setActiveLocation(defaultCtx);
       });
   }
 

@@ -103,6 +103,7 @@
     function add(h, ctx) {
       var origDate = h.date;
       var patch = ov[origDate];
+      if (patch && patch._hidden) return;
       var name = patch ? (patch.name || h.name) : h.name;
       var date = patch ? (patch.date || h.date) : h.date;
       var c    = patch ? (patch.ctx  || ctx)    : ctx;
@@ -495,7 +496,8 @@
       var label = MONTHS[first.getMonth()].slice(0, 3) + ' ' + first.getDate() +
                   ' – ' + MONTHS[last.getMonth()].slice(0, 3) + ' ' + last.getDate();
       var planned = isTripPlanned(g.start);
-      html += '<div class="calendar-event-card calendar-event-card--gift" data-gift-start="' + g.start + '">' +
+      var pastCls = g.end < todayISO ? ' calendar-event-card--past' : '';
+      html += '<div class="calendar-event-card calendar-event-card--gift' + pastCls + '" data-gift-start="' + g.start + '">' +
         '<div class="calendar-event-icon calendar-event-icon--gift">' +
           '<span class="material-symbols-outlined">celebration</span>' +
         '</div>' +
@@ -525,7 +527,8 @@
         return '<span class="leave-day-name">' + dayName + '</span> ' + rest;
       });
       var sel = isBridgeSelected(m.start);
-      html += '<div class="calendar-event-card calendar-event-card--mega" data-bridge-start="' + m.start + '" data-bridge-leaves="' + m.leaves + '">' +
+      var pastCls = m.end < todayISO ? ' calendar-event-card--past' : '';
+      html += '<div class="calendar-event-card calendar-event-card--mega' + pastCls + '" data-bridge-start="' + m.start + '" data-bridge-leaves="' + m.leaves + '">' +
         '<div class="calendar-event-icon calendar-event-icon--mega">' +
           '<span class="material-symbols-outlined">workspace_premium</span>' +
         '</div>' +
@@ -557,7 +560,8 @@
         return '<span class="leave-day-name">' + dayName + '</span> ' + rest;
       });
       var sel = isBridgeSelected(b.start);
-      html += '<div class="calendar-event-card calendar-event-card--gb" data-bridge-start="' + b.start + '" data-bridge-leaves="' + b.leaves + '">' +
+      var pastCls = b.end < todayISO ? ' calendar-event-card--past' : '';
+      html += '<div class="calendar-event-card calendar-event-card--gb' + pastCls + '" data-bridge-start="' + b.start + '" data-bridge-leaves="' + b.leaves + '">' +
         '<div class="calendar-event-icon calendar-event-icon--gb">' +
           '<span class="material-symbols-outlined">offline_bolt</span>' +
         '</div>' +
@@ -584,7 +588,8 @@
         else if (e._ctx === 'home')   { icon = 'home';      iconCls = 'calendar-event-icon--home'; label = 'Hometown'; }
         else                          { icon = 'person';     iconCls = 'calendar-event-icon--personal'; label = 'Personal'; }
 
-        html += '<div class="calendar-event-card">' +
+        var pastCls = e.date < todayISO ? ' calendar-event-card--past' : '';
+        html += '<div class="calendar-event-card' + pastCls + '">' +
           '<div class="calendar-event-icon ' + iconCls + '">' +
             '<span class="material-symbols-outlined">' + icon + '</span>' +
           '</div>' +
@@ -627,11 +632,35 @@
 
   /* ─── Month navigation ─────────────────────────────── */
 
+  var isAnimating = false;
+
   function go(delta) {
-    viewMonth += delta;
-    if (viewMonth > 11) { viewMonth = 0; viewYear++; }
-    if (viewMonth < 0)  { viewMonth = 11; viewYear--; }
-    loadAndRender();
+    if (isAnimating) return;
+    isAnimating = true;
+
+    var exitCls = delta > 0 ? 'calendar-grid--exit-left' : 'calendar-grid--exit-right';
+    var enterCls = delta > 0 ? 'calendar-grid--enter-right' : 'calendar-grid--enter-left';
+
+    calGrid.classList.add(exitCls);
+    calEventsList.classList.add('calendar-events--fading');
+
+    setTimeout(function () {
+      viewMonth += delta;
+      if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+      if (viewMonth < 0)  { viewMonth = 11; viewYear--; }
+
+      calGrid.classList.remove(exitCls);
+      calGrid.classList.add(enterCls);
+      loadAndRender();
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          calGrid.classList.remove(enterCls);
+          calEventsList.classList.remove('calendar-events--fading');
+          setTimeout(function () { isAnimating = false; }, 320);
+        });
+      });
+    }, 300);
   }
 
   prevBtn.addEventListener('click', function () { go(-1); });
@@ -639,12 +668,33 @@
 
   /* Swipe – use calMain so swipes work in calendar grid, legend, and events list */
   var swipeStartX = 0;
+  var swiping = false;
+
   calMain.addEventListener('touchstart', function (e) {
+    if (isAnimating) return;
     swipeStartX = e.touches[0].clientX;
+    swiping = true;
+    calGrid.style.transition = 'none';
   }, { passive: true });
+
+  calMain.addEventListener('touchmove', function (e) {
+    if (!swiping) return;
+    var dx = e.touches[0].clientX - swipeStartX;
+    var clamped = Math.max(-120, Math.min(120, dx));
+    calGrid.style.transform = 'translateX(' + clamped + 'px)';
+    calGrid.style.opacity = 1 - Math.abs(clamped) / 300;
+  }, { passive: true });
+
   calMain.addEventListener('touchend', function (e) {
+    if (!swiping) return;
+    swiping = false;
     var diff = e.changedTouches[0].clientX - swipeStartX;
-    if (Math.abs(diff) > 50) go(diff < 0 ? 1 : -1);
+    calGrid.style.transition = '';
+    calGrid.style.transform = '';
+    calGrid.style.opacity = '';
+    if (Math.abs(diff) > 50) {
+      go(diff < 0 ? 1 : -1);
+    }
   }, { passive: true });
 
   /* Month dropdown */

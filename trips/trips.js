@@ -3,12 +3,64 @@
   'use strict';
 
   var CONFIRMED_TRIPS_KEY = 'holidayHacker_confirmedTrips';
+  var ADVISOR_DATA_KEY    = 'holidayHacker_advisorData';
+  var SELECTED_BRIDGES_KEY = 'holidayHacker_selectedBridges';
+  var PLANNED_TRIPS_KEY   = 'holidayHacker_plannedTrips';
+  var FAVORITES_KEY       = 'holidayHacker_favorites';
+  var TRIP_SETTINGS_KEY   = 'holidayHacker_tripSettings';
+  var HOMETOWN_IMAGE_URL  = 'https://img.freepik.com/free-vector/suburban-house-illustration_33099-2357.jpg';
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function getTripSettings() {
+    try { return JSON.parse(localStorage.getItem(TRIP_SETTINGS_KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function saveTripSettings(settings) {
+    localStorage.setItem(TRIP_SETTINGS_KEY, JSON.stringify(settings));
+  }
+  function getFavorites() {
+    try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function saveFavorites(favs) {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));
+  }
+  function isFavorite(windowStart) {
+    return getFavorites().some(function (f) { return f.windowStart === windowStart; });
+  }
 
   function getConfirmedTrips() {
     try {
       return JSON.parse(localStorage.getItem(CONFIRMED_TRIPS_KEY) || '[]');
     } catch (e) { return []; }
+  }
+
+  function getActiveWindowStarts() {
+    var data, selected, planned;
+    try { data = JSON.parse(localStorage.getItem(ADVISOR_DATA_KEY) || '{}'); } catch (e) { data = {}; }
+    try { selected = JSON.parse(localStorage.getItem(SELECTED_BRIDGES_KEY) || '[]'); } catch (e) { selected = []; }
+    try { planned = JSON.parse(localStorage.getItem(PLANNED_TRIPS_KEY) || '[]'); } catch (e) { planned = []; }
+
+    var active = {};
+    (data.gifts || []).forEach(function (g) {
+      if (planned.indexOf(g.start) !== -1) active[g.start] = true;
+    });
+    (data.bridges || []).forEach(function (b) {
+      if (selected.indexOf(b.start) !== -1) active[b.start] = true;
+    });
+    (data.megas || []).forEach(function (m) {
+      if (selected.indexOf(m.start) !== -1) active[m.start] = true;
+    });
+    return active;
+  }
+
+  function syncConfirmedTrips() {
+    var trips = getConfirmedTrips();
+    if (!trips.length) return trips;
+    var active = getActiveWindowStarts();
+    var cleaned = trips.filter(function (t) { return !!active[t.windowStart]; });
+    if (cleaned.length !== trips.length) {
+      localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(cleaned));
+    }
+    return cleaned;
   }
 
   function formatRange(start, end) {
@@ -56,7 +108,7 @@
 
   function populate() {
     var container = document.getElementById('tripsHacks');
-    var trips = getConfirmedTrips();
+    var trips = syncConfirmedTrips();
     var totalLeavesSaved = 0;
     trips.forEach(function (t) {
       totalLeavesSaved += computeLeavesSaved(t);
@@ -70,32 +122,78 @@
 
     var plannedCount = 0;
     try {
-      var planned = JSON.parse(localStorage.getItem('holidayHacker_plannedTrips') || '[]');
-      var selected = JSON.parse(localStorage.getItem('holidayHacker_selectedBridges') || '[]');
-      var data = JSON.parse(localStorage.getItem('holidayHacker_advisorData') || '{}');
-      var gifts = (data.gifts || []).filter(function (g) { return planned.indexOf(g.start) !== -1; });
-      var bridges = (data.bridges || []).filter(function (b) { return selected.indexOf(b.start) !== -1; });
-      var megas = (data.megas || []).filter(function (m) { return selected.indexOf(m.start) !== -1; });
-      plannedCount = gifts.length + bridges.length + megas.length;
+      trips.forEach(function (t) {
+        var totalDays = t.windowDays || 0;
+        var leavesUsed = t.leaves || 0;
+        plannedCount += Math.max(0, totalDays - leavesUsed);
+      });
     } catch (e) {}
     var holidaysEl = document.querySelector('.passport-stat-card--holidays h3');
     if (holidaysEl) holidaysEl.textContent = plannedCount;
 
+    /* Dynamic benchmark text based on holiday utilization */
+    var beatTextEl = document.querySelector('.passport-stat-hero-footer span:last-child');
+    try {
+      var advisorData = JSON.parse(localStorage.getItem(ADVISOR_DATA_KEY) || '{}');
+      var possibleHolidayDays = 0;
+      (advisorData.gifts || []).forEach(function (g) { possibleHolidayDays += (g.days || 0); });
+      (advisorData.bridges || []).forEach(function (b) { possibleHolidayDays += (b.days || 0); });
+      (advisorData.megas || []).forEach(function (m) { possibleHolidayDays += (m.days || 0); });
+      var utilizationPct = possibleHolidayDays > 0 ? Math.round((plannedCount / possibleHolidayDays) * 100) : 0;
+      utilizationPct = Math.max(0, Math.min(100, utilizationPct));
+      if (beatTextEl) beatTextEl.textContent = "You're beating " + utilizationPct + '% of hackers!';
+    } catch (err) {}
+
     var travelModes = getTravelModes();
+    var allSettings = getTripSettings();
     var html = '';
     trips.forEach(function (t, idx) {
       var d = t.destination || {};
-      var imgUrl = d.imageUrl || '';
-      var imgStyle = imgUrl ? 'background-image: url(\'' + imgUrl.replace(/'/g, "\\'") + '\')' : 'background-color: var(--gray-300)';
+      var isHometownTrip = d.slug === '__hometown__' || d.isHometown;
+      var imgUrl = (d.imageUrl || '').trim();
+      if (isHometownTrip && !imgUrl) imgUrl = HOMETOWN_IMAGE_URL;
+      var imgCls = isHometownTrip ? ' trips-card-img--hometown' : '';
+      var imgStyle = imgUrl
+        ? 'background-image: url(\'' + imgUrl.replace(/'/g, "\\'") + '\')'
+        : 'background-color: var(--gray-300)';
       var label = formatRange(t.windowStart, t.windowEnd);
       var leavesUsed = t.leaves || 0;
-      var badge = t.windowType === 'free' ? 'Confirmed' : 'Draft';
-      var badgeCls = t.windowType === 'free' ? 'trips-card-badge--confirmed' : 'trips-card-badge--draft';
+      var needsLeaveReminder = leavesUsed > 0;
+      var typeLabel = t.windowType === 'golden' ? 'Golden Bridge' : (t.windowType === 'mega' ? 'Mega-Bridge' : 'Free Holiday');
+      var badge = (t.windowName || typeLabel);
+      var badgeCls = t.windowType === 'free' ? 'trips-card-badge--free' : (t.windowType === 'golden' ? 'trips-card-badge--golden' : 'trips-card-badge--mega');
       var meta = t.windowDays + 'D/' + (t.windowDays - 1) + 'N • ' + leavesUsed + ' Leave' + (leavesUsed !== 1 ? 's' : '') + ' used';
       var destName = (d.name || '').replace(/</g, '&lt;');
-      html += '<div class="trips-card" data-idx="' + idx + '">' +
+      var ts = allSettings[t.windowStart] || {};
+      var savedDays = ts.reminderDays || 30;
+      var savedTime = ts.reminderTime || '10:00';
+      var tParts = savedTime.split(':');
+      var tH = parseInt(tParts[0], 10) || 10;
+      var tMM = (tParts[1] || '00').slice(0, 2);
+      var tAmpm = tH < 12 ? 'AM' : 'PM';
+      var tH12 = tH === 0 ? 12 : (tH > 12 ? tH - 12 : tH);
+      var displayTime = tH12 + ':' + tMM + ' ' + tAmpm;
+      var fav = isFavorite(t.windowStart);
+      var favIcon = fav ? 'favorite' : 'favorite_border';
+      var favCls = fav ? ' trips-card-action-btn--fav-active' : '';
+      var leaveReminderHtml = needsLeaveReminder
+        ? ('<div class="trips-card-leave-reminder">' +
+            '<div class="trips-card-reminder-row">' +
+              '<div class="trips-card-reminder-icon"><span class="material-symbols-outlined">event_note</span></div>' +
+              '<div class="trips-card-reminder-display"><p class="trips-card-reminder-title">Leave Application</p><p class="trips-card-reminder-sub">' + savedDays + ' days before • ' + displayTime + '</p></div>' +
+              '<button type="button" class="trips-card-reminder-edit" aria-label="Edit"><span class="material-symbols-outlined">edit</span></button>' +
+              '<button type="button" class="trips-card-advisor-toggle is-on" aria-label="Toggle reminder"></button>' +
+            '</div>' +
+            '<div class="trips-card-edit-wrap" style="display:none">' +
+              '<section class="edit-field"><label class="edit-field-label">Days before trip</label><input type="number" class="edit-field-input trips-edit-days" min="1" max="60" value="' + savedDays + '" placeholder="30"/></section>' +
+              '<section class="edit-field"><label class="edit-field-label">Reminder time</label><input type="time" class="edit-field-input trips-edit-time" value="' + savedTime + '"/></section>' +
+              '<button type="button" class="trips-card-edit-done">Done</button>' +
+            '</div>' +
+          '</div>')
+        : '';
+      html += '<div class="trips-card" data-idx="' + idx + '" data-window-start="' + t.windowStart + '">' +
         '<div class="trips-card-img-wrap">' +
-          '<div class="trips-card-img" style="' + imgStyle + '"></div>' +
+          '<div class="trips-card-img' + imgCls + '" style="' + imgStyle + '"></div>' +
           '<div class="trips-card-overlay"></div>' +
           '<div class="trips-card-caption">' +
             '<span class="trips-card-badge ' + badgeCls + '">' + badge + '</span>' +
@@ -104,32 +202,19 @@
         '</div>' +
         '<div class="trips-card-body">' +
           '<div class="trips-card-meta">' +
-            '<span class="trips-card-date"><span class="material-symbols-outlined">date_range</span> ' + label + '</span>' +
-            '<span class="trips-card-days">' + meta + '</span>' +
-          '</div>' +
-          '<div class="trips-card-toggle-row">' +
-            '<label class="trips-card-reminders-toggle"><span class="trips-card-switch"><input type="checkbox" class="trips-card-reminders-cb" checked/><span class="trips-card-switch-slider"></span></span><span class="trips-card-reminders-label">Reminders</span></label>' +
-            '<button type="button" class="trips-card-expand-btn" aria-label="Expand"><span class="material-symbols-outlined">expand_more</span></button>' +
-          '</div>' +
-          '<div class="trips-card-expanded">' +
-            '<div class="trips-card-leave-reminder">' +
-              '<div class="trips-card-reminder-row">' +
-                '<div class="trips-card-reminder-icon"><span class="material-symbols-outlined">event_note</span></div>' +
-                '<div class="trips-card-reminder-display"><p class="trips-card-reminder-title">Leave Application</p><p class="trips-card-reminder-sub">30 days before • 10:00 AM</p></div>' +
-                '<button type="button" class="trips-card-reminder-edit" aria-label="Edit"><span class="material-symbols-outlined">edit</span></button>' +
-                '<button type="button" class="trips-card-advisor-toggle is-on" aria-label="Toggle reminder"></button>' +
-              '</div>' +
-              '<div class="trips-card-edit-wrap" style="display:none">' +
-                '<section class="edit-field"><label class="edit-field-label">Days before trip</label><input type="number" class="edit-field-input trips-edit-days" min="1" max="60" value="30" placeholder="30"/></section>' +
-                '<section class="edit-field"><label class="edit-field-label">Reminder time</label><input type="time" class="edit-field-input trips-edit-time" value="10:00"/></section>' +
-                '<button type="button" class="trips-card-edit-done">Done</button>' +
-              '</div>' +
+            '<div class="trips-card-meta-left">' +
+              '<span class="trips-card-date"><span class="material-symbols-outlined">date_range</span> ' + label + '</span>' +
+              '<span class="trips-card-days">' + meta + '</span>' +
             '</div>' +
+            '<label class="trips-card-reminders-toggle"><span class="trips-card-reminders-label">Reminders</span><span class="trips-card-switch"><input type="checkbox" class="trips-card-reminders-cb" checked/><span class="trips-card-switch-slider"></span></span></label>' +
+          '</div>' +
+          '<div class="trips-card-expand-row"><button type="button" class="trips-card-expand-btn" aria-label="Expand"><span class="material-symbols-outlined">expand_more</span></button></div>' +
+          '<div class="trips-card-expanded">' +
+            leaveReminderHtml +
             '<div class="trips-card-transport">' +
               '<p class="trips-card-transport-label">Transport Mode</p>' +
               '<div class="trips-card-transport-btns">' + (function () {
                 var defaultMode = travelModes[0] || 'car';
-                var texts = { flight: 'Remind me when prices drop', train: getTrainText(t.windowStart), bus: 'Ideal booking 30 days prior @ 8:00 AM', car: 'Pre-departure checklist' };
                 var icons = { flight: 'flight', train: 'train', bus: 'directions_bus', car: 'directions_car' };
                 var btns = '';
                 travelModes.forEach(function (m) {
@@ -145,12 +230,11 @@
               '</div>' +
             '</div>' +
             '<div class="trips-card-actions">' +
-              '<button type="button" class="trips-card-actions-toggle"><span>Trip Actions</span><span class="material-symbols-outlined trips-card-actions-icon">expand_more</span></button>' +
               '<div class="trips-card-actions-grid">' +
                 '<button type="button" class="trips-card-action-btn trips-card-view-details"><span class="material-symbols-outlined">info</span><span>View Details</span></button>' +
-                '<button type="button" class="trips-card-action-btn"><span class="material-symbols-outlined">calendar_today</span><span>Change Window</span></button>' +
-                '<button type="button" class="trips-card-action-btn"><span class="material-symbols-outlined">favorite_border</span><span>Favorite</span></button>' +
-                '<button type="button" class="trips-card-action-btn"><span class="material-symbols-outlined">content_copy</span><span>Duplicate</span></button>' +
+                '<button type="button" class="trips-card-action-btn trips-card-change-window"><span class="material-symbols-outlined">calendar_month</span><span>Change Window</span></button>' +
+                '<button type="button" class="trips-card-action-btn trips-card-add-cal"><span class="material-symbols-outlined">calendar_add_on</span><span>Add to Calendar</span></button>' +
+                '<button type="button" class="trips-card-action-btn trips-card-favorite' + favCls + '"><span class="material-symbols-outlined">' + favIcon + '</span><span>Favorite</span></button>' +
                 '<button type="button" class="trips-card-action-btn trips-card-remove"><span class="material-symbols-outlined">delete_outline</span><span>Remove</span></button>' +
               '</div>' +
             '</div>' +
@@ -166,10 +250,14 @@
 
     container.querySelectorAll('.trips-card').forEach(function (card) {
       var idx = parseInt(card.getAttribute('data-idx'), 10);
+      var windowStart = card.getAttribute('data-window-start');
+      var trip = trips[idx];
       var expandBtn = card.querySelector('.trips-card-expand-btn');
       var viewDetailsBtn = card.querySelector('.trips-card-view-details');
       var titleEl = card.querySelector('.trips-card-title');
       var imgWrap = card.querySelector('.trips-card-img-wrap');
+
+      /* Expand/collapse */
       if (expandBtn) {
         expandBtn.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -178,15 +266,18 @@
           if (icon) icon.textContent = card.classList.contains('trips-card--expanded') ? 'expand_less' : 'expand_more';
         });
       }
+
+      /* View details */
       function openDetail() {
         if (!isNaN(idx) && trips[idx]) openTripDetail(trips[idx]);
       }
       if (viewDetailsBtn) viewDetailsBtn.addEventListener('click', function (e) { e.stopPropagation(); openDetail(); });
       if (titleEl) titleEl.addEventListener('click', function (e) { e.stopPropagation(); openDetail(); });
       if (imgWrap) imgWrap.addEventListener('click', function (e) { e.stopPropagation(); openDetail(); });
+
+      /* Transport mode */
       var transportBtns = card.querySelectorAll('.trips-card-transport-btn');
       var bookingEl = card.querySelector('.trips-card-booking');
-      var trip = trips[idx];
       function getModeContent(mode) {
         var icons = { flight: 'flight', train: 'train', bus: 'directions_bus', car: 'directions_car' };
         var texts = { flight: 'Remind me when prices drop', train: getTrainText(trip && trip.windowStart), bus: 'Ideal booking 30 days prior @ 8:00 AM', car: 'Pre-departure checklist' };
@@ -206,50 +297,23 @@
         if (bookingEl) bookingEl.setAttribute('data-mode', mode);
       }
       transportBtns.forEach(function (btn) {
-        btn.addEventListener('pointerdown', function (e) {
-          e.stopPropagation();
-          setTransportActive(btn);
-        });
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          setTransportActive(btn);
-        });
+        btn.addEventListener('pointerdown', function (e) { e.stopPropagation(); setTransportActive(btn); });
+        btn.addEventListener('click', function (e) { e.stopPropagation(); setTransportActive(btn); });
       });
-      var actionsToggle = card.querySelector('.trips-card-actions-toggle');
-      var actionsGrid = card.querySelector('.trips-card-actions-grid');
-      var actionsIcon = card.querySelector('.trips-card-actions-icon');
-      if (actionsToggle && actionsGrid && actionsIcon) {
-        actionsGrid.style.display = 'none';
-        actionsToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var open = actionsGrid.style.display !== 'none';
-          actionsGrid.style.display = open ? 'none' : 'flex';
-          actionsIcon.textContent = open ? 'expand_more' : 'expand_less';
-        });
-      }
+
+      /* Actions grid is always visible when card is expanded (no toggle needed) */
+
+      /* Reminder edit + save to localStorage */
       var editBtn = card.querySelector('.trips-card-reminder-edit');
       var editWrap = card.querySelector('.trips-card-edit-wrap');
       var reminderDisplay = card.querySelector('.trips-card-reminder-display');
       var editDays = card.querySelector('.trips-edit-days');
       var editTime = card.querySelector('.trips-edit-time');
       var editDone = card.querySelector('.trips-card-edit-done');
-      if (editBtn && editWrap && reminderDisplay) {
+      if (editBtn && editWrap) {
         editBtn.addEventListener('click', function (e) {
           e.stopPropagation();
           editWrap.style.display = editWrap.style.display === 'none' ? 'block' : 'none';
-          if (editWrap.style.display !== 'none' && editDays && editTime) {
-            var subEl = reminderDisplay.querySelector('.trips-card-reminder-sub');
-            var m = subEl ? subEl.textContent : '';
-            var daysMatch = m.match(/(\d+)\s*days/);
-            var timeMatch = m.match(/(\d+):(\d+)\s*(AM|PM)/i);
-            if (daysMatch) editDays.value = daysMatch[1];
-            if (timeMatch) {
-              var h = parseInt(timeMatch[1], 10);
-              if (timeMatch[3].toUpperCase() === 'PM' && h < 12) h += 12;
-              if (timeMatch[3].toUpperCase() === 'AM' && h === 12) h = 0;
-              editTime.value = (h < 10 ? '0' : '') + h + ':' + (timeMatch[2].length < 2 ? '0' + timeMatch[2] : timeMatch[2]);
-            } else { editTime.value = '10:00'; }
-          }
         });
       }
       if (editDone && editWrap && reminderDisplay && editDays && editTime) {
@@ -257,16 +321,22 @@
           e.stopPropagation();
           var sub = reminderDisplay.querySelector('.trips-card-reminder-sub');
           var tv = editTime.value || '10:00';
-          var parts = tv.split(':');
-          var h = parseInt(parts[0], 10) || 10;
-          var m = (parts[1] || '00').slice(0, 2);
+          var p = tv.split(':');
+          var h = parseInt(p[0], 10) || 10;
+          var m = (p[1] || '00').slice(0, 2);
           var ampm = h < 12 ? 'AM' : 'PM';
           var h12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
           var timeStr = h12 + ':' + m + ' ' + ampm;
-          if (sub) sub.textContent = (editDays.value || 30) + ' days before • ' + timeStr;
+          var dv = parseInt(editDays.value, 10) || 30;
+          if (sub) sub.textContent = dv + ' days before • ' + timeStr;
           editWrap.style.display = 'none';
+          var settings = getTripSettings();
+          settings[windowStart] = { reminderDays: dv, reminderTime: tv };
+          saveTripSettings(settings);
         });
       }
+
+      /* Reminders toggle */
       var remindersCb = card.querySelector('.trips-card-reminders-cb');
       var advisorToggle = card.querySelector('.trips-card-advisor-toggle');
       var transportSection = card.querySelector('.trips-card-transport');
@@ -285,6 +355,387 @@
           if (remindersCb && !remindersCb.checked) return;
           tgl.classList.toggle('is-on');
         });
+      });
+
+      /* Favorite */
+      var favBtn = card.querySelector('.trips-card-favorite');
+      if (favBtn && trip) {
+        favBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var favs = getFavorites();
+          var existIdx = favs.findIndex(function (f) { return f.windowStart === windowStart; });
+          if (existIdx >= 0) {
+            favs.splice(existIdx, 1);
+            favBtn.classList.remove('trips-card-action-btn--fav-active');
+            favBtn.querySelector('.material-symbols-outlined').textContent = 'favorite_border';
+          } else {
+            favs.push({
+              windowStart: trip.windowStart,
+              windowEnd: trip.windowEnd,
+              windowName: trip.windowName,
+              windowType: trip.windowType,
+              windowDays: trip.windowDays,
+              leaves: trip.leaves,
+              destination: trip.destination
+            });
+            favBtn.classList.add('trips-card-action-btn--fav-active');
+            favBtn.querySelector('.material-symbols-outlined').textContent = 'favorite';
+          }
+          saveFavorites(favs);
+        });
+      }
+
+      /* Change Window */
+      var changeWindowBtn = card.querySelector('.trips-card-change-window');
+      if (changeWindowBtn && trip) {
+        changeWindowBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          openChangeWindowPopup(trip, idx);
+        });
+      }
+
+      /* Add to Calendar */
+      var addCalBtn = card.querySelector('.trips-card-add-cal');
+      if (addCalBtn && trip) {
+        addCalBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          openCalendarSheet(trip, card);
+        });
+      }
+
+      /* Remove */
+      var removeBtn = card.querySelector('.trips-card-remove');
+      if (removeBtn) {
+        removeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (!confirm('Remove this trip? The holiday window will remain available for a new destination.')) return;
+          var allTrips = getConfirmedTrips();
+          allTrips = allTrips.filter(function (t) { return t.windowStart !== windowStart; });
+          localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(allTrips));
+          populate();
+        });
+      }
+    });
+  }
+
+  /* ─── Add to Calendar sheet ───────────────────────────── */
+
+  function dateMinus(isoDate, days) {
+    var d = new Date(isoDate + 'T00:00:00');
+    d.setDate(d.getDate() - days);
+    return d;
+  }
+
+  function fmtDateShort(d) {
+    return MONTHS[d.getMonth()] + ' ' + d.getDate();
+  }
+
+  function toICSDate(d) {
+    var y = d.getFullYear();
+    var m = d.getMonth() + 1;
+    var day = d.getDate();
+    return String(y) + (m < 10 ? '0' : '') + m + (day < 10 ? '0' : '') + day;
+  }
+
+  function toICSDateTime(d, time) {
+    var p = (time || '10:00').split(':');
+    var h = (parseInt(p[0], 10) || 10);
+    var m = (parseInt(p[1], 10) || 0);
+    return toICSDate(d) + 'T' + (h < 10 ? '0' : '') + h + (m < 10 ? '0' : '') + m + '00';
+  }
+
+  function toGCalDate(d) {
+    return toICSDate(d);
+  }
+
+  function toGCalDateTime(d, time) {
+    return toICSDateTime(d, time);
+  }
+
+  function buildCalendarEvents(trip, card) {
+    var dName = (trip.destination && trip.destination.name) || 'Trip';
+    var winName = trip.windowName || 'Holiday';
+    var rangeLabel = fmtDateShort(new Date(trip.windowStart + 'T00:00:00')) + '-' +
+                     fmtDateShort(new Date(trip.windowEnd + 'T00:00:00'));
+    var events = [];
+
+    var endDate = new Date(trip.windowEnd + 'T00:00:00');
+    endDate.setDate(endDate.getDate() + 1);
+    events.push({
+      id: 'trip',
+      label: 'Trip: ' + dName + ' (' + rangeLabel + ')',
+      summary: dName + ' - ' + winName,
+      description: trip.windowDays + ' day trip to ' + dName,
+      allDay: true,
+      startDate: trip.windowStart,
+      endDateExcl: endDate.toISOString().slice(0, 10)
+    });
+
+    var settings = getTripSettings();
+    var ts = settings[trip.windowStart] || {};
+    var reminderDays = ts.reminderDays || 30;
+    var reminderTime = ts.reminderTime || '10:00';
+    var remCb = card ? card.querySelector('.trips-card-reminders-cb') : null;
+    var remOn = remCb ? remCb.checked : true;
+
+    var tripLeaves = trip.leaves || 0;
+    if (remOn && tripLeaves > 0) {
+      var leaveDate = dateMinus(trip.windowStart, reminderDays);
+      var p = reminderTime.split(':');
+      var h = parseInt(p[0], 10) || 10;
+      var mm = (p[1] || '00').slice(0, 2);
+      var ampm = h < 12 ? 'AM' : 'PM';
+      var h12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
+      var timeLabel = h12 + ':' + mm + ' ' + ampm;
+      events.push({
+        id: 'leave',
+        label: 'Apply Leave - ' + fmtDateShort(leaveDate) + ' at ' + timeLabel,
+        summary: 'Apply Leave: ' + dName + ' trip (' + rangeLabel + ')',
+        description: 'Submit leave application for your ' + dName + ' trip on ' + rangeLabel,
+        allDay: false,
+        dateObj: leaveDate,
+        time: reminderTime
+      });
+    }
+
+    var activeBtn = card ? card.querySelector('.trips-card-transport-btn--active') : null;
+    var mode = activeBtn ? activeBtn.getAttribute('data-mode') : null;
+    var bookingConfig = { train: { days: 60, time: '08:00', label: 'Book Train' },
+                          bus:   { days: 30, time: '08:00', label: 'Book Bus' },
+                          flight:{ days: 45, time: '10:00', label: 'Book Flight' } };
+    var bc = mode ? bookingConfig[mode] : null;
+    if (bc && remOn) {
+      var bookDate = dateMinus(trip.windowStart, bc.days);
+      var bp = bc.time.split(':');
+      var bh = parseInt(bp[0], 10);
+      var bmm = bp[1] || '00';
+      var bampm = bh < 12 ? 'AM' : 'PM';
+      var bh12 = bh === 0 ? 12 : (bh > 12 ? bh - 12 : bh);
+      var bTimeLabel = bh12 + ':' + bmm + ' ' + bampm;
+      events.push({
+        id: 'booking',
+        label: bc.label + ' - ' + fmtDateShort(bookDate) + ' at ' + bTimeLabel,
+        summary: bc.label + ': ' + dName + ' trip (' + rangeLabel + ')',
+        description: bc.label + ' for your ' + dName + ' trip on ' + rangeLabel,
+        allDay: false,
+        dateObj: bookDate,
+        time: bc.time
+      });
+    }
+    return events;
+  }
+
+  function buildGoogleCalURL(evt) {
+    var base = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+    var text = '&text=' + encodeURIComponent(evt.summary);
+    var dates;
+    if (evt.allDay) {
+      dates = '&dates=' + toGCalDate(new Date(evt.startDate + 'T00:00:00')) + '/' +
+              toGCalDate(new Date(evt.endDateExcl + 'T00:00:00'));
+    } else {
+      var startDT = toGCalDateTime(evt.dateObj, evt.time);
+      var endObj = new Date(evt.dateObj);
+      endObj.setMinutes(endObj.getMinutes() + 30);
+      var endDT = toGCalDateTime(endObj, evt.time.split(':')[0] + ':30');
+      dates = '&dates=' + startDT + '/' + endDT;
+    }
+    var details = '&details=' + encodeURIComponent(evt.description || '');
+    return base + text + dates + details;
+  }
+
+  function buildICSContent(events) {
+    var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//HolidayHacker//EN\r\n';
+    events.forEach(function (evt) {
+      ics += 'BEGIN:VEVENT\r\n';
+      if (evt.allDay) {
+        ics += 'DTSTART;VALUE=DATE:' + toICSDate(new Date(evt.startDate + 'T00:00:00')) + '\r\n';
+        ics += 'DTEND;VALUE=DATE:' + toICSDate(new Date(evt.endDateExcl + 'T00:00:00')) + '\r\n';
+      } else {
+        ics += 'DTSTART:' + toICSDateTime(evt.dateObj, evt.time) + '\r\n';
+        var endObj = new Date(evt.dateObj);
+        endObj.setMinutes(endObj.getMinutes() + 30);
+        ics += 'DTEND:' + toICSDateTime(endObj, evt.time.split(':')[0] + ':30') + '\r\n';
+        ics += 'BEGIN:VALARM\r\nTRIGGER:-PT10M\r\nACTION:DISPLAY\r\nDESCRIPTION:Reminder\r\nEND:VALARM\r\n';
+      }
+      ics += 'SUMMARY:' + (evt.summary || '').replace(/[\r\n]/g, ' ') + '\r\n';
+      ics += 'DESCRIPTION:' + (evt.description || '').replace(/[\r\n]/g, ' ') + '\r\n';
+      ics += 'END:VEVENT\r\n';
+    });
+    ics += 'END:VCALENDAR';
+    return ics;
+  }
+
+  function openCalendarSheet(trip, card) {
+    var existing = document.getElementById('calSheetOverlay');
+    if (existing) existing.remove();
+
+    var events = buildCalendarEvents(trip, card);
+    var defaultId = events.find(function (e) { return e.id === 'booking'; }) ?
+      'booking' :
+      ((events.find(function (e) { return e.id === 'leave'; }) ? 'leave' : 'trip'));
+    var checkListHtml = '';
+    events.forEach(function (evt) {
+      var checkedAttr = evt.id === defaultId ? ' checked' : '';
+      checkListHtml += '<label class="trips-cal-check">' +
+        '<input type="radio" name="tripsCalOnePick" value="' + evt.id + '"' + checkedAttr + '/>' +
+        '<span>' + evt.label + '</span></label>';
+    });
+
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var secondaryBtnHtml = isIOS
+      ? '<button type="button" class="trips-cal-btn trips-cal-btn--apple"><img class="trips-cal-apple-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Apple_Calendar_%28iOS%29.svg" alt="Apple Calendar"/><span>Apple Calendar</span></button>'
+      : '<button type="button" class="trips-cal-btn trips-cal-btn--download"><span class="material-symbols-outlined">download</span><span>Download Calendar File</span></button>';
+
+    var overlay = document.createElement('div');
+    overlay.id = 'calSheetOverlay';
+    overlay.className = 'trips-cal-overlay';
+    overlay.innerHTML = '<div class="trips-cal-popup">' +
+      '<div class="trips-cal-header"><h3>Add to Calendar</h3><button type="button" class="trips-cal-close" aria-label="Close"><span class="material-symbols-outlined">close</span></button></div>' +
+      '<p class="trips-cal-note"><span class="material-symbols-outlined">info</span><span>Google Calendar adds one entry at a time. Choose one event below.</span></p>' +
+      '<div class="trips-cal-list">' + checkListHtml + '</div>' +
+      '<div class="trips-cal-buttons">' +
+        '<button type="button" class="trips-cal-btn trips-cal-btn--google"><img class="trips-cal-google-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar"/><span>Google Calendar</span></button>' +
+        secondaryBtnHtml +
+      '</div>' +
+    '</div>';
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.trips-cal-close').addEventListener('click', function () { overlay.remove(); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.remove(); });
+
+    function getPickedEvent() {
+      var picked = overlay.querySelector('.trips-cal-check input[type="radio"]:checked');
+      if (!picked) return null;
+      var id = picked.value;
+      return events.find(function (ev) { return ev.id === id; }) || null;
+    }
+
+    function downloadIcsForEvents(selectedEvents) {
+      if (!selectedEvents.length) { overlay.remove(); return; }
+      var ics = buildICSContent(selectedEvents);
+      var blob = new Blob([ics], { type: 'text/calendar' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      var dName = ((trip.destination && trip.destination.name) || 'Trip').replace(/\s+/g, '_');
+      a.download = dName + '_calendar_events.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      overlay.remove();
+    }
+
+    overlay.querySelector('.trips-cal-btn--google').addEventListener('click', function () {
+      var picked = getPickedEvent();
+      if (!picked) { overlay.remove(); return; }
+      var url = buildGoogleCalURL(picked);
+      window.open(url, '_blank');
+      overlay.remove();
+    });
+
+    var appleBtn = overlay.querySelector('.trips-cal-btn--apple');
+    var downloadBtn = overlay.querySelector('.trips-cal-btn--download');
+    if (appleBtn) {
+      appleBtn.addEventListener('click', function () { downloadIcsForEvents(events); });
+    }
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function () { downloadIcsForEvents(events); });
+    }
+  }
+
+  /* ─── Change Window popup ────────────────────────────── */
+
+  function getAllAvailableWindows() {
+    var data;
+    try { data = JSON.parse(localStorage.getItem(ADVISOR_DATA_KEY) || '{}'); } catch (e) { data = {}; }
+    var todayISO = new Date().toISOString().slice(0, 10);
+    var windows = [];
+    (data.gifts || []).forEach(function (g) {
+      if (g.end >= todayISO) windows.push({ type: 'free', name: g.name, start: g.start, end: g.end, days: g.days, leaves: 0 });
+    });
+    (data.bridges || []).forEach(function (b) {
+      if (b.end >= todayISO) windows.push({ type: 'golden', name: b.name, start: b.start, end: b.end, days: b.days, leaves: b.leaves });
+    });
+    (data.megas || []).forEach(function (m) {
+      if (m.end >= todayISO) {
+        var n = m.days === 9 ? '9-Day Mega-Bridge' : (m.days + '-Day Long Bridge');
+        windows.push({ type: 'mega', name: n, start: m.start, end: m.end, days: m.days, leaves: m.leaves });
+      }
+    });
+    windows.sort(function (a, b) { return a.start.localeCompare(b.start); });
+    return windows;
+  }
+
+  function openChangeWindowPopup(currentTrip, tripIdx) {
+    var existing = document.getElementById('changeWindowOverlay');
+    if (existing) existing.remove();
+
+    var windows = getAllAvailableWindows();
+    var confirmedTrips = getConfirmedTrips();
+    var usedStarts = {};
+    confirmedTrips.forEach(function (t) { usedStarts[t.windowStart] = true; });
+
+    var listHtml = '';
+    windows.forEach(function (w) {
+      var isCurrent = w.start === currentTrip.windowStart;
+      var isUsed = !isCurrent && usedStarts[w.start];
+      var typeCls = w.type === 'free' ? 'trips-cw-item--free' : (w.type === 'golden' ? 'trips-cw-item--golden' : 'trips-cw-item--mega');
+      var disabledCls = isUsed ? ' trips-cw-item--disabled' : '';
+      var currentCls = isCurrent ? ' trips-cw-item--current' : '';
+      var typeLabel = w.type === 'golden' ? 'Golden Bridge' : (w.type === 'mega' ? 'Mega-Bridge' : 'Free Holiday');
+      listHtml += '<button type="button" class="trips-cw-item ' + typeCls + disabledCls + currentCls + '" data-start="' + w.start + '"' + (isUsed ? ' disabled' : '') + '>' +
+        '<div class="trips-cw-item-name">' + (w.name || typeLabel).replace(/</g, '&lt;') + '</div>' +
+        '<div class="trips-cw-item-meta">' + formatRange(w.start, w.end) + ' • ' + w.days + 'D' + (isCurrent ? ' • Current' : '') + (isUsed ? ' • In use' : '') + '</div>' +
+      '</button>';
+    });
+
+    var overlay = document.createElement('div');
+    overlay.id = 'changeWindowOverlay';
+    overlay.className = 'trips-cw-overlay';
+    overlay.innerHTML = '<div class="trips-cw-popup">' +
+      '<div class="trips-cw-header"><h3>Change Window</h3><button type="button" class="trips-cw-close" aria-label="Close"><span class="material-symbols-outlined">close</span></button></div>' +
+      '<div class="trips-cw-list">' + listHtml + '</div>' +
+    '</div>';
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.trips-cw-close').addEventListener('click', function () { overlay.remove(); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.remove(); });
+
+    overlay.querySelectorAll('.trips-cw-item:not([disabled])').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var newStart = btn.getAttribute('data-start');
+        if (newStart === currentTrip.windowStart) { overlay.remove(); return; }
+        var w = windows.find(function (x) { return x.start === newStart; });
+        if (!w) return;
+
+        /* Ensure the new window is toggled on in calendar selections */
+        if (w.type === 'free') {
+          try {
+            var pl = JSON.parse(localStorage.getItem(PLANNED_TRIPS_KEY) || '[]');
+            if (pl.indexOf(w.start) === -1) { pl.push(w.start); localStorage.setItem(PLANNED_TRIPS_KEY, JSON.stringify(pl)); }
+          } catch (ex) {}
+        } else {
+          try {
+            var sb = JSON.parse(localStorage.getItem(SELECTED_BRIDGES_KEY) || '[]');
+            if (sb.indexOf(w.start) === -1) { sb.push(w.start); localStorage.setItem(SELECTED_BRIDGES_KEY, JSON.stringify(sb)); }
+          } catch (ex) {}
+        }
+
+        var allTrips = getConfirmedTrips();
+        var match = allTrips.find(function (t) { return t.windowStart === currentTrip.windowStart; });
+        if (match) {
+          match.windowStart = w.start;
+          match.windowEnd = w.end;
+          match.windowDays = w.days;
+          match.windowName = w.name;
+          match.windowType = w.type;
+          match.leaves = w.leaves || 0;
+          localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(allTrips));
+        }
+        overlay.remove();
+        populate();
       });
     });
   }
@@ -377,15 +828,23 @@
     if (imgEl) {
       imgEl.style.backgroundImage = 'none';
       imgEl.style.backgroundColor = 'var(--gray-200)';
-      if (d.imageUrl) {
-        var sep = d.imageUrl.indexOf('?') >= 0 ? '&' : '?';
-        var bust = d.imageUrl + sep + '_t=' + Date.now();
+      var detailImg = (d.imageUrl || '').trim();
+      if ((d.isHometown || d.slug === '__hometown__') && !detailImg) detailImg = HOMETOWN_IMAGE_URL;
+      if (detailImg) {
+        var sep = detailImg.indexOf('?') >= 0 ? '&' : '?';
+        var bust = detailImg + sep + '_t=' + Date.now();
         imgEl.style.backgroundImage = 'url("' + bust.replace(/"/g, '%22') + '")';
         imgEl.style.backgroundColor = 'transparent';
       }
     }
-    if (catEl) catEl.textContent = d.category || '';
-    var descHtml = formatWvText((d.description || '') || 'No description available.');
+    if (catEl) catEl.textContent = (d.isHometown || d.slug === '__hometown__') ? 'Hometown visit' : (d.category || '');
+    var descHtml = (d.isHometown || d.slug === '__hometown__')
+      ? ('<p>Family time in your hometown.' +
+          ((trip.leaves || 0) > 0
+            ? ' Use reminders below for leave and travel.'
+            : ' This window does not need leave days; use transport reminders if you are booking travel.') +
+        '</p>')
+      : formatWvText((d.description || '') || 'No description available.');
     var underHtml = formatWvText(d.understand_brief || '');
     var seeHtml = formatWvText(d.see_brief || '');
     if (descEl) descEl.innerHTML = descHtml;

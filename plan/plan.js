@@ -9,8 +9,12 @@
   var TRAVEL_PREFS_KEY = 'holidayHacker_travelPreferences';
   var PLAN_SELECTED_DEST_KEY = 'holidayHacker_planSelectedDestination';
   var CONFIRMED_TRIPS_KEY = 'holidayHacker_confirmedTrips';
+  var FAVORITES_KEY = 'holidayHacker_favorites';
+  var VISITED_PLACES_KEY = 'holidayHacker_visitedPlaces';
   var CAL_DONE_KEY = 'holidayHacker_calSetup';
   var INITIAL_DEST_COUNT = 3;
+  var HOMETOWN_SLUG = '__hometown__';
+  var HOMETOWN_IMAGE_URL = 'https://img.freepik.com/free-vector/suburban-house-illustration_33099-2357.jpg';
 
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -27,6 +31,34 @@
     var s = new Date(start + 'T00:00:00');
     var e = new Date(end + 'T00:00:00');
     return MONTHS[s.getMonth()] + ' ' + s.getDate() + ' – ' + MONTHS[e.getMonth()] + ' ' + e.getDate();
+  }
+
+  function formatStateDisplayName(state) {
+    if (!state || typeof state !== 'string') return '';
+    return state.replace(/_/g, ' ');
+  }
+
+  function normalizeLocationKey(str) {
+    return (str || '').toLowerCase().replace(/[\s\-_.]/g, '');
+  }
+
+  function hasDistinctHometown(user) {
+    if (!user) return false;
+    var home = (user.homeLocation || '').trim();
+    var work = (user.workLocation || '').trim();
+    if (!home || !work) return false;
+    return normalizeLocationKey(work) !== normalizeLocationKey(home);
+  }
+
+  function parseHomeLocation(user) {
+    if (!user || !user.homeLocation) return null;
+    var raw = String(user.homeLocation).trim();
+    if (!raw) return null;
+    var parts = raw.split(',').map(function (p) { return p.trim(); }).filter(Boolean);
+    if (!parts.length) return null;
+    var city = parts[0];
+    var state = parts.length > 1 ? parts[parts.length - 1] : '';
+    return { city: city, state: state, raw: raw };
   }
 
   function getAdvisorData() {
@@ -113,14 +145,45 @@
     return 'Mega-Bridge';
   }
 
+  function getConfirmedDestForWindow(windowStart) {
+    var trips = getConfirmedTrips();
+    var match = trips.find(function (t) { return t.windowStart === windowStart; });
+    return match && match.destination ? match.destination : null;
+  }
+
   function renderWindowCard(w, isSelected) {
     var sel = isSelected ? ' plan-window-card--selected' : '';
     var typeCls = getCardTypeClass(w);
     var tagCls = w.type === 'free' ? 'plan-tag plan-tag--free' : (w.type === 'golden' ? 'plan-tag plan-tag--bridge' : 'plan-tag plan-tag--mega');
-    var check = isSelected ? '<span class="plan-window-check material-symbols-outlined">check_circle</span>' : '';
     var title = w.name.length > 35 ? w.name.slice(0, 32) + '…' : w.name;
-    return '<div class="plan-window-card ' + typeCls + sel + '" data-start="' + w.start + '" data-type="' + w.type + '" title="' + (w.name || '').replace(/"/g, '&quot;') + '">' +
-      check +
+    var dest = getConfirmedDestForWindow(w.start);
+    var hasDest = !!dest;
+    var destCls = hasDest ? ' plan-window-card--has-dest' : '';
+    var bgHtml = '';
+    var destChip = '';
+    if (hasDest) {
+      var imgUrl = (dest.imageUrl || '').replace(/'/g, "\\'");
+      var isHometownWin = dest.slug === HOMETOWN_SLUG || dest.isHometown;
+      if (imgUrl) {
+        bgHtml = '<div class="plan-window-bg" style="background-image: url(\'' + imgUrl + '\')"></div>' +
+                 '<div class="plan-window-bg-overlay"></div>';
+      } else if (isHometownWin) {
+        var homeBg = HOMETOWN_IMAGE_URL.replace(/'/g, "\\'");
+        bgHtml = '<div class="plan-window-bg" style="background-image: url(\'' + homeBg + '\')"></div>' +
+                 '<div class="plan-window-bg-overlay"></div>';
+      } else {
+        bgHtml = '<div class="plan-window-bg plan-window-bg--no-photo"></div>' +
+                 '<div class="plan-window-bg-overlay"></div>';
+      }
+      var destName = (dest.name || '').replace(/</g, '&lt;');
+      var destState = formatStateDisplayName(dest.state || '').replace(/</g, '&lt;');
+      destChip = '<div class="plan-window-dest">' +
+        '<span class="material-symbols-outlined">location_on</span>' +
+        '<span>' + destName + (destState ? ', ' + destState : '') + '</span>' +
+      '</div>';
+    }
+    return '<div class="plan-window-card ' + typeCls + sel + destCls + '" data-start="' + w.start + '" data-type="' + w.type + '" title="' + (w.name || '').replace(/"/g, '&quot;') + '">' +
+      bgHtml +
       '<h3 class="plan-window-title">' + title + '</h3>' +
       '<div class="plan-window-dates">' +
         '<span class="material-symbols-outlined">calendar_month</span>' +
@@ -131,6 +194,7 @@
         '<span class="plan-tag plan-tag--primary">' + w.days + ' Days</span>' +
         (w.leaves > 0 ? '<span class="plan-tag">' + w.leaves + ' Leave' + (w.leaves > 1 ? 's' : '') + '</span>' : '') +
       '</div>' +
+      destChip +
     '</div>';
   }
 
@@ -191,22 +255,31 @@
         var start = card.getAttribute('data-start');
         setPlanSelected(start);
         updateUI();
-        if (currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);
+        if (currentUser && allDestinations.length) {
+          loadAndScoreDestinations(currentUser);
+        } else if (currentUser) {
+          fetchRecommendationData(currentUser);
+        }
       });
     });
   }
 
   function updateProgress() {
     if (!progressText || !progressFill) return;
-    var selected = getSelectedBridges();
-    var planned = getPlannedTrips();
-    var usedDays = 0;
-    allWindows.forEach(function (w) {
-      var isSelected = w.type === 'free' ? planned.indexOf(w.start) !== -1 : selected.indexOf(w.start) !== -1;
-      if (isSelected) usedDays += w.days;
-    });
-    var possibleDays = allWindows.reduce(function (s, w) { return s + w.days; }, 0);
-    var pct = possibleDays > 0 ? Math.round((usedDays / possibleDays) * 100) : 0;
+    var data = getAdvisorData();
+    var totalDays = 0;
+    (data.gifts || []).forEach(function (g) { totalDays += (g.days || 0); });
+    (data.bridges || []).forEach(function (b) { totalDays += (b.days || 0); });
+    (data.megas || []).forEach(function (m) { totalDays += (m.days || 0); });
+
+    if (totalDays <= 0) {
+      progressText.textContent = '0%';
+      progressFill.setAttribute('stroke-dashoffset', 100);
+      return;
+    }
+
+    var usedDays = allWindows.reduce(function (s, w) { return s + (w.days || 0); }, 0);
+    var pct = Math.min(100, Math.round((usedDays / totalDays) * 100));
 
     progressText.textContent = pct + '%';
     var circumference = 100;
@@ -499,7 +572,7 @@
         if (cf) tags.push({ text: 'Child friendly', cls: '', prio: 7 });
       }
       if (isSummer && (cat.indexOf('beach') !== -1 || cat.indexOf('nature') !== -1)) tags.push({ text: 'Best in summer', cls: '', prio: 5 });
-      if ((d.state === 'Kerala' || d.state === 'Karnataka') && cat.indexOf('nature') !== -1) tags.push({ text: 'Suitable in monsoon', cls: '', prio: 5 });
+      if ((d.state === 'Kerala' || d.state === 'Karnataka' || d.state === 'Tamil_Nadu' || d.state === 'Andhra_Pradesh' || d.state === 'Telangana' || d.state === 'Puducherry' || d.state === 'Lakshadweep') && cat.indexOf('nature') !== -1) tags.push({ text: 'Suitable in monsoon', cls: '', prio: 5 });
       if (!spiritual && !cf && !strenuous && (cat.indexOf('garden') !== -1 || cat.indexOf('park') !== -1 || cat.indexOf('nature') !== -1 || cat.indexOf('wildlife') !== -1 || cat.indexOf('mountain') !== -1)) tags.push({ text: 'Best for couples', cls: '', prio: 6 });
     }
     var minD = d.min_days != null ? d.min_days : 2;
@@ -509,86 +582,220 @@
     return tags.slice(0, 1);
   }
 
+  function getPlanFavorites() {
+    try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function isDestFavorite(slug) {
+    return getPlanFavorites().some(function (f) { return f.destination && f.destination.slug === slug; });
+  }
+
+  function getVisitedPlaces() {
+    try {
+      var arr = JSON.parse(localStorage.getItem(VISITED_PLACES_KEY) || '[]');
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) { return []; }
+  }
+
+  function setVisitedPlaces(arr) {
+    localStorage.setItem(VISITED_PLACES_KEY, JSON.stringify(arr || []));
+  }
+
+  /* Resolve "Bangalore" → "bengaluru", "Bombay" → "mumbai", etc., using the
+   * alias map shipped in database/state-city/data.json. Falls back to the
+   * normalised raw string when no alias is found. */
+  function planAliasCanonical(s) {
+    var key = normalizeLocationKey(s);
+    if (!key) return '';
+    var map = (stateCityData && stateCityData.aliases) || {};
+    return map[key] || key;
+  }
+
+  /* A destination is considered "visited" when:
+   * - the visited entry is a single token (state or single-name city/UT, e.g. "Goa", "Karnataka")
+   *   → matches every destination whose state or name equals that token; or
+   * - the visited entry is "City, State"
+   *   → matches a destination whose name == City and state == State.
+   * Comparison runs through the alias map AND whitespace/punctuation/case
+   * normalisation, so "Bangalore", "Bengaluru" and "bengaluru" all match
+   * "Bengaluru, Karnataka". */
+  function isDestinationVisited(d, visitedList) {
+    if (!d || !visitedList || !visitedList.length) return false;
+    var dName = planAliasCanonical(d.name);
+    var dState = planAliasCanonical(d.state);
+    for (var i = 0; i < visitedList.length; i++) {
+      var entry = String(visitedList[i] || '').trim();
+      if (!entry) continue;
+      var parts = entry.split(',').map(function (p) { return p.trim(); }).filter(Boolean);
+      if (parts.length === 1) {
+        var token = planAliasCanonical(parts[0]);
+        if (token && (token === dState || token === dName)) return true;
+      } else {
+        var pCity = planAliasCanonical(parts[0]);
+        var pState = planAliasCanonical(parts[parts.length - 1]);
+        if (pCity === dName && (!pState || pState === dState)) return true;
+      }
+    }
+    return false;
+  }
+
+  /* Toggle the visited flag for a single destination. When unmarking, drops
+   * any matching entry (city-level or state-level) so the toggle truly turns off. */
+  function setDestinationVisited(dest, makeVisited) {
+    if (!dest || !dest.raw || !dest.raw.name) return;
+    var canonName = planAliasCanonical(dest.raw.name);
+    var canonState = planAliasCanonical(dest.raw.state);
+    var arr = getVisitedPlaces().filter(function (entry) {
+      var parts = String(entry || '').split(',').map(function (p) { return p.trim(); }).filter(Boolean);
+      if (parts.length === 1) {
+        var t = planAliasCanonical(parts[0]);
+        return !(t === canonName || t === canonState);
+      }
+      var pc = planAliasCanonical(parts[0]);
+      var ps = planAliasCanonical(parts[parts.length - 1]);
+      return !(pc === canonName && (!ps || ps === canonState));
+    });
+    if (makeVisited) {
+      var stateDisp = formatStateDisplayName(dest.raw.state || '');
+      var label = stateDisp ? (dest.raw.name + ', ' + stateDisp) : dest.raw.name;
+      arr.push(label);
+    }
+    setVisitedPlaces(arr);
+  }
+
+  function closeAllPlanMenus() {
+    document.querySelectorAll('.plan-dest-menu').forEach(function (m) {
+      if (!m.hidden) m.hidden = true;
+    });
+    document.querySelectorAll('.plan-dest-menu-btn[aria-expanded="true"]').forEach(function (b) {
+      b.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function refreshVisitedFlags() {
+    var visitedList = getVisitedPlaces();
+    scoredDestinations.forEach(function (d) {
+      d.visited = isDestinationVisited(d.raw, visitedList);
+    });
+    scoredDestinations.sort(function (a, b) {
+      if (a.visited !== b.visited) return a.visited ? 1 : -1;
+      var diff = (b.score || 0) - (a.score || 0);
+      if (diff !== 0) return diff;
+      return (b.content_richness || 0) - (a.content_richness || 0);
+    });
+  }
+
   function renderDestCard(dest, isSelected) {
     var d = dest.raw;
     var tags = dest.tags || [];
     var imgUrl = (d.images && d.images[0] && d.images[0].url) || '';
     var selCls = isSelected ? ' plan-dest-card--selected' : '';
+    var visitedCls = dest.visited ? ' plan-dest-card--visited' : '';
     var bestTag = tags[0];
     var tagHtml = bestTag ? '<span class="plan-dest-badge ' + (bestTag.cls || '') + '">' + (bestTag.text || '').replace(/</g, '&lt;') + '</span>' : '';
-    var icon = dest.hasKids ? 'family_restroom' : (dest.isCouple ? 'favorite' : 'groups_3');
     var scoreDebug = '<span class="plan-dest-score-debug" title="Calculated score">' + (dest.score != null ? dest.score : '–') + '</span>';
-    return '<div class="plan-dest-card' + selCls + '" data-slug="' + (d.slug || '').replace(/"/g, '&quot;') + '">' +
+    var favActive = isDestFavorite(d.slug);
+    var favIconName = favActive ? 'favorite' : 'favorite_border';
+    var favActiveCls = favActive ? ' plan-dest-fav--active' : '';
+    var slugAttr = (d.slug || '').replace(/"/g, '&quot;');
+    return '<div class="plan-dest-card' + selCls + visitedCls + '" data-slug="' + slugAttr + '">' +
       '<div class="plan-dest-img" style="background-image: url(\'' + (imgUrl || 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%236b7280%22 width=%22100%22 height=%22100%22/></svg>').replace(/'/g, "\\'") + '\')"></div>' +
       '<div class="plan-dest-overlay"></div>' +
+      '<button type="button" class="plan-dest-fav' + favActiveCls + '" data-slug="' + slugAttr + '" aria-label="Favorite"><span class="material-symbols-outlined">' + favIconName + '</span></button>' +
       '<div class="plan-dest-badges">' + tagHtml + scoreDebug + '</div>' +
-      '<button type="button" class="plan-dest-map-btn" aria-label="Select ' + (d.name || '').replace(/"/g, '&quot;') + '"><span class="material-symbols-outlined">where_to_vote</span></button>' +
       '<div class="plan-dest-info">' +
-        '<div><h3 class="plan-dest-name">' + (d.name || '').replace(/</g, '&lt;') + '</h3><p class="plan-dest-region">' + (d.state || '').replace(/</g, '&lt;') + '</p></div>' +
-        '<div class="plan-dest-icons"><span class="material-symbols-outlined">' + icon + '</span></div>' +
+        '<div><h3 class="plan-dest-name">' + (d.name || '').replace(/</g, '&lt;') + '</h3><p class="plan-dest-region">' + formatStateDisplayName(d.state || '').replace(/</g, '&lt;') + '</p></div>' +
+        '<button type="button" class="plan-dest-menu-btn" data-slug="' + slugAttr + '" aria-label="More options" aria-haspopup="menu" aria-expanded="false"><span class="material-symbols-outlined">more_vert</span></button>' +
+      '</div>' +
+      '<div class="plan-dest-menu" role="menu" hidden>' +
+        '<button type="button" class="plan-dest-menu-item" data-action="visit" data-slug="' + slugAttr + '" role="menuitem">' +
+          '<span class="material-symbols-outlined">flag</span>' +
+          '<span>Already visited</span>' +
+        '</button>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderHometownCard(parsed, isSelected) {
+    var selCls = isSelected ? ' plan-dest-card--selected' : '';
+    var city = (parsed.city || '').replace(/</g, '&lt;');
+    var stateDisp = formatStateDisplayName(parsed.state || '').replace(/</g, '&lt;');
+    var sub = stateDisp ? (city + ', ' + stateDisp) : city;
+    var homeCardImg = HOMETOWN_IMAGE_URL.replace(/'/g, "\\'");
+    return '<div class="plan-dest-card plan-dest-card--hometown' + selCls + '" data-slug="' + HOMETOWN_SLUG + '">' +
+      '<div class="plan-dest-img plan-dest-img--hometown" style="background-image: url(\'' + homeCardImg + '\')"></div>' +
+      '<div class="plan-dest-overlay plan-dest-overlay--hometown"></div>' +
+      '<div class="plan-dest-badges">' +
+        '<span class="plan-dest-badge plan-dest-badge--hometown">Hometown</span>' +
+      '</div>' +
+      '<div class="plan-dest-info">' +
+        '<div><h3 class="plan-dest-name">Visit hometown</h3>' +
+        '<p class="plan-dest-region">' + sub + '</p>' +
+        '<p class="plan-dest-hometown-hint">Not traveling elsewhere? Use this break for family time back home.</p></div>' +
+        '<div class="plan-dest-icons"><span class="material-symbols-outlined">home</span></div>' +
       '</div></div>';
   }
 
-  function getConfirmedTrips() {
-    try {
-      return JSON.parse(localStorage.getItem(CONFIRMED_TRIPS_KEY) || '[]');
-    } catch (e) { return []; }
-  }
-
-  function setConfirmedTrips(trips) {
-    localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(trips));
-  }
-
-  function renderDestinations() {
+  function wirePlanDestCardClicks(sel) {
     var grid = document.getElementById('planDestGrid');
-    var loading = document.getElementById('planDestLoading');
     if (!grid) return;
-
-    if (scoredDestinations.length === 0) {
-      if (loading) { loading.style.display = ''; loading.textContent = 'No destinations found. Complete Calendar setup and select a trip window.'; }
-      return;
-    }
-
-    if (loading) loading.style.display = 'none';
-    var confirmed = getConfirmedTrips();
-    var confirmedSlugs = confirmed.map(function (t) { return t.destination && t.destination.slug; }).filter(Boolean);
-    var sel = getPlanSelected();
-    var confirmedForCurrent = confirmed.find(function (t) { return t.windowStart === sel; });
-    var selectedSlug = confirmedForCurrent && confirmedForCurrent.destination ? confirmedForCurrent.destination.slug : null;
-
-    var filtered = scoredDestinations.filter(function (d) {
-      return confirmedSlugs.indexOf(d.raw.slug) === -1 || d.raw.slug === selectedSlug;
-    });
-    var toShow = filtered.slice(0, destVisibleCount);
-    var moreCount = filtered.length - destVisibleCount;
-    var html = toShow.map(function (dest) {
-      return renderDestCard(dest, selectedSlug === dest.raw.slug);
-    }).join('');
-
-    if (moreCount > 0) {
-      var moreLabel = moreCount >= 50 ? '50+' : moreCount + '+';
-      html += '<button type="button" class="plan-explore-btn plan-explore-btn--card" id="planExploreMore">' +
-        '<span>Explore ' + moreLabel + ' More</span>' +
-        '<span class="material-symbols-outlined">arrow_forward</span></button>';
-    }
-
-    grid.innerHTML = html;
-
-    grid.querySelectorAll('.plan-dest-map-btn').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var card = btn.closest('.plan-dest-card');
-        if (!card) return;
+    grid.querySelectorAll('.plan-dest-card').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (
+          e.target.closest('.plan-explore-btn') ||
+          e.target.closest('.plan-dest-fav') ||
+          e.target.closest('.plan-dest-menu-btn') ||
+          e.target.closest('.plan-dest-menu')
+        ) return;
         var slug = card.getAttribute('data-slug');
-        var dest = scoredDestinations.find(function (x) { return x.raw.slug === slug; });
-        if (!dest) return;
         var w = allWindows.find(function (x) { return x.start === sel; });
         if (!w) return;
-        var imgUrl = (dest.raw.images && dest.raw.images[0] && dest.raw.images[0].url) || '';
-        var sb = dest.raw.section_briefs || {};
         var trips = getConfirmedTrips();
         var existing = trips.findIndex(function (t) { return t.windowStart === sel; });
-        var entry = {
+
+        if (slug === HOMETOWN_SLUG) {
+          var parsed = currentUser ? parseHomeLocation(currentUser) : null;
+          if (!parsed) return;
+          var entry = {
+            windowStart: w.start,
+            windowEnd: w.end,
+            windowDays: w.days,
+            windowName: w.name,
+            windowType: w.type,
+            leaves: w.leaves || 0,
+            destination: {
+              slug: HOMETOWN_SLUG,
+              name: parsed.city,
+              state: parsed.state,
+              category: 'Hometown',
+              isHometown: true,
+              imageUrl: HOMETOWN_IMAGE_URL,
+              description: '',
+              understand_brief: '',
+              see_brief: '',
+              min_days: w.days,
+              distance_km: null
+            }
+          };
+          if (existing >= 0) {
+            if (trips[existing].destination && trips[existing].destination.slug === HOMETOWN_SLUG) {
+              trips.splice(existing, 1);
+            } else {
+              trips[existing] = entry;
+            }
+          } else {
+            trips.push(entry);
+          }
+          setConfirmedTrips(trips);
+          renderWindows();
+          renderDestinations();
+          return;
+        }
+
+        var dest = scoredDestinations.find(function (x) { return x.raw.slug === slug; });
+        if (!dest) return;
+        var imgUrl = (dest.raw.images && dest.raw.images[0] && dest.raw.images[0].url) || '';
+        var sb = dest.raw.section_briefs || {};
+        var entry2 = {
           windowStart: w.start,
           windowEnd: w.end,
           windowDays: w.days,
@@ -612,15 +819,164 @@
           if (trips[existing].destination && trips[existing].destination.slug === slug) {
             trips.splice(existing, 1);
           } else {
-            trips[existing] = entry;
+            trips[existing] = entry2;
           }
         } else {
-          trips.push(entry);
+          trips.push(entry2);
         }
         setConfirmedTrips(trips);
+        renderWindows();
         renderDestinations();
       });
     });
+  }
+
+  function getConfirmedTrips() {
+    try {
+      return JSON.parse(localStorage.getItem(CONFIRMED_TRIPS_KEY) || '[]');
+    } catch (e) { return []; }
+  }
+
+  function setConfirmedTrips(trips) {
+    localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(trips));
+  }
+
+  function syncConfirmedTripsToWindows() {
+    var trips = getConfirmedTrips();
+    if (!trips.length) return;
+    var activeStarts = {};
+    allWindows.forEach(function (w) { activeStarts[w.start] = true; });
+    var cleaned = trips.filter(function (t) { return !!activeStarts[t.windowStart]; });
+    if (cleaned.length !== trips.length) {
+      setConfirmedTrips(cleaned);
+    }
+  }
+
+  function renderDestinations() {
+    var grid = document.getElementById('planDestGrid');
+    var loading = document.getElementById('planDestLoading');
+    var destSection = document.querySelector('.plan-destinations');
+    if (!grid) return;
+
+    var sel = getPlanSelected();
+    var hasSelectedWindow = sel && allWindows.some(function (w) { return w.start === sel; });
+
+    if (!hasSelectedWindow || allWindows.length === 0) {
+      if (destSection) destSection.style.display = 'none';
+      return;
+    }
+
+    if (destSection) destSection.style.display = '';
+
+    var showHometown = !!(currentUser && hasDistinctHometown(currentUser));
+    var homeParsed = showHometown ? parseHomeLocation(currentUser) : null;
+    if (showHometown && !homeParsed) showHometown = false;
+
+    var confirmed = getConfirmedTrips();
+    var confirmedForCurrent = confirmed.find(function (t) { return t.windowStart === sel; });
+    var selectedSlug = confirmedForCurrent && confirmedForCurrent.destination ? confirmedForCurrent.destination.slug : null;
+
+    var hometownHtml = (showHometown && homeParsed)
+      ? renderHometownCard(homeParsed, selectedSlug === HOMETOWN_SLUG)
+      : '';
+
+    if (scoredDestinations.length === 0) {
+      if (!showHometown || !homeParsed) {
+        grid.innerHTML = '<div class="plan-dest-loading" id="planDestLoading">Loading destinations…</div>';
+        return;
+      }
+      grid.innerHTML = hometownHtml +
+        '<div class="plan-dest-loading plan-dest-loading--inline" id="planDestLoading">Loading destinations…</div>';
+      wirePlanDestCardClicks(sel);
+      return;
+    }
+
+    if (loading) loading.style.display = 'none';
+
+    var confirmedSlugs = confirmed.map(function (t) { return t.destination && t.destination.slug; }).filter(Boolean);
+    var filtered = scoredDestinations.filter(function (d) {
+      if (d.visited) return false;
+      return confirmedSlugs.indexOf(d.raw.slug) === -1 || d.raw.slug === selectedSlug;
+    });
+    var toShow = filtered.slice(0, destVisibleCount);
+    var moreCount = filtered.length - destVisibleCount;
+    var html = hometownHtml + toShow.map(function (dest) {
+      return renderDestCard(dest, selectedSlug === dest.raw.slug);
+    }).join('');
+
+    if (moreCount > 0) {
+      var moreLabel = moreCount >= 50 ? '50+' : moreCount + '+';
+      html += '<button type="button" class="plan-explore-btn plan-explore-btn--card" id="planExploreMore">' +
+        '<span>Explore ' + moreLabel + ' More</span>' +
+        '<span class="material-symbols-outlined">arrow_forward</span></button>';
+    }
+
+    grid.innerHTML = html;
+
+    grid.querySelectorAll('.plan-dest-menu-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var card = btn.closest('.plan-dest-card');
+        var menu = card && card.querySelector('.plan-dest-menu');
+        if (!menu) return;
+        var willOpen = !!menu.hidden;
+        closeAllPlanMenus();
+        menu.hidden = !willOpen;
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
+
+    grid.querySelectorAll('.plan-dest-menu-item[data-action="visit"]').forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var slug = item.getAttribute('data-slug');
+        var dest = scoredDestinations.find(function (x) { return x.raw.slug === slug; });
+        closeAllPlanMenus();
+        if (!dest) return;
+        setDestinationVisited(dest, true);
+        refreshVisitedFlags();
+        renderDestinations();
+      });
+    });
+
+    grid.querySelectorAll('.plan-dest-fav').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var slug = btn.getAttribute('data-slug');
+        var dest = scoredDestinations.find(function (x) { return x.raw.slug === slug; });
+        if (!dest) return;
+        var favs = getPlanFavorites();
+        var existIdx = favs.findIndex(function (f) { return f.destination && f.destination.slug === slug; });
+        if (existIdx >= 0) {
+          favs.splice(existIdx, 1);
+          btn.classList.remove('plan-dest-fav--active');
+          btn.querySelector('.material-symbols-outlined').textContent = 'favorite_border';
+        } else {
+          var w = allWindows.find(function (x) { return x.start === sel; });
+          var imgUrl = (dest.raw.images && dest.raw.images[0] && dest.raw.images[0].url) || '';
+          favs.push({
+            windowStart: w ? w.start : '',
+            windowEnd: w ? w.end : '',
+            windowName: w ? w.name : '',
+            windowType: w ? w.type : '',
+            windowDays: w ? w.days : 0,
+            leaves: w ? (w.leaves || 0) : 0,
+            destination: {
+              slug: dest.raw.slug,
+              name: dest.raw.name,
+              state: dest.raw.state,
+              imageUrl: imgUrl,
+              category: dest.raw.category || ''
+            }
+          });
+          btn.classList.add('plan-dest-fav--active');
+          btn.querySelector('.material-symbols-outlined').textContent = 'favorite';
+        }
+        localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs));
+      });
+    });
+
+    wirePlanDestCardClicks(sel);
 
     var exploreBtn = document.getElementById('planExploreMore');
     if (exploreBtn) {
@@ -646,6 +1002,7 @@
     }
     if (!tripMonth) tripMonth = new Date().getMonth() + 1;
 
+    var visitedList = getVisitedPlaces();
     scoredDestinations = allDestinations.filter(function (d) { return !isUserHomeCity(d, user); }).map(function (d) {
       var result = scoreDestination(d, userCoords, prefs, availableDays, tripMonth);
       var tags = deriveTags(d, prefs.hasKidsUnder10, tripMonth);
@@ -660,9 +1017,11 @@
         tags: tags,
         hasKids: prefs.hasKidsUnder10,
         isCouple: !prefs.hasKidsUnder10,
-        content_richness: richness
+        content_richness: richness,
+        visited: isDestinationVisited(d, visitedList)
       };
     }).filter(function (x) { return x.raw.name; }).sort(function (a, b) {
+      if (a.visited !== b.visited) return a.visited ? 1 : -1;
       var diff = (b.score || 0) - (a.score || 0);
       if (diff !== 0) return diff;
       return (b.content_richness || 0) - (a.content_richness || 0);
@@ -675,7 +1034,7 @@
   function fetchRecommendationData(user) {
     var configUrl = '../database/recommendation/config.json?t=' + Date.now();
     var scUrl = '../database/state-city/data.json';
-    var destUrls = ['../database/destinations/in/Karnataka.json', '../database/destinations/in/Kerala.json'];
+    var destUrls = ['../database/destinations/in/Karnataka.json', '../database/destinations/in/Kerala.json', '../database/destinations/in/Tamil_Nadu.json', '../database/destinations/in/Andhra_Pradesh.json', '../database/destinations/in/Telangana.json', '../database/destinations/in/Puducherry.json', '../database/destinations/in/Lakshadweep.json'];
 
     Promise.all([
       fetch(configUrl, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
@@ -708,25 +1067,45 @@
     if (!user.name && !user.workLocation) { window.location.href = '../index.html'; return; }
     currentUser = user;
     allWindows = buildAllWindows();
+    syncConfirmedTripsToWindows();
     var sel = getPlanSelected();
     if (!sel && allWindows.length) {
       setPlanSelected(allWindows[0].start);
     }
+    if (sel && !allWindows.some(function (w) { return w.start === sel; })) {
+      localStorage.removeItem(PLAN_SELECTED_KEY);
+    }
     updateUI();
     wireFilterPills();
     wireSearch();
-    fetchRecommendationData(user);
+    if (allWindows.length) {
+      fetchRecommendationData(user);
+    } else {
+      renderDestinations();
+    }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.plan-dest-menu') || e.target.closest('.plan-dest-menu-btn')) return;
+      closeAllPlanMenus();
+    });
 
     window.addEventListener('planPrefsDone', function () {
       if (currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);
     });
 
     window.addEventListener('storage', function (e) {
-      if (e.key === TRAVEL_PREFS_KEY && currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);
+      if ((e.key === TRAVEL_PREFS_KEY || e.key === VISITED_PLACES_KEY) && currentUser && allDestinations.length) {
+        loadAndScoreDestinations(currentUser);
+      }
     });
 
     document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible' && currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);
+      if (document.visibilityState === 'visible') {
+        allWindows = buildAllWindows();
+        syncConfirmedTripsToWindows();
+        updateUI();
+        if (currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);
+      }
     });
   }
 

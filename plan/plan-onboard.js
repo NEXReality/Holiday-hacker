@@ -178,16 +178,32 @@
       '<div class="chat-privacy"><span class="material-symbols-outlined">lock</span> Your data stays on this device</div>';
     chatFooter.innerHTML = html;
 
-    chatFooter.querySelectorAll('.chat-chip[data-multi="1"]').forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var v = chip.getAttribute('data-value');
-        var arr = answers[key];
-        var idx = arr.indexOf(v);
-        if (idx !== -1) arr.splice(idx, 1);
-        else arr.push(v);
-        chip.classList.toggle('chat-chip--selected', arr.indexOf(v) !== -1);
+    function renderSelectedState() {
+      var arr = Array.isArray(answers[key]) ? answers[key] : [];
+      chatFooter.querySelectorAll('.chat-chip[data-multi="1"]').forEach(function (btn) {
+        var val = btn.getAttribute('data-value');
+        btn.classList.toggle('chat-chip--selected', arr.indexOf(val) !== -1);
       });
+    }
+
+    function toggleChipValue(v) {
+      var arr = Array.isArray(answers[key]) ? answers[key].slice() : [];
+      var idx = arr.indexOf(v);
+      if (idx !== -1) arr.splice(idx, 1);
+      else arr.push(v);
+      answers[key] = arr;
+      renderSelectedState();
+    }
+
+    chatFooter.querySelectorAll('.chat-chip[data-multi="1"]').forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleChipValue(btn.getAttribute('data-value'));
+      };
     });
+
+    renderSelectedState();
     document.getElementById('chatChipsContinue').addEventListener('click', function () {
       var arr = answers[key];
       if (key === 'travelModes' && !arr.length) arr.push('car');

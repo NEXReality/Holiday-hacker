@@ -3,7 +3,7 @@
 
   var userData = localStorage.getItem('holidayHacker_user');
   if (userData) {
-    window.location.href = 'holidays/index.html';
+    window.location.href = 'calendar/index.html';
     return;
   }
 
@@ -13,6 +13,7 @@
   var answers = {};
   var cityData = [];
   var currentStep = 0;
+  var CITY_ALIAS_MAP = {};
 
   var STEPS = [
     {
@@ -75,7 +76,44 @@
       message: function () {
         var work = answers.workLocation.split(',')[0];
         var home = answers.homeLocation.split(',')[0];
-        return 'Got it! I\u2019ve synced the holidays for ' + work + ' and ' + home + '. Let\u2019s head to your Timeline to see your first \u2018Paisa Vasool\u2019 travel windows! \u{1F389}';
+        if (normalizeText(work) === normalizeText(home)) {
+          return 'Got it! I\u2019ve synced the holidays for ' + work + '. Now a couple of quick work-schedule questions so I can highlight your off-days and plan smarter \u{1F4AA}';
+        }
+        return 'Got it! I\u2019ve synced the holidays for ' + work + ' and ' + home + '. Now a couple of quick work-schedule questions so I can highlight your off-days and plan smarter \u{1F4AA}';
+      }
+    },
+    {
+      type: 'input',
+      key: 'weeklyOff',
+      botMessage: 'What does your weekly off look like?',
+      inputType: 'chips',
+      options: [
+        { label: 'Sat\u2013Sun Off',       value: 'sat-sun',      icon: 'weekend' },
+        { label: 'Sunday Only Off',    value: 'sun-only',     icon: 'calendar_today' },
+        { label: '2nd & 4th Sat Off',  value: '2nd-4th-sat',  icon: 'date_range' },
+        { label: 'Custom / Shift Off', value: 'custom',       icon: 'tune' }
+      ]
+    },
+    {
+      type: 'input',
+      key: 'pendingLeaves',
+      botMessage: 'How many pending leaves do you have left this year?',
+      inputType: 'slider'
+    },
+    {
+      type: 'input',
+      key: 'carryOver',
+      botMessage: 'Does your office allow carrying over unused leaves to next year?',
+      inputType: 'chips',
+      options: [
+        { label: 'Yes', value: 'yes', icon: 'check_circle' },
+        { label: 'No',  value: 'no',  icon: 'cancel' }
+      ]
+    },
+    {
+      type: 'bot',
+      message: function () {
+        return 'All set, ' + answers.name + '! Your personalized calendar is ready \u2014 let\u2019s see your upcoming holidays, golden bridges, and mega weekends! \u{1F680}';
       },
       final: true
     }
@@ -87,6 +125,52 @@
     return str.replace(/\S+/g, function (word) {
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     });
+  }
+
+  function normalizeText(str) {
+    return (str || '').toLowerCase().replace(/[\s\-_.]/g, '');
+  }
+
+  function aliasToCanonical(str) {
+    var key = normalizeText(str);
+    return CITY_ALIAS_MAP[key] || key;
+  }
+
+  function aliasesForCanonical(canonical) {
+    var out = [];
+    Object.keys(CITY_ALIAS_MAP).forEach(function (k) {
+      if (CITY_ALIAS_MAP[k] === canonical) out.push(k);
+    });
+    return out;
+  }
+
+  function cityDataMatches(item, query) {
+    var qRaw = normalizeText(query);
+    var qCanon = aliasToCanonical(query);
+    var tokens = [];
+    var labelRaw = normalizeText(item.label || '');
+    var cityRaw = normalizeText(item.city || '');
+    var stateRaw = normalizeText(item.state || '');
+    var labelCanon = aliasToCanonical(item.label || '');
+    var cityCanon = aliasToCanonical(item.city || '');
+    var stateCanon = aliasToCanonical(item.state || '');
+    tokens.push(labelRaw, cityRaw, stateRaw, labelCanon, cityCanon, stateCanon);
+    aliasesForCanonical(cityCanon).forEach(function (a) { tokens.push(a); });
+    aliasesForCanonical(stateCanon).forEach(function (a) { tokens.push(a); });
+    return tokens.some(function (t) {
+      return t.indexOf(qRaw) !== -1 || t.indexOf(qCanon) !== -1;
+    });
+  }
+
+  function resolveLocationInput(input) {
+    var q = aliasToCanonical(input);
+    var exact = cityData.find(function (item) {
+      var cityKey = aliasToCanonical(item.city || '');
+      var stateKey = aliasToCanonical(item.state || '');
+      var labelKey = aliasToCanonical(item.label || '');
+      return cityKey === q || stateKey === q || labelKey === q;
+    });
+    return exact ? exact.label : '';
   }
 
   function getTime() {
@@ -200,6 +284,31 @@
     });
   }
 
+  function showSlider() {
+    var html =
+      '<div class="chat-slider-wrap">' +
+        '<div class="chat-slider-value" id="sliderDisplay">12</div>' +
+        '<input type="range" class="chat-slider" id="chatSlider" min="0" max="30" value="12" step="1"/>' +
+        '<div class="chat-slider-labels"><span>0</span><span>30</span></div>' +
+        '<button type="button" class="chat-slider-confirm" id="sliderConfirm">' +
+          '<span class="material-symbols-outlined">check</span> Confirm' +
+        '</button>' +
+      '</div>' + privacyHTML();
+    chatFooter.innerHTML = html;
+
+    var slider  = document.getElementById('chatSlider');
+    var display = document.getElementById('sliderDisplay');
+    var confirmBtn = document.getElementById('sliderConfirm');
+
+    slider.addEventListener('input', function () {
+      display.textContent = slider.value;
+    });
+
+    confirmBtn.addEventListener('click', function () {
+      handleAnswer(slider.value);
+    });
+  }
+
   function showDropdown(placeholder, showSame) {
     var sameHTML = showSame
       ? '<label class="chat-same-check"><input type="checkbox" id="sameAsWork"/><span>Same as work location</span></label>'
@@ -232,9 +341,8 @@
         list.style.display = 'none';
         return;
       }
-      var q = query.toLowerCase();
       var filtered = cityData.filter(function (item) {
-        return item.label.toLowerCase().indexOf(q) !== -1;
+        return cityDataMatches(item, query);
       });
       if (!filtered.length) {
         list.style.display = 'none';
@@ -266,13 +374,17 @@
     });
 
     function submitDropdown() {
-      if (!selectedValue) return;
+      if (!selectedValue) {
+        var resolved = resolveLocationInput(searchInput.value.trim());
+        if (!resolved) return;
+        selectedValue = resolved;
+      }
       handleAnswer(selectedValue);
     }
 
     btnSend.addEventListener('click', submitDropdown);
     searchInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && selectedValue) submitDropdown();
+      if (e.key === 'Enter') submitDropdown();
     });
 
     if (showSame) {
@@ -300,12 +412,26 @@
     chatFooter.innerHTML = privacyHTML();
   }
 
+  function labelForValue(key, value) {
+    for (var i = 0; i < STEPS.length; i++) {
+      if (STEPS[i].key === key && STEPS[i].options) {
+        for (var j = 0; j < STEPS[i].options.length; j++) {
+          if (STEPS[i].options[j].value === value) return STEPS[i].options[j].label;
+        }
+      }
+    }
+    return value;
+  }
+
   function handleAnswer(value) {
     var step = STEPS[currentStep];
     if (step.key === 'name') value = capitalizeName(value);
     answers[step.key] = value;
 
-    addUserMessage(value);
+    var display = (step.inputType === 'slider')
+      ? value + ' days'
+      : (step.inputType === 'chips' ? labelForValue(step.key, value) : value);
+    addUserMessage(display);
     clearFooter();
 
     currentStep++;
@@ -322,12 +448,18 @@
     if (step.type === 'bot') {
       addBotMessage(msg, step.accent, function () {
         if (step.final) {
+          answers.weeklyOff      = answers.weeklyOff || 'sat-sun';
+          answers.pendingLeaves  = parseInt(answers.pendingLeaves, 10) || 0;
+          answers.annualLeaves   = answers.pendingLeaves;
+          answers.leaveCarryOver = answers.carryOver || 'no';
+          delete answers.carryOver;
           answers.lastUpdated = new Date().toISOString();
           localStorage.setItem('holidayHacker_user', JSON.stringify(answers));
+          localStorage.setItem('holidayHacker_calSetup', '1');
           setTimeout(function () {
             page.classList.add('page--leaving');
             setTimeout(function () {
-              window.location.href = 'holidays/index.html';
+              window.location.href = 'calendar/index.html';
             }, 550);
           }, 3800);
         } else {
@@ -340,6 +472,7 @@
         if (step.inputType === 'text') showTextInput(step.placeholder);
         else if (step.inputType === 'chips') showChips(step.options);
         else if (step.inputType === 'dropdown') showDropdown(step.placeholder, step.showSameOption);
+        else if (step.inputType === 'slider') showSlider();
       });
     }
   }
@@ -350,6 +483,7 @@
     fetch('database/state-city/data.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
+        CITY_ALIAS_MAP = data.aliases || {};
         data.states.forEach(function (state) {
           cityData.push({ city: state.name, state: '', label: state.name });
           state.cities.forEach(function (city) {
