@@ -750,8 +750,8 @@
     block.innerHTML =
       '<div class="advisor-avatar"><span class="material-symbols-outlined">smart_toy</span></div>' +
       '<div class="advisor-bubble advisor-bubble--nav">' +
-        '<p>Ready to plan your trips? Head to <strong>Trips</strong> for location suggestions and travel options.</p>' +
-        '<a href="../trips/index.html" class="advisor-nav-btn">Go to Trips</a>' +
+        '<p>Ready to plan your trips? Head to <strong>Plan</strong> for destination recommendations tailored to your free windows.</p>' +
+        '<a href="../plan/index.html" class="advisor-nav-btn">Go to Plan</a>' +
       '</div>';
     advisorMsgs.appendChild(block);
     scrollBottom();
