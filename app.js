@@ -101,16 +101,6 @@
       inputType: 'slider'
     },
     {
-      type: 'input',
-      key: 'carryOver',
-      botMessage: 'Does your office allow carrying over unused leaves to next year?',
-      inputType: 'chips',
-      options: [
-        { label: 'Yes', value: 'yes', icon: 'check_circle' },
-        { label: 'No',  value: 'no',  icon: 'cancel' }
-      ]
-    },
-    {
       type: 'bot',
       message: function () {
         return 'All set, ' + answers.name + '! Your personalized calendar is ready \u2014 let\u2019s see your upcoming holidays, golden bridges, and mega weekends! \u{1F680}';
@@ -451,8 +441,6 @@
           answers.weeklyOff      = answers.weeklyOff || 'sat-sun';
           answers.pendingLeaves  = parseInt(answers.pendingLeaves, 10) || 0;
           answers.annualLeaves   = answers.pendingLeaves;
-          answers.leaveCarryOver = answers.carryOver || 'no';
-          delete answers.carryOver;
           answers.lastUpdated = new Date().toISOString();
           localStorage.setItem('holidayHacker_user', JSON.stringify(answers));
           localStorage.setItem('holidayHacker_calSetup', '1');

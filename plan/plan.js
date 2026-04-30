@@ -776,18 +776,22 @@
               distance_km: null
             }
           };
+          var didAddHome = false;
           if (existing >= 0) {
             if (trips[existing].destination && trips[existing].destination.slug === HOMETOWN_SLUG) {
               trips.splice(existing, 1);
             } else {
               trips[existing] = entry;
+              didAddHome = true;
             }
           } else {
             trips.push(entry);
+            didAddHome = true;
           }
           setConfirmedTrips(trips);
           renderWindows();
           renderDestinations();
+          if (didAddHome) showPlanToast('Hometown visit', w.name);
           return;
         }
 
@@ -815,18 +819,22 @@
             see_brief: (sb.see && sb.see.brief) || ''
           }
         };
+        var didAddDest = false;
         if (existing >= 0) {
           if (trips[existing].destination && trips[existing].destination.slug === slug) {
             trips.splice(existing, 1);
           } else {
             trips[existing] = entry2;
+            didAddDest = true;
           }
         } else {
           trips.push(entry2);
+          didAddDest = true;
         }
         setConfirmedTrips(trips);
         renderWindows();
         renderDestinations();
+        if (didAddDest) showPlanToast(dest.raw.name, w.name);
       });
     });
   }
@@ -839,6 +847,34 @@
 
   function setConfirmedTrips(trips) {
     localStorage.setItem(CONFIRMED_TRIPS_KEY, JSON.stringify(trips));
+  }
+
+  var _planToastTimer = null;
+  function showPlanToast(destName, windowName) {
+    var toast = document.getElementById('planToast');
+    if (!toast) return;
+    var titleEl = document.getElementById('planToastTitle');
+    var textEl = document.getElementById('planToastText');
+    if (titleEl) {
+      titleEl.textContent = destName ? (destName + ' saved') : 'Trip saved';
+    }
+    if (textEl) {
+      var safeWin = windowName ? String(windowName).replace(/</g, '&lt;') : '';
+      textEl.innerHTML = safeWin
+        ? 'Locked in for <strong>' + safeWin + '</strong>. Head to <strong>Trips</strong> to customize.'
+        : 'Head to <strong>Trips</strong> to customize this plan.';
+    }
+    toast.hidden = false;
+    requestAnimationFrame(function () { toast.classList.add('plan-toast--show'); });
+    if (_planToastTimer) clearTimeout(_planToastTimer);
+    _planToastTimer = setTimeout(hidePlanToast, 6000);
+  }
+  function hidePlanToast() {
+    var toast = document.getElementById('planToast');
+    if (!toast) return;
+    toast.classList.remove('plan-toast--show');
+    if (_planToastTimer) { clearTimeout(_planToastTimer); _planToastTimer = null; }
+    setTimeout(function () { if (!toast.classList.contains('plan-toast--show')) toast.hidden = true; }, 250);
   }
 
   function syncConfirmedTripsToWindows() {
@@ -1088,6 +1124,11 @@
       if (e.target.closest('.plan-dest-menu') || e.target.closest('.plan-dest-menu-btn')) return;
       closeAllPlanMenus();
     });
+
+    var toastClose = document.getElementById('planToastClose');
+    if (toastClose) toastClose.addEventListener('click', hidePlanToast);
+    var toastCta = document.getElementById('planToastCta');
+    if (toastCta) toastCta.addEventListener('click', hidePlanToast);
 
     window.addEventListener('planPrefsDone', function () {
       if (currentUser && allDestinations.length) loadAndScoreDestinations(currentUser);

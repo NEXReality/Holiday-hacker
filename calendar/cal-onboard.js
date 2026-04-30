@@ -1,7 +1,7 @@
-/* Calendar onboarding chat: collects weeklyOff, pendingLeaves, carryOver.
+/* Calendar onboarding chat: collects weeklyOff and pendingLeaves.
  * Shown only when user has completed main onboarding (index.html) but not
  * calendar setup. Flow: bot greeting → chips (weekly off) → slider (leaves)
- * → chips (carry over) → save to user, set CAL_DONE_KEY, hide overlay. */
+ * → save to user, set CAL_DONE_KEY, hide overlay. */
 (function () {
   'use strict';
 
@@ -66,16 +66,6 @@
       key: 'pendingLeaves',
       botMessage: 'How many pending leaves do you have left this year?',
       inputType: 'slider'
-    },
-    {
-      type: 'input',
-      key: 'carryOver',
-      botMessage: 'Does your office allow carrying over unused leaves to next year?',
-      inputType: 'chips',
-      options: [
-        { label: 'Yes', value: 'yes', icon: 'check_circle' },
-        { label: 'No',  value: 'no',  icon: 'cancel' }
-      ]
     },
     {
       type: 'bot',
@@ -247,7 +237,6 @@
     user.weeklyOff      = answers.weeklyOff;
     user.pendingLeaves  = parseInt(answers.pendingLeaves, 10);
     user.annualLeaves   = user.pendingLeaves;
-    user.leaveCarryOver = answers.carryOver;
     user.lastUpdated    = new Date().toISOString();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     localStorage.setItem(CAL_DONE_KEY, '1');

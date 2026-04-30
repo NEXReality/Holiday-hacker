@@ -90,6 +90,21 @@
     </main>
     </div>
 
+    <div class="plan-toast" id="planToast" role="status" aria-live="polite" hidden>
+      <span class="material-symbols-outlined plan-toast-icon">check_circle</span>
+      <div class="plan-toast-body">
+        <p class="plan-toast-title" id="planToastTitle">Trip saved</p>
+        <p class="plan-toast-text" id="planToastText">Head to <strong>Trips</strong> to customize this plan.</p>
+      </div>
+      <a href="../trips/index.html" class="plan-toast-cta" id="planToastCta">
+        Go to Trips
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <button type="button" class="plan-toast-close" id="planToastClose" aria-label="Dismiss">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
     <nav class="glass-nav" aria-label="Main">
       <div class="nav-inner">
         <a href="../holidays/index.html" class="nav-item">
